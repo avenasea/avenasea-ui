@@ -1,0 +1,15 @@
+{
+  "background_color": "#ffffff",
+  "theme_color": "#ececec",
+  "name": "CLSearch",
+  "short_name": "CLSearch",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icons/favicon-196x196.png",
+      "sizes": "196x196",
+      "type": "image/png"
+    }
+  ]
+}
