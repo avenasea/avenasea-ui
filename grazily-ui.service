@@ -1,0 +1,17 @@
+[Unit]
+Description=Grazily UI
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=ubuntu
+WorkingDirectory=/home/ubuntu/www/grazily.com/grazily-ui/
+ExecStart=/home/ubuntu/www/grazily.com/grazily-ui/bin/start.sh
+StandardOutput=append:/var/log/grazily-ui.log
+StandardError=append:/var/log/grazily-ui.error.log
+
+[Install]
+WantedBy=multi-user.target
