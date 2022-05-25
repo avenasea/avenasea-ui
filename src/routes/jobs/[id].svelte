@@ -28,7 +28,7 @@
 </script>
 
 <svelte:head>
-	<title>{job.title} job - Grazily</title>
+	<title>{job.title} job</title>
 </svelte:head>
 
 {#if job.title}

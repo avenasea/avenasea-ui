@@ -4,12 +4,17 @@
 	import { userStore } from '../stores/user';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
+	import Message from '$components/Message.svelte';
 
 	const user = {};
 	let ref;
+	let msg;
+	let type;
 
 	async function onLogin() {
 		try {
+			msg = null;
+			type = null;
 			const res = await new User(fetch).login(user);
 			if (res.user && res.token) {
 				localStorage.setItem('token', res.token);
@@ -20,6 +25,8 @@
 				goto(ref);
 			}
 		} catch (err) {
+			type = 'error';
+			msg = err.message;
 			console.error(err);
 		}
 	}
@@ -31,8 +38,10 @@
 </script>
 
 <svelte:head>
-	<title>Login - Grazily</title>
+	<title>Login</title>
 </svelte:head>
+
+<Message {type} {msg} />
 
 <form on:submit|preventDefault={onLogin}>
 	<div class="field">

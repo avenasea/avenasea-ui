@@ -2,6 +2,9 @@
 	import Stats from '$api/stats';
 	import { onMount } from 'svelte';
 
+	const name = import.meta.env.VITE_META_NAME;
+	const title = import.meta.env.VITE_META_TITLE;
+
 	let jobTags = [];
 	let tags = [];
 	let stats = {};
@@ -20,11 +23,11 @@
 </script>
 
 <svelte:head>
-	<title>CLSearch - search all of craiglist in your inbox</title>
+	<title>{name} - {title}</title>
 </svelte:head>
 
 <div class="content">
-	<h1>Search all of Craigslist in your inbox</h1>
+	<h1>{title}</h1>
 
 	<p style="font-size: 120%">A weekly email of highly targeted Craigslist searches in your inbox every day.</p>
 

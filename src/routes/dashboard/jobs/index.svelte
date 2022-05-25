@@ -4,6 +4,7 @@
 	import User from '$api/user';
 	import { goto } from '$app/navigation';
 
+	const domain = import.meta.env.VITE_META_DOMAIN;
 	let warning;
 	let me;
 	let job = {};
@@ -194,7 +195,7 @@
 
 	<div class="field">
 		<label for="name">Contact email:</label>
-		<input type="email" id="contact" bind:value={job.contact} placeholder="careers@grazily.com" />
+		<input type="email" id="contact" bind:value={job.contact} placeholder="careers@{domain}" />
 	</div>
 	<footer>
 		<button>Save</button>

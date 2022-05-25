@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Grazily Pricing</title>
+	<title>Pricing</title>
 </svelte:head>
 
 <h1>Pricing</h1>
