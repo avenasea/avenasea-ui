@@ -7,4 +7,4 @@
 . .env.local
 
 
-node ./build/index.js
+PORT=${PORT} node ./build/index.js
