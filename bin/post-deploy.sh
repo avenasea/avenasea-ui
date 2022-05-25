@@ -15,6 +15,7 @@ npm -v
 
 npm i
 #npm start
+echo $HOST_PASS | sudo -S systemctl daemon-reload
 echo $HOST_PASS | sudo -S systemctl restart ${META_SERVICE}
 
 echo "current name: $name"
