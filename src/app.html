@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>{name}</title>
+		<title>Grazily</title>
 		<meta charset="utf-8" />
 		<link rel="icon" href="/icons/favicon.png" />
 		<link rel="apple-touch-icon" sizes="128x128" href="/icons/favicon.png" />
@@ -16,10 +16,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script defer data-domain="grazily.com" src="https://plausible.io/js/plausible.js"></script>
 
-		%svelte.head%
+		%sveltekit.head%
 		<link rel="stylesheet" href="/styles/main.css" />
 	</head>
 	<body>
-		<div id="svelte">%svelte.body%</div>
+		<div id="svelte">%sveltekit.body%</div>
 	</body>
 </html>
