@@ -29,13 +29,17 @@
 <div class="content">
 	<h1>{title}</h1>
 
-	<p style="font-size: 120%">A weekly email of highly targeted Craigslist searches in your inbox every day.</p>
+	<p style="font-size: 120%">A weekly email of highly targeted jobs in your inbox every Sunday.</p>
 
 	<p>All accounts include a free 2-week trial (no credit card required).</p>
 
 	<section>
 		<p>
-			Use our search to drill down into very specific craigslist listings across all cities and countries.
+			Use our search to drill down into very specific job listings across popular Applicant Tracking
+			Systems (ATSs).
+		</p>
+		<p>
+			Opt-in to be contacted by hiring companies that match your highly targeted job requirements.
 		</p>
 	</section>
 
@@ -55,7 +59,7 @@
 		<h3>What our users are saying:</h3>
 		<blockquote>
 			<p>
-				<q>The only jobs I ever get interviews with are the ones from my search profiles.</q
+				<q>The only jobs I ever get interviews with are the ones from my Grazily search profiles.</q
 				>
 			</p>
 			<footer><cite>Michael Ash <a href="https://twitter.com/corl8">@CORL8</a></cite></footer>
@@ -63,7 +67,7 @@
 		<blockquote>
 			<p>
 				<q
-					>I see all the jobs that match my specific requirements without having to
+					>Using Grazily I see all the jobs that match my specific requirements without having to -
 					spend time scouring the web.</q
 				>
 			</p>
