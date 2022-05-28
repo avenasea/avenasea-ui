@@ -1,6 +1,7 @@
 <script>
 	export let tags = [];
 	export let type = 'jobs';
+	export let click = null;
 	const link = type === 'jobs' ? '/jobs/tags' : '/searches/tags';
 </script>
 

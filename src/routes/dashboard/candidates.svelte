@@ -162,7 +162,7 @@
 			/>
 			<button type="button" on:click|preventDefault={() => addPositiveWord()}>Add</button>
 		</div>
-		<ul>
+		<ul class="tags">
 			{#each positive as pos}
 				<li>
 					<span class="word">{pos}</span>
@@ -186,7 +186,7 @@
 			/>
 			<button type="button" on:click|preventDefault={() => addNegativeWord()}>Add</button>
 		</div>
-		<ul>
+		<ul class="tags">
 			{#each negative as neg}
 				<li>
 					<span class="word">{neg}</span>
@@ -270,5 +270,8 @@
 
 	.welcome {
 		font-size: 150%;
+	}
+	.tags li {
+		margin-bottom: 1rem;
 	}
 </style>

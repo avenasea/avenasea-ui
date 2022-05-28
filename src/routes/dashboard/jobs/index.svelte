@@ -3,6 +3,7 @@
 	import Jobs from '$api/jobs';
 	import User from '$api/user';
 	import { goto } from '$app/navigation';
+	import Tags from '$components/Tags.svelte';
 
 	const domain = import.meta.env.VITE_META_DOMAIN;
 	let warning;
@@ -161,6 +162,7 @@
 			/>
 			<button type="button" on:click|preventDefault={() => addPositiveWord()}>Add</button>
 		</div>
+		<!-- <Tags tags={positive} click={removePositiveWord(tag)} /> -->
 		<ul class="tags">
 			{#each positive as pos}
 				<li>
@@ -215,3 +217,9 @@
 </ol>
 
 {#if warning}<p class="warning">{warning}</p>{/if}
+
+<style>
+	li {
+		margin-bottom: 1rem;
+	}
+</style>

@@ -228,4 +228,7 @@
 	.welcome {
 		font-size: 150%;
 	}
+	.tags li {
+		margin-bottom: 1rem;
+	}
 </style>
