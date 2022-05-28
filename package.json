@@ -1,6 +1,7 @@
 {
 	"name": "grazily-ui",
 	"version": "0.0.1",
+	"license": "WTFPL",
 	"scripts": {
 		"start": "./bin/start.sh",
 		"dev": "svelte-kit dev",
