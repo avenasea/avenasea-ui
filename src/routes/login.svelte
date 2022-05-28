@@ -6,7 +6,7 @@
 	import { page } from '$app/stores';
 	import Message from '$components/Message.svelte';
 
-	const user = {};
+	const user: { password?: string; email?: string } = {};
 	let ref;
 	let msg;
 	let type;
@@ -52,11 +52,11 @@
 		<label for="password">Password:</label>
 		<input type="password" id="password" bind:value={user.password} />
 	</div>
-	<!--
 	<p style="text-align: right;">
-		<a href="/forgot">Forgot password?</a>
+		<a href={`${'/password/request-reset'}${user.email ? `?email=${user.email}` : ''}`}
+			>Forgot password?</a
+		>
 	</p>
-	-->
 	<footer>
 		<button>Login</button>
 	</footer>
