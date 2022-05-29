@@ -14,8 +14,11 @@
 
 	async function onReset() {
 		try {
+			type = null;
+			msg = null;
 			const res = await new User(fetch).requestReset(email);
 			msg = res.message;
+			type = 'success';
 		} catch (err) {
 			type = 'error';
 			msg = err;

@@ -23,9 +23,15 @@
 	}
 
 	async function onReset() {
-		if (!password || password == '' || parseInt(expiry) < Date.now()) return;
+		if (!password || password == '' || parseInt(expiry) < Date.now()) {
+			msg = 'Please set a password';
+			type = 'error';
+			return;
+		}
 		try {
-			await new User(fetch).passwordReset(token, password);
+			msg = null;
+			type = null;
+			await new User().passwordReset(token, password);
 			goto('/login');
 		} catch (err) {
 			msg = err;
