@@ -53,8 +53,10 @@
 		<input type="password" id="password" bind:value={user.password} />
 	</div>
 	<p style="text-align: right;">
-		<a href={`${'/password/request-reset'}${user.email ? `?email=${user.email}` : ''}`}
-			>Forgot password?</a
+		<a
+			href={`${'/password/request-reset'}${
+				user.email ? `?email=${encodeURIComponent(user.email)}` : ''
+			}`}>Forgot password?</a
 		>
 	</p>
 	<footer>
