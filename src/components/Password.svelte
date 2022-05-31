@@ -1,5 +1,6 @@
 <script lang="ts">
 	export let finalPassword = '';
+	export let changePassword = false;
 	let password = '';
 	let confirmPassword = '';
 	let timeouts = {};
@@ -72,7 +73,7 @@
 </script>
 
 <div class="field">
-	<label for="password">Password:</label>
+	<label for="password">{changePassword ? 'Change Password:' : 'Password:'}</label>
 	<input
 		type="password"
 		id="password"
@@ -101,7 +102,7 @@
 	>
 </div>
 <div class="field">
-	<label for="password">Confirm Password:</label>
+	<label for="password">{changePassword ? 'Confirm New Password:' : 'Confirm Password:'}</label>
 	<input
 		type="password"
 		id="confirmPassword"
