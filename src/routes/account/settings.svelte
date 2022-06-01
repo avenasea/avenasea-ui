@@ -21,7 +21,7 @@
 			msg = 'Settings have been updated';
 		} catch (err) {
 			type = 'error';
-			msg = 'Something went wrong';
+			msg = err;
 			console.error(err);
 		}
 	}

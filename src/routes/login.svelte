@@ -26,7 +26,7 @@
 			}
 		} catch (err) {
 			type = 'error';
-			msg = err.message;
+			msg = err;
 			console.error(err);
 		}
 	}
