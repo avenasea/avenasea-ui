@@ -3,6 +3,8 @@
 	import Jobs from '$api/jobs';
 	import Searches from '$api/searches';
 
+	const name = import.meta.env.VITE_META_NAME;
+
 	export async function load({ fetch, params }) {
 		const { username } = params;
 		const user = await new User(fetch).getByUsername(username);
@@ -36,7 +38,7 @@
 </script>
 
 <svelte:head>
-	<title>{user.username ? `${user.username} on ` : ''}Grazily</title>
+	<title>{user.username ? `${user.username} ` : ''} Profile</title>
 </svelte:head>
 
 {#if user.username}
@@ -52,7 +54,7 @@
 			<div class="email">
 				Email:
 				<a
-					href="mailto:{user.email}?subject=Grazily%20Profile...&body=I%20found%20your%20profile%20at:%20{typeof window !==
+					href="mailto:{user.email}?subject={name}%20Profile...&body=I%20found%20your%20profile%20at:%20{typeof window !==
 						'undefined' && window.location.href}">{user.email}</a
 				>
 			</div>

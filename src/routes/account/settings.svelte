@@ -6,6 +6,7 @@
 	import { getLocation } from '$lib/location';
 	import { location } from '$stores/user';
 	import Payments from '$api/payments';
+	import Password from '$components/Password.svelte';
 
 	let me = {};
 	let type;
@@ -20,7 +21,7 @@
 			msg = 'Settings have been updated';
 		} catch (err) {
 			type = 'error';
-			msg = 'Something went wrong';
+			msg = err;
 			console.error(err);
 		}
 	}
@@ -85,10 +86,7 @@
 		<label for="phone"> Phone Number ({me.phone || 'none'}):</label>
 		<input type="tel" id="phone" bind:value={me.newPhone} />
 	</div>
-	<div class="field">
-		<label for="password">Change Password:</label>
-		<input type="password" id="password" bind:value={me.newPassword} />
-	</div>
+	<Password changePassword={true} bind:finalPassword={me.newPassword} />
 	<div class="field">
 		<label for="location"> Location:</label>
 		<input type="text" id="location" bind:value={me.location} />

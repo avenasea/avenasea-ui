@@ -3,7 +3,7 @@
 </script>
 
 <header>
-	<a href="/" id="logo"><img src="/logo.svg" alt="CLSearch" border="0" title="Home" /></a>
+	<a href="/" id="logo"><img src="/logo.svg" alt="{import.meta.env.VITE_META_NAME}" border="0" title="Home" /></a>
 	<NavBar />
 </header>
 

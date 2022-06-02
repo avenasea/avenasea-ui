@@ -30,7 +30,7 @@
 </script>
 
 <svelte:head>
-	<title>{title} - Grazily</title>
+	<title>{title}</title>
 </svelte:head>
 
 <h1>{title}</h1>

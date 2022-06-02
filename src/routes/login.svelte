@@ -6,16 +6,15 @@
 	import { page } from '$app/stores';
 	import Message from '$components/Message.svelte';
 
-	const user = {};
+	const user: { password?: string; email?: string } = {};
 	let ref;
 	let msg;
 	let type;
 
 	async function onLogin() {
-		type = null;
-		msg = null;
-		
 		try {
+			msg = null;
+			type = null;
 			const res = await new User(fetch).login(user);
 			if (res.user && res.token) {
 				localStorage.setItem('token', res.token);
@@ -26,8 +25,8 @@
 				goto(ref);
 			}
 		} catch (err) {
-			msg = err.message;
 			type = 'error';
+			msg = err;
 			console.error(err);
 		}
 	}
@@ -39,7 +38,7 @@
 </script>
 
 <svelte:head>
-	<title>Login - Grazily</title>
+	<title>Login</title>
 </svelte:head>
 
 <Message {type} {msg} />
@@ -53,11 +52,13 @@
 		<label for="password">Password:</label>
 		<input type="password" id="password" bind:value={user.password} />
 	</div>
-	<!--
 	<p style="text-align: right;">
-		<a href="/forgot">Forgot password?</a>
+		<a
+			href={`${'/password/request-reset'}${
+				user.email ? `?email=${encodeURIComponent(user.email)}` : ''
+			}`}>Forgot password?</a
+		>
 	</p>
-	-->
 	<footer>
 		<button>Login</button>
 	</footer>

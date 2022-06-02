@@ -1,5 +1,7 @@
 <nav>
-	<a href="/dashboard">CL Searches</a>
+	<a href="/dashboard">Job Searches</a>
+	<a href="/dashboard/jobs">My Job Listings</a>
+	<a href="/dashboard/candidates">Candidate Searches</a>
 </nav>
 
 <style>

@@ -16,8 +16,6 @@
 </script>
 
 <script>
-	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
 	import Tags from '$components/Tags.svelte';
 	import { fromNow } from '$lib/dates';
 
@@ -34,7 +32,7 @@
 </script>
 
 <svelte:head>
-	<title>{search.name} profile - Grazily</title>
+	<title>{search.name} search profile</title>
 </svelte:head>
 
 {#if search.name}

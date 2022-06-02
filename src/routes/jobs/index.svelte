@@ -27,7 +27,7 @@
 </script>
 
 <svelte:head>
-	<title>Grazily Jobs</title>
+	<title>Jobs</title>
 </svelte:head>
 
 <ul>

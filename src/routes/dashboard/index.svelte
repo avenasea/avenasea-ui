@@ -26,18 +26,18 @@
 			searches = await new Searches(fetch).getAll();
 		} catch (err) {
 			console.error(err);
-			msg = err.message;
+			msg = err;
 			type = 'error';
 		}
 	}
 
 	async function deleteProfile(id) {
 		try {
-			msg = (await new Searches(fetch).deleteById(id)).message;
-			type = 'success';
+			await new Searches(fetch).deleteById(id);
+			msg = null;
 		} catch (err) {
 			console.error(err);
-			msg = err.message;
+			msg = err;
 			type = 'error';
 		}
 
@@ -53,7 +53,7 @@
 			msg = null;
 		} catch (err) {
 			console.error(err);
-			msg = err.message;
+			msg = err;
 			type = 'error';
 		}
 	}
@@ -117,7 +117,7 @@
 			}
 		} catch (err) {
 			console.error('this is an error: ', err);
-			msg = err.message;
+			msg = err;
 			type = 'error';
 		} finally {
 			search = {};
@@ -227,5 +227,8 @@
 <style>
 	.welcome {
 		font-size: 150%;
+	}
+	.tags li {
+		margin-bottom: 1rem;
 	}
 </style>

@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Privacy - {name}</title>
+	<title>Privacy</title>
 </svelte:head>
 
 <h1>Privacy Statement</h1>

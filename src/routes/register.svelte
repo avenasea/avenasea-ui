@@ -4,21 +4,33 @@
 	import { affiliate, location } from '$stores/user.js';
 	import { getLocation } from '$lib/location';
 	import { onMount } from 'svelte';
+	import Password from '$components/Password.svelte';
+	import Message from '$components/Message.svelte';
 
 	let aff = $affiliate;
+	let type;
+	let msg;
 
 	const user = {
 		contactme: true,
 		affiliate: aff,
-		location: ''
+		location: '',
+		password: '',
+		username: '',
+		email: '',
+		phone: ''
 	};
 
 	async function onSignup() {
+		if (!user.email || user.email == '' || !user.password || user.password == '') return;
 		try {
+			msg = '';
+			type = '';
 			const res = await new User(fetch).register(user);
 			goto('/login');
 		} catch (err) {
-			console.error(err);
+			type = 'error';
+			msg = err;
 		}
 	}
 
@@ -37,6 +49,10 @@
 	<title>Register</title>
 </svelte:head>
 
+{#if msg}
+	<Message {type} {msg} />
+{/if}
+
 <form on:submit|preventDefault={onSignup}>
 	<div class="field">
 		<label for="email"> Email: </label>
@@ -50,10 +66,7 @@
 		<label for="phone"> Phone Number:</label>
 		<input type="tel" id="phone" bind:value={user.phone} />
 	</div>
-	<div class="field">
-		<label for="password">Password:</label>
-		<input type="password" id="password" bind:value={user.password} />
-	</div>
+	<Password bind:finalPassword={user.password} />
 	<div class="field">
 		<label for="location"> Location:</label>
 		<input type="text" id="location" bind:value={user.location} />

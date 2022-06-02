@@ -36,6 +36,15 @@ class User extends Api {
 	async all() {
 		return await this.api('/users');
 	}
+
+	async requestReset(email) {
+		return await this.api('/password/request-reset', { email }, { method: 'POST' });
+	}
+
+	async passwordReset(token, password) {
+		return await this.api('/password/reset', { token, password }, { method: 'PUT' });
+	}
+
 }
 
 export default User;

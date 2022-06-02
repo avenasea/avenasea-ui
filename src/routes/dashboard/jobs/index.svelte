@@ -3,8 +3,9 @@
 	import Jobs from '$api/jobs';
 	import User from '$api/user';
 	import { goto } from '$app/navigation';
-	import Message from '$components/Message.svelte';
+	import Tags from '$components/Tags.svelte';
 
+	const domain = import.meta.env.VITE_META_DOMAIN;
 	let warning;
 	let me;
 	let job = {};
@@ -15,8 +16,6 @@
 	let negativeWord;
 	let positiveWord;
 	let isUpdate = false;
-	let msg;
-	let type;
 	const types = [
 		{
 			value: 'fulltime',
@@ -48,12 +47,9 @@
 
 	async function deleteJob(id) {
 		try {
-			msg = (await new Jobs(fetch).deleteById(id)).message;
-			type = 'success';
+			await new Jobs(fetch).deleteById(id);
 		} catch (err) {
 			console.error(err);
-			msg = err.message;
-			type = 'error';
 		}
 
 		jobs = await new Jobs(fetch).getAllMine();
@@ -67,8 +63,6 @@
 			negative = job.negative;
 		} catch (err) {
 			console.error(err);
-			msg = err.message;
-			type = 'error';
 		}
 	}
 
@@ -130,8 +124,6 @@
 			}
 		} catch (err) {
 			console.error(err);
-			msg = err.message;
-			type = 'error';
 		} finally {
 			job = {};
 			positive = [];
@@ -149,8 +141,6 @@
 <p>Create a public job as a hiring company or recruiter looking to fill a position:</p>
 
 <h1>Add a new job</h1>
-
-<Message {type} {msg} />
 
 <form on:submit|preventDefault={addJob}>
 	<div class="field">
@@ -172,6 +162,7 @@
 			/>
 			<button type="button" on:click|preventDefault={() => addPositiveWord()}>Add</button>
 		</div>
+		<!-- <Tags tags={positive} click={removePositiveWord(tag)} /> -->
 		<ul class="tags">
 			{#each positive as pos}
 				<li>
@@ -206,7 +197,7 @@
 
 	<div class="field">
 		<label for="name">Contact email:</label>
-		<input type="email" id="contact" bind:value={job.contact} placeholder="careers@clsearch.org" />
+		<input type="email" id="contact" bind:value={job.contact} placeholder="careers@{domain}" />
 	</div>
 	<footer>
 		<button>Save</button>
@@ -226,3 +217,9 @@
 </ol>
 
 {#if warning}<p class="warning">{warning}</p>{/if}
+
+<style>
+	li {
+		margin-bottom: 1rem;
+	}
+</style>

@@ -1,4 +1,5 @@
 import cfg from 'dotenv-flow';
+import pkg from 'package.json';
 
 cfg.config();
 
@@ -27,7 +28,7 @@ const env_production = {
 const conf = {
 	apps: [
 		{
-			name: 'clsearch-ui',
+			name: pkg.name,
 			script: './build/index.js',
 			env_production
 		}

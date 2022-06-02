@@ -1,4 +1,6 @@
 <script>
+	const domain = import.meta.env.VITE_META_DOMAIN;
+
 	const code = Math.random()
 		.toString(36)
 		.replace(/[^a-z0-9]/gi, '')
@@ -20,7 +22,7 @@
 
 <p>Copy link:</p>
 
-<textarea on:click={select}>https://clsearch.org/?aff={code}</textarea>
+<textarea on:click={select}>https://{domain}/?aff={code}</textarea>
 
 <style>
 	textarea {
