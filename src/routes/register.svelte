@@ -5,8 +5,11 @@
 	import { getLocation } from '$lib/location';
 	import { onMount } from 'svelte';
 	import Password from '$components/Password.svelte';
+	import Message from '$components/Message.svelte';
 
 	let aff = $affiliate;
+	let type;
+	let msg;
 
 	const user = {
 		contactme: true,
@@ -21,10 +24,13 @@
 	async function onSignup() {
 		if (!user.email || user.email == '' || !user.password || user.password == '') return;
 		try {
+			msg = '';
+			type = '';
 			const res = await new User(fetch).register(user);
 			goto('/login');
 		} catch (err) {
-			console.error(err);
+			type = 'error';
+			msg = err;
 		}
 	}
 
@@ -42,6 +48,10 @@
 <svelte:head>
 	<title>Register</title>
 </svelte:head>
+
+{#if msg}
+	<Message {type} {msg} />
+{/if}
 
 <form on:submit|preventDefault={onSignup}>
 	<div class="field">

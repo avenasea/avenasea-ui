@@ -26,7 +26,7 @@
 			searches = await new Searches(fetch).getAll();
 		} catch (err) {
 			console.error(err);
-			msg = err.message;
+			msg = err;
 			type = 'error';
 		}
 	}
@@ -37,7 +37,7 @@
 			msg = null;
 		} catch (err) {
 			console.error(err);
-			msg = err.message;
+			msg = err;
 			type = 'error';
 		}
 
@@ -53,7 +53,7 @@
 			msg = null;
 		} catch (err) {
 			console.error(err);
-			msg = err.message;
+			msg = err;
 			type = 'error';
 		}
 	}
@@ -117,7 +117,7 @@
 			}
 		} catch (err) {
 			console.error('this is an error: ', err);
-			msg = err.message;
+			msg = err;
 			type = 'error';
 		} finally {
 			search = {};
