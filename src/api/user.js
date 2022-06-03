@@ -46,7 +46,7 @@ class User extends Api {
 	}
 
 	async newsletter(user) {
-		return await this.api('/newsletter', user, { method: 'POST' });
+		return await this.api('/newsletters', user, { method: 'POST' });
 	}
 }
 
