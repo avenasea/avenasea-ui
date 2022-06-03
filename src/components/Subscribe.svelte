@@ -13,6 +13,7 @@
 			const res = await new User(fetch).newsletter(user);
 			type = 'success';
 			msg = 'You have been subscribed!';
+			user = {};
 		} catch (err) {
 			type = 'error';
 			msg = err;
