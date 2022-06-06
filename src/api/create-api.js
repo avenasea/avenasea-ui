@@ -16,19 +16,28 @@ class Api {
 			headers.Authorization = token ? 'Bearer ' + token : '';
 		}
 
-		const res = await this.fetch(path, {
-			method: opts.method || 'GET',
-			body: method === 'GET' ? null : body,
-			headers
-		});
+		try {
+			const res = await this.fetch(path, {
+				method: opts.method || 'GET',
+				body: method === 'GET' ? null : body,
+				headers
+			});
 
-		if (res.ok) {
-			return await (opts.raw ? res.text() : res.json());
+			if (res.ok) {
+				return await (opts.raw ? res.text() : res.json());
+			}
+
+			const err = await res.json();
+
+			throw new Error(err.message);
+		} catch (err) {
+			const { name, message } = err;
+
+			throw {
+				name,
+				message
+			};
 		}
-
-		const err = await res.json();
-
-		throw new Error(err.message);
 	}
 }
 
