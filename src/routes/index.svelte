@@ -1,4 +1,5 @@
 <script>
+	import Subscribe from '$components/Subscribe.svelte';
 	import Stats from '$api/stats';
 	import { onMount } from 'svelte';
 
@@ -76,6 +77,8 @@
 			</footer>
 		</blockquote>
 	</section>
+
+	<Subscribe />
 
 	{#if stats.users}
 		<h3 style="margin: 4rem auto;">
