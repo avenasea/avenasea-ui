@@ -1,5 +1,4 @@
-<script>
-	import Subscribe from '$components/Subscribe.svelte';
+<!-- <script>
 	import Stats from '$api/stats';
 	import { onMount } from 'svelte';
 
@@ -25,10 +24,24 @@
 
 <svelte:head>
 	<title>{name} - {title}</title>
-</svelte:head>
+</svelte:head> -->
+
+<script>
+import Banner from "$components/Banner.svelte";
+import Contact from "$components/Contact.svelte";
+
+</script>
+
+
 
 <div class="content">
-	<h1>{title}</h1>
+
+	<Banner />
+
+	<Contact />
+
+
+	<!-- <h1>{title}</h1>
 
 	<p style="font-size: 120%">A weekly email of highly targeted jobs in your inbox every Sunday.</p>
 
@@ -109,10 +122,15 @@
 				</li>
 			{/each}
 		</ul>
-	{/if}
+	{/if} -->
 </div>
 
 <style>
+
+
+</style>
+
+<!-- <style>
 	.content {
 		text-align: center;
 	}
@@ -192,4 +210,4 @@
 	.tags-list a {
 		color: #000;
 	}
-</style>
+</style> -->
