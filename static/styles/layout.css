@@ -1,12 +1,32 @@
 @font-face {
-	font-family: Bitter;
-	src: url(/fonts/Bitter-Regular.ttf);
+	font-family: 'Work Sans';
+	src: url(/fonts/WorkSans-Bold.ttf) format('opentype');
+	font-weight: 700;
 }
+
+@font-face {
+	font-family: 'Work Sans';
+	src: url(/fonts/WorkSans-Black.ttf) format('opentype');
+	font-weight: 900;
+}
+
+@font-face {
+	font-family: 'Work Sans';
+	src: url(/fonts/WorkSans-Regular.ttf) format('opentype');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Work Sans';
+	src: url(/fonts/WorkSans-Light.ttf) format('opentype');
+	font-weight: 300;
+}
+
 
 html,
 body {
-	min-height: 100vh;
 	width: 100%;
+	color: #fff;
 }
 
 html {
@@ -15,13 +35,16 @@ html {
 
 body {
 	margin: 0;
-	padding: 2.4rem;
-	font-family: Bitter, sans-serif;
+	font-family: Work Sans, sans-serif;
 	font-size: 1.8rem;
+	background: #0A133F;
 }
 
 p {
 	margin: 1rem 0;
+	font-size: 1.6rem;
+	line-height: 2.6rem;
+	color: #99AAFF;
 }
 
 ul,
@@ -33,6 +56,30 @@ ol {
 h1,
 h2 {
 	margin: 1.2rem 0;
+}
+
+h2{
+	font-size: 4.2rem;
+	line-height: 4.6rem;
+}
+
+a{
+	text-decoration: none;
+}
+
+.color-heading{
+	font-weight: 900;
+	font-size: 2.2rem;
+	color: #fff;
+	text-transform: uppercase;
+	background-image: linear-gradient(90deg, #21A8F3, #C7F5C6);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.container{
+	width: 117rem;
+	margin: 0 auto;
 }
 
 .error {
@@ -83,7 +130,7 @@ h2 {
 	font-size: 2rem;
 }
 
-@media (min-width: 641px) {
+/* @media (min-width: 641px) {
 	body {
 		max-width: 80%;
 		margin: 0 auto;
@@ -96,22 +143,22 @@ h2 {
 
 @media (min-width: 320px) {
 	/* smartphones, iPhone, portrait 480x320 phones */
-}
-@media (min-width: 481px) {
+/* } */
+/* @media (min-width: 481px) {
 	/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-}
-@media (min-width: 641px) {
+/* } */
+/* @media (min-width: 641px) {
 	/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-}
-@media (min-width: 961px) {
+/* } */
+/* @media (min-width: 961px) {
 	/* tablet, landscape iPad, lo-res laptops ands desktops */
-	body {
+	/* body {
 		max-width: 50%;
 	}
-}
-@media (min-width: 1025px) {
+} */
+/* @media (min-width: 1025px) {
 	/* big landscape tablets, laptops, and desktops */
-}
-@media (min-width: 1281px) {
+/* } */
+/* @media (min-width: 1281px) {
 	/* hi-res laptops and desktops */
-}
+/* }  */
