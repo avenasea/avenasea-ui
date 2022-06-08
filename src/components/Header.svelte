@@ -1,12 +1,12 @@
 <script>
 	import Button from './Button.svelte';
-    import NavBar from './NavBar.svelte';
+	import NavBar from './NavBar.svelte';
 </script>
 
 <header>
-	<a href="/" id="logo"><img src="/images/logo.svg"/></a>
+	<a href="/" id="logo"><img src="/images/logo.svg" /></a>
 	<NavBar />
-	<Button className={'white header'} content={'GET NOTIFIED'} href={'/'}/>
+	<Button className={'white header'} content={'GET NOTIFIED'} href={'/#subscribe'} />
 </header>
 
 <style>
@@ -25,7 +25,7 @@
 		text-decoration: none;
 	}
 
-	#logo{
+	#logo {
 		margin-top: 2rem;
 	}
 
