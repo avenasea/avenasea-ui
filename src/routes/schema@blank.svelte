@@ -1,7 +1,7 @@
 <script>
 	import Ajv from 'ajv';
 
-	const ajv = new Ajv({ allErrors: true, strict: false });
+	const ajv = new Ajv({ allErrors: true, strictSchema: false });
 
 	let schema = '';
 	let schemaObject = {};
