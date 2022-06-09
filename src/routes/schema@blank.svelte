@@ -63,6 +63,12 @@
 </div>
 
 <style>
+	fieldset {
+		margin: 1em 0;
+		padding: 0.5em;
+		border-radius: 8px;
+		border: 2px #2c2ca2 solid;
+	}
 	.container {
 		margin: 4em;
 	}
