@@ -40,6 +40,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"ajv": "^8.11.0",
 		"lice": "^1.1.0"
 	}
 }
