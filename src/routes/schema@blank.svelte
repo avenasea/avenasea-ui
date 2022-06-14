@@ -6,10 +6,9 @@
 
 	let schema = '';
 	let schemaObject = {};
+	let splitObject = {};
 
-	let finalObject = {
-		modules: {}
-	};
+	let finalObject = {};
 	let finalJSON = '';
 
 	let errors = [];
@@ -19,9 +18,11 @@
 			errors = [];
 			schemaObject = schema ? JSON.parse(schema) : {};
 			finalJSON = finalObject ? JSON.stringify(finalObject) : '';
-			for (const [key] of Object.entries(schemaObject.properties.modules.properties)) {
-				if (!finalObject.modules[key]) finalObject.modules[key] = {};
-			}
+			Object.entries(schemaObject.properties).forEach(([key, val]) => {
+				if (!splitObject[val.module]) splitObject[val.module] = {};
+				splitObject[val.module][key] = val;
+			});
+			console.log(splitObject);
 			const validate = ajv.compile(schemaObject);
 			const valid = validate(finalObject);
 			if (!valid) {
@@ -47,11 +48,11 @@
 		<p class="error">{JSON.stringify(error)}</p>
 	{/each}
 	<form on:submit|preventDefault={() => {}}>
-		{#if schemaObject?.properties?.modules}
+		{#if schemaObject}
 			<h1>Modules:</h1>
-			{#each Object.entries(schemaObject.properties.modules.properties) as [moduleName, moduleValue]}
+			{#each Object.entries(splitObject) as [moduleName, moduleValue]}
 				<CollapsableSection collapsed={true} heading={moduleName}>
-					{#each Object.entries(moduleValue.properties) as [fieldName, fieldValue]}
+					{#each Object.entries(moduleValue) as [fieldName, fieldValue]}
 						<fieldset>
 							<label for="">{fieldName}</label>
 							{#if errors.filter((e) => e.instancePath?.includes(fieldName)).length > 0}
@@ -63,9 +64,9 @@
 								<p>{key}: {val}</p>
 							{/each}
 							{#if fieldValue.type == 'number'}
-								<input type="number" bind:value={finalObject.modules[moduleName][fieldName]} />
+								<input type="number" bind:value={finalObject[fieldName]} />
 							{:else}
-								<input type="text" bind:value={finalObject.modules[moduleName][fieldName]} />
+								<input type="text" bind:value={finalObject[fieldName]} />
 							{/if}
 						</fieldset>
 						<hr />
