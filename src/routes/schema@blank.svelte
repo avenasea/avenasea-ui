@@ -1,4 +1,5 @@
 <script>
+	import CollapsableSection from '$components/CollapsableSection.svelte';
 	import Ajv from 'ajv';
 
 	const ajv = new Ajv({ allErrors: true, strictSchema: false });
@@ -6,7 +7,9 @@
 	let schema = '';
 	let schemaObject = {};
 
-	let finalObject = {};
+	let finalObject = {
+		modules: {}
+	};
 	let finalJSON = '';
 
 	let errors = [];
@@ -16,6 +19,9 @@
 			errors = [];
 			schemaObject = schema ? JSON.parse(schema) : {};
 			finalJSON = finalObject ? JSON.stringify(finalObject) : '';
+			for (const [key] of Object.entries(schemaObject.properties.modules.properties)) {
+				if (!finalObject.modules[key]) finalObject.modules[key] = {};
+			}
 			const validate = ajv.compile(schemaObject);
 			const valid = validate(finalObject);
 			if (!valid) {
@@ -41,22 +47,30 @@
 		<p class="error">{JSON.stringify(error)}</p>
 	{/each}
 	<form on:submit|preventDefault={() => {}}>
-		{#if schemaObject.properties}
-			{#each Object.entries(schemaObject.properties) as [key, val]}
-				<fieldset>
-					<label for="">{key}</label>
-					{#if errors.filter((e) => e.instancePath?.includes(key)).length > 0}
-						<div class="error">{errors.filter((e) => e.instancePath.includes(key))[0].message}</div>
-					{/if}
-					{#each Object.entries(val) as [key, val]}
-						<p>{key}: {val}</p>
+		{#if schemaObject?.properties?.modules}
+			<h1>Modules:</h1>
+			{#each Object.entries(schemaObject.properties.modules.properties) as [moduleName, moduleValue]}
+				<CollapsableSection collapsed={true} heading={moduleName}>
+					{#each Object.entries(moduleValue.properties) as [fieldName, fieldValue]}
+						<fieldset>
+							<label for="">{fieldName}</label>
+							{#if errors.filter((e) => e.instancePath?.includes(fieldName)).length > 0}
+								<div class="error">
+									{errors.filter((e) => e.instancePath.includes(fieldName))[0].message}
+								</div>
+							{/if}
+							{#each Object.entries(fieldValue) as [key, val]}
+								<p>{key}: {val}</p>
+							{/each}
+							{#if fieldValue.type == 'number'}
+								<input type="number" bind:value={finalObject.modules[moduleName][fieldName]} />
+							{:else}
+								<input type="text" bind:value={finalObject.modules[moduleName][fieldName]} />
+							{/if}
+						</fieldset>
+						<hr />
 					{/each}
-					{#if val.type == 'number'}
-						<input type="number" bind:value={finalObject[key]} />
-					{:else}
-						<input type="text" bind:value={finalObject[key]} />
-					{/if}
-				</fieldset>
+				</CollapsableSection>
 			{/each}
 		{/if}
 	</form>
@@ -66,8 +80,10 @@
 	fieldset {
 		margin: 1em 0;
 		padding: 0.5em;
-		border-radius: 8px;
-		border: 2px #2c2ca2 solid;
+		border: none;
+	}
+	hr {
+		border-color: #2c2ca2;
 	}
 	.container {
 		margin: 4em;
