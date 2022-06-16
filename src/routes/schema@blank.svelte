@@ -1,5 +1,6 @@
 <script>
 	import CollapsableSection from '$components/CollapsableSection.svelte';
+	import { DateInput } from 'date-picker-svelte';
 	import Ajv from 'ajv';
 	import addFormats from 'ajv-formats';
 
@@ -67,6 +68,12 @@
 							{/each}
 							{#if fieldValue.type == 'number'}
 								<input type="number" bind:value={finalObject[fieldName]} />
+							{:else if fieldValue.format == 'date'}
+								<DateInput
+									format="yyyy-MM-dd"
+									placeholder={new Date().toLocaleDateString()}
+									bind:value={finalObject[fieldName]}
+								/>
 							{:else}
 								<input type="text" bind:value={finalObject[fieldName]} />
 							{/if}
@@ -80,6 +87,10 @@
 </div>
 
 <style>
+	:global(:root) {
+		--date-picker-background: #1b1e27;
+		--date-picker-foreground: #f7f7f7;
+	}
 	fieldset {
 		margin: 1em 0;
 		padding: 0.5em;
