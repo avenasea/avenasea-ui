@@ -41,6 +41,7 @@
 	"type": "module",
 	"dependencies": {
 		"ajv": "^8.11.0",
+		"ajv-formats": "^2.1.1",
 		"lice": "^1.1.0"
 	}
 }
