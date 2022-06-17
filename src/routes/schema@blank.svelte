@@ -70,7 +70,7 @@
 								<input type="number" bind:value={finalObject[fieldName]} />
 							{:else if fieldValue.format == 'date'}
 								<DateInput
-									placeholder={new Date().toLocaleDateString()}
+									placeholder={new Date().toISOString().split('T')[0]}
 									format="yyyy-MM-dd"
 									bind:dateString={finalObject[fieldName]}
 								/>
