@@ -1,8 +1,11 @@
 <script>
 	import CollapsableSection from '$components/CollapsableSection.svelte';
+	import DateInput from '$components/DateInput.svelte';
 	import Ajv from 'ajv';
+	import addFormats from 'ajv-formats';
 
 	const ajv = new Ajv({ allErrors: true, strictSchema: false });
+	addFormats(ajv);
 
 	let schema = '';
 	let schemaObject = {};
@@ -65,6 +68,12 @@
 							{/each}
 							{#if fieldValue.type == 'number'}
 								<input type="number" bind:value={finalObject[fieldName]} />
+							{:else if fieldValue.format == 'date'}
+								<DateInput
+									placeholder={new Date().toLocaleDateString()}
+									format="yyyy-MM-dd"
+									bind:dateString={finalObject[fieldName]}
+								/>
 							{:else}
 								<input type="text" bind:value={finalObject[fieldName]} />
 							{/if}
