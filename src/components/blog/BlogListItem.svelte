@@ -12,14 +12,13 @@
 				})`}
 			/>
 			<div class="right-container">
-				<span class="post-category">{post.category || 'news'}</span>
 				<h2 class="post-title">{post.title}</h2>
-				<span class="post-text">{@html post.html}</span>
-				<span class="post-date">
+				<span class="post-date color-heading">
 					{post.timestamp
 						? new Date(post.timestamp).toLocaleDateString()
 						: new Date().toLocaleDateString()}
 				</span>
+				<span class="post-text">{@html post.html}</span>
 			</div>
 		</div>
 	</a>
@@ -27,7 +26,7 @@
 
 <style>
 	article {
-		width: 49%;
+		width: 32%;
 		padding: 1em 0;
 		margin: 0.5em 0;
 		transition: transform 0.2s ease;
@@ -42,11 +41,11 @@
 	.post-text {
 		color: #8794a7;
 		text-align: left;
-		height: 6rem;
+		height: 9rem;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		display: -webkit-box;
-		-webkit-line-clamp: 2;
+		-webkit-line-clamp: 3;
 		-webkit-box-orient: vertical;
 	}
 	.post-content {
@@ -59,7 +58,8 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		width: 100%;
-		height: 30rem;
+		height: 28rem;
+		border-radius: 4%;
 	}
 	.right-container {
 		display: flex;
@@ -76,8 +76,8 @@
 	}
 	.post-date {
 		color: rgba(255, 255, 255, 0.637);
-		font-size: 1.3rem;
-		margin-top: 0.5rem;
+		font-size: 1.6rem;
+		margin-top: -1rem;
 	}
 	h2 {
 		letter-spacing: inherit;
@@ -86,7 +86,6 @@
 	@media (max-width: 820px) {
 
 		article{
-			padding: 0 2rem;
 			width: 100%;
 			margin: 1rem 0 4rem 0;
 		}

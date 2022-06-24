@@ -41,74 +41,34 @@
 	<title>{category.charAt(0).toUpperCase() + category.slice(1)} | Blog | $HSKO</title>
 </svelte:head>
 
-<div class="background">
-	<section class="posts-container">
-		<div class="posts-heading">
-			<a href="#" on:click|preventDefault={() => (showCategoryDropdown = !showCategoryDropdown)}>
-				Categories
-				<img class:arrow-up={showCategoryDropdown} src="/images/icons/down-arrow.svg" alt="" />
-			</a>
-			{#if showCategoryDropdown}
-				<ul class="category-dropdown">
-					<li>
-						<a
-							class="category-link"
-							href={`/blog?category=all`}
-							on:click={() => (showCategoryDropdown = false)}
-						>
-							all news
-						</a>
-					</li>
-					{#each categories as category}
-						<li>
-							<a
-								class="category-link"
-								href={`/blog?category=${category}`}
-								on:click={() => (showCategoryDropdown = false)}
-							>
-								{category}
-							</a>
-						</li>
-					{/each}
-				</ul>
-			{/if}
-			<h1>Latest news</h1>
-		</div>
-		<p class="posts-p">
+	<section class="posts container">
+			<span class="color-heading">Curabitur</span>
+			<h1 class="posts-heading">Latest news</h1>
+		<!-- <p class="posts-p">
 			Cras feugiat nunc in accumsan pretium. Curabitur accumsan, lorem sed sodales pulvinar, felis
 			eros tincidunt.
-		</p>
+		</p> -->
 		<ul class="post-list">
 			{#each filteredPosts as post}
 				<BlogListItem {post} />
 			{/each}
-		</ul>
+		</ul> 
 	</section>
-</div>
+
 
 <style>
 	section{
 		padding: 0 2rem;
+		position: relative;
+		margin-top: -4rem;
 	}
-	.background {
-		background: url(/images/texture-bg-2.png) no-repeat;
-		background-position: 0 100%;
-		width: 100%;
-		height: 100%;
-	}
-	.posts-container {
-		margin: 0 auto;
-		/* padding: 3em 1em; */
-		max-width: 100rem;
-	}
+
 	h1 {
 		font-size: 4.2rem;
 	}
-	.posts-heading {
-		display: flex;
-		justify-content: space-between;
-		flex-direction: row-reverse;
-	}
+	/* .posts-heading {
+		
+	} */
 	.posts-p {
 		width: 66rem;
 		max-width: 100%;
@@ -119,9 +79,12 @@
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		padding-bottom: 9.5rem;
+		padding-bottom: 10.5rem;
+		margin: 0;
+    	padding: 0;
 	}
-	.arrow-up {
+
+	/* .arrow-up {
 		transform: rotate(180deg);
 	}
 	.posts-heading a {
@@ -142,59 +105,32 @@
 		z-index: 1;
 		text-align: center;
 		box-shadow: 0.7rem 0.7rem 2rem #1c1c1cc7;
-		/* border: 0.1rem #000 solid; */
+		border: 0.1rem #000 solid;
 	}
 	
 	.category-dropdown > li {
 		margin: 1.5rem 0;
-	}
+	} */
 
 	
 
 	@media (max-width: 820px) {
 
+		section{
+			margin-top: 0;
+		}
+
 		.posts-heading {
 			flex-direction: column-reverse;
 		}
-
-		h1{
-			text-align: center;
-		}
-
-		.posts-p{
-		    text-align: center;
-			margin: 1rem auto 2rem auto;
-		}
-
 		.posts-heading{
    			padding-top: 1rem;
 		}
 
 		.post-list{
-			padding: 0 2rem 5.5rem 2rem;
+			/* padding: 0 2rem 5.5rem 2rem; */
 		}
 
-		.category-dropdown{
-			top: 18rem;
-    		left: 27rem;
-		}
-	}
-
-	@media (max-width: 580px) {
-
-		.posts-p{
-			width: 35rem;
-		}
-
-		.post-list{
-			padding: 0 2rem 2.5rem 2rem;
-		}
-
-		
-		.category-dropdown{
-			top: 16rem;
-    		left: 9rem;
-		}
 	}
 
 
