@@ -6,7 +6,7 @@
 	import { page } from '$app/stores';
 
 	if (browser && !$userStore) {
-		const ref = $page?.path;
+		const ref = $page?.url.pathname;
 
 		goto('/login?ref=' + ref);
 	}
