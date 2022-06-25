@@ -12,7 +12,7 @@ project=$HOST_PROJECT
 echo "current name: $name"
 
 cd $HOME/www/${name}/${project}
-nvm install v18
+nvm install v16
 node -v
 npm -v
 npm i
