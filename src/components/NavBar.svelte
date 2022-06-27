@@ -1,12 +1,24 @@
 <script>
 
-	export let isHome;
 	let active = false;
+
+	export let url;
+
 
 	function addClass(e){
 		e.target.classList.toggle('active');
 		active = !active;
 	}
+
+	function close() {
+		const openMenu = document.querySelector('.burger-menu.active');
+		if (openMenu) {
+			openMenu.classList.remove('active');
+			active = false;
+		}
+	}
+
+
 
 
 	// import { goto } from '$app/navigation';
@@ -20,14 +32,14 @@
 	// };
 </script>
 
-<section class={isHome ? "home" : ""}>
+<section>
 
-	<nav style={active ? "right: 0; top: 0; width: 34rem; height: 100%; padding: 3rem; background: red"  : ""}>
-		<a href="/">Home</a>
-		<a href="/">Hotels</a>
-		<a href="/about">About us</a>
-		<a href="/blog">Blog</a>
-		<a href="/#contact">Contact us</a>
+	<nav style={active ? "right: 0; top: 0; width: 34rem; height: 100%; padding: 5rem 3rem; background: #14235B; display: flex " : ""}>
+		<a href="/" class={`${url === '/' ? 'active' : ''}`}  on:click={close}>Home</a>
+		<a href="/"  on:click={close}>Hotels</a>
+		<a href="/about" class={`${url === '/about' ? 'active' : ''}`}  on:click={close}>About us</a>
+		<a href="/blog" class={`${url.includes('/blog') ? 'active' : ''}`}  on:click={close}>Blog</a>
+		<a href="/#contact" class={`${url === '/#contact' ? 'active' : ''}`}  on:click={close}>Contact us</a>
 	</nav>
 
 	<div class="menu">
@@ -151,9 +163,10 @@
 		}
 
 		nav {
-			position: absolute;
+			position: fixed;
+			z-index: 99;
 			top: 0;
-			right: 100%;
+			right: -100%;
 			flex-direction: column;
 			align-items: flex-start;
 			transition: all 0.5s;
@@ -163,12 +176,29 @@
 
 		.burger-menu{
 			display: block;
+			position: fixed;
+			z-index: 999;
 		}
 
 		.menu{
 			width: 100%;
 			display: flex;
 			justify-content: flex-end;
+		}
+
+		.active:before, .active:after{
+			background-color: #0D9F8E;
+		}
+
+		a{
+			padding: 1rem 0;
+			margin: 0;
+		}
+
+		.active{
+			background-image: linear-gradient(90deg, #21A8F3, #C7F5C6);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 		}
 	}
 

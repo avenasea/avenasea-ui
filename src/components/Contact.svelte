@@ -1,6 +1,5 @@
 <script>
 import Button from "./Button.svelte";
-import News from "./News.svelte";
 
 export let className;
 
@@ -13,7 +12,7 @@ export let className;
 
 	onMount(() => {
 		const form = document.querySelector("form.newsletter-block");
-		form.addEventListener("submit", formSend);
+		// form.addEventListener("submit", formSend);
 	});
 
 	// form.addEventListener("submit", formSend);

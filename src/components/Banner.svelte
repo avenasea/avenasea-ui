@@ -65,6 +65,14 @@ import Button from "./Button.svelte";
         margin-top: 12rem;
     }
 
+    @media (max-width: 1034px) {
+
+        .banner-text{
+            padding-left: 5rem;
+        }
+
+    }
+
     @media (max-width: 680px) {
 
         section{
@@ -73,7 +81,7 @@ import Button from "./Button.svelte";
 
         h1{
             font-size: 4rem;
-            line-height: 3.1rem;
+            line-height: 4rem;
             margin-top: -3px;
         }
         .color-heading{

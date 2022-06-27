@@ -72,6 +72,7 @@
 
 	section{
 		margin: 0rem auto 15rem auto;
+		padding: 0 2rem;
     	position: relative;
 	}
 

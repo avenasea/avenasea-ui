@@ -37,10 +37,13 @@ body {
 	margin: 0;
 	font-family: Work Sans, sans-serif;
 	font-size: 1.8rem;
-	background-color: #0A133F;
 	background: url(/images/BG.svg) no-repeat;
 	background-color: #0A133F;
+}
 
+.home{
+	background: none;
+	background-color: #0A133F;
 }
 
 p {
@@ -141,6 +144,11 @@ a{
 	.color-heading{
 		font-size: 1.6rem;
 		line-height: 1.6rem;
+	}
+
+	h1{
+		font-size: 4rem;
+		line-height: 4rem;
 	}
 	
 	h2{

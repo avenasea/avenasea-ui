@@ -50,8 +50,14 @@ import News from '$components/News.svelte';
 				<h1 class="post-title">{post.title}</h1>
 				<span class="post-date color-heading"
 					>{post.timestamp
+						? new Date(post.timestamp).getDate()
+						: new Date().toLocaleDateString()}
+					{post.timestamp
 						? new Date(post.timestamp).toLocaleDateString('eng', {month: 'long'})
-						: new Date().toLocaleDateString()}</span>
+						: new Date().toLocaleDateString()}
+					{post.timestamp
+							? new Date(post.timestamp).getFullYear()
+							: new Date().toLocaleDateString()}</span>
 				<div class="content">
 					{@html post.html}
 				</div>

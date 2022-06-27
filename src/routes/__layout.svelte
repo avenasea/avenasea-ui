@@ -18,12 +18,18 @@
 	});
 
 	afterUpdate(() => {
-		console.log(window.location.pathname);
 		url = window.location.pathname;
-	});
+		let body = document.querySelector('body')
+		if(url === '/'){
+			body.classList.add('home');
+		}else{
+			body.classList.remove('home');
+		}
+	});	
+	
 
 </script>
 
-<Header isHome={url === '/'}/>
+<Header {url}/>
 <slot />
 <Footer />

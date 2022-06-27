@@ -41,6 +41,7 @@
 	section{
 		margin: 0rem auto 35rem auto;
 		position: relative;
+		padding: 0 2rem;
 	}
 
 	h1{

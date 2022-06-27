@@ -38,7 +38,7 @@
 </script>
 
 <svelte:head>
-	<title>{category.charAt(0).toUpperCase() + category.slice(1)} | Blog | $HSKO</title>
+	<title>Blog</title>
 </svelte:head>
 
 	<section class="posts container">
@@ -58,7 +58,7 @@
 
 <style>
 	section{
-		padding: 0 2rem;
+		padding: 0 2rem 8rem 2rem;
 		position: relative;
 		margin-top: -4rem;
 	}
@@ -118,6 +118,7 @@
 
 		section{
 			margin-top: 0;
+			padding: 0 2rem;
 		}
 
 		.posts-heading {
@@ -127,9 +128,6 @@
    			padding-top: 1rem;
 		}
 
-		.post-list{
-			/* padding: 0 2rem 5.5rem 2rem; */
-		}
 
 	}
 

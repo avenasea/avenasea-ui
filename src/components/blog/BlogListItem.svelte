@@ -13,11 +13,16 @@
 			/>
 			<div class="right-container">
 				<h2 class="post-title">{post.title}</h2>
-				<span class="post-date color-heading">
-					{post.timestamp
-						? new Date(post.timestamp).toLocaleDateString()
+					<span class="post-date color-heading"
+					>{post.timestamp
+						? new Date(post.timestamp).getDate()
 						: new Date().toLocaleDateString()}
-				</span>
+					{post.timestamp
+						? new Date(post.timestamp).toLocaleDateString('eng', {month: 'long'})
+						: new Date().toLocaleDateString()}
+					{post.timestamp
+							? new Date(post.timestamp).getFullYear()
+							: new Date().toLocaleDateString()}</span>
 				<span class="post-text">{@html post.html}</span>
 			</div>
 		</div>
@@ -92,6 +97,10 @@
 
 		.post-image{
 			height: 30rem;
+		}
+
+		.post-date{
+			margin-top: 0;
 		}
 
 

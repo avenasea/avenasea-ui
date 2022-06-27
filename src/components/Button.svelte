@@ -48,9 +48,9 @@
 		margin: 0 auto;
 	}
 
-	/* .header{
-		margin-top: 2rem;
-	} */
+	.header{
+		margin-top: -1rem;
+	}
 
 
 	@media (max-width: 1034px) {
@@ -58,9 +58,9 @@
 			display: none;
 		}
 
-		/* .form{
-			margin: 0 auto;
-		} */
+		.form{
+			margin: 1rem auto 0 auto;
+		}
 
 	}
 

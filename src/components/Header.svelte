@@ -1,12 +1,14 @@
 <script>
 	import Button from './Button.svelte';
     import NavBar from './NavBar.svelte';
-	export let isHome;
+
+	export let url;
+	// console.log(url);
 </script>
 
 <header>
 	<a href="/" id="logo"><img src="/images/logo.svg"/></a>
-	<NavBar isHome={isHome}/>
+	<NavBar {url}/>
 	<Button className={'white header'} content={'GET NOTIFIED'} href={'/'}/>
 </header>
 
@@ -18,7 +20,7 @@
 		/* flex-direction: column; */
 		justify-content: space-between;
 		/* align-items: flex-start; */
-		padding: 2rem 3rem 10rem 3rem;
+		padding: 3rem 3rem 10rem 3rem;
 		/* margin-bottom: 1.4rem; */
 		width: 100%;
 	}
@@ -36,6 +38,7 @@
 		width: 22.7rem;
 		max-width: 100%;
 	}
+
 
 	@media (max-width: 680px) {
 		
