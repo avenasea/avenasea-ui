@@ -14,16 +14,17 @@
 	}
 </script>
 
-<script>
+<script lang="ts">
+	import type { Contract } from '$types/contract';
 	import { onMount } from 'svelte';
 	import CollapsableSection from '$components/CollapsableSection.svelte';
 	import DateInput from '$components/DateInput.svelte';
 	import Ajv from 'ajv';
 	import addFormats from 'ajv-formats';
 
-	export let contractID;
-	let contract;
-	let schemaObject = {};
+	export let contractID: string;
+	let contract: Contract;
+	let schemaObject: Contract['JSONschema'];
 	let splitObject = {};
 	let finalObject = {};
 	let errors = [];
@@ -58,7 +59,7 @@
 	onMount(async () => {
 		contract = await new Contracts().getById(contractID);
 		schemaObject = contract.JSONschema;
-		Object.entries(schemaObject.properties).forEach(([key, val]) => {
+		Object.entries(schemaObject.properties).forEach(([key, val]: any) => {
 			if (!splitObject[val.module]) splitObject[val.module] = {};
 			splitObject[val.module][key] = val;
 		});
