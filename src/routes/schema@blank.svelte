@@ -4,7 +4,10 @@
 	import Ajv from 'ajv';
 	import addFormats from 'ajv-formats';
 
-	const ajv = new Ajv({ allErrors: true, strictSchema: false });
+	const ajv = new Ajv({
+		allErrors: true,
+		strictSchema: false
+	});
 	addFormats(ajv);
 
 	let schema = '';
