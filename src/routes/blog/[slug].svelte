@@ -26,8 +26,9 @@
 <script>
 	import Twitter from '$components/shareButtons/Twitter.svelte';
 	import Fb from '$components/shareButtons/Fb.svelte';
-	import Form from '$components/Form.svelte';
-	import BlogListItem from '$components/blog/BlogListItem.svelte';
+	import Button from '$components/Button.svelte';
+import Contact from '$components/Contact.svelte';
+import News from '$components/News.svelte';
 
 	export let post;
 </script>
@@ -37,83 +38,108 @@
 </svelte:head>
 
 <article>
-	<div class="container article">
 		<div
 			class="post-image"
 			style={`background-image: url(${
 				post.image || `https://picsum.photos/980/492?random=${Math.random()}`
 			})`}
 		/>
-		<span class="post-category">{post.category || 'news'}</span>
-		<h1 class="post-title">{post.title}</h1>
-		<span class="post-date"
-			>Date: {post.timestamp
-				? new Date(post.timestamp).toLocaleDateString()
-				: new Date().toLocaleDateString()} / Author: {post.author}</span
-		>
-		<div class="content">
-			{@html post.html}
-		</div>
-		<div class="post-tags">
-			<span class="post-tags"
-				>Tags:
-				{#each post.tags as tag}
-					<span class="tag">{tag}</span>
-				{/each}
-			</span>
-		</div>
-		<div class="share-buttons">
-			<Fb />
-			<Twitter />
-		</div>
+		<div class="container article">
+			<div class="post-content">
+				<!-- <span class="post-category">{post.category || 'news'}</span> -->
+				<h1 class="post-title">{post.title}</h1>
+				<span class="post-date color-heading"
+					>{post.timestamp
+						? new Date(post.timestamp).getDate()
+						: new Date().toLocaleDateString()}
+					{post.timestamp
+						? new Date(post.timestamp).toLocaleDateString('eng', {month: 'long'})
+						: new Date().toLocaleDateString()}
+					{post.timestamp
+							? new Date(post.timestamp).getFullYear()
+							: new Date().toLocaleDateString()}</span>
+				<div class="content">
+					{@html post.html}
+				</div>
+				<!-- <div class="post-tags">
+					<span class="post-tags"
+						>Tags:
+						{#each post.tags as tag}
+							<span class="tag">{tag}</span>
+						{/each}
+					</span>
+				</div> -->
+				<div class="share-buttons">
+					<Fb />
+					<Twitter />
+				</div>
+			</div>
+			<div class="post-card">
+				<span class="color-heading">Etiam et arcu enim</span>
+				<h2>Nam interdum velit ut lorem</h2>
+				<p>Nullam fermentum accumsan nibh, in ultricies elit lacinia in. Etiam viverra vel magna ut ultricies.</p>
+				<Button className={'card'} content={'Learn more'} href={'/'}/>
+			</div>
 	</div>
 </article>
 
-<section class="any-news">
-	<div class="news-block">
-		<a href="/blog">Related posts</a>
+<Contact className='contact-news'/>
 
-		<p class="title-p">
-			Cras feugiat nunc in accumsan pretium. Curabitur accumsan, lorem sed sodales pulvinar, felis
-			eros tincidunt.
-		</p>
+<News contentSpan={"Curabitur"} contentA={"Related"}/>
 
-		<div class="news">
-			<BlogListItem post={posts[5]} />
-			<BlogListItem post={posts[3]} />
-		</div>
-	</div>
-</section>
+
 
 <style>
 	article {
-		background: url(/images/texture-bg-2.png) no-repeat;
+		position: relative;
+		margin-top: -7rem;
+		padding: 0 2rem;
+		/* box-shadow: 0px 0px 45px 25px rgb(0 0 0 / 20%); */
+		/* background: url(/images/texture-bg-2.png) no-repeat; */
 		background-position: 0 100%;
 	}
 
 	.article {
+		display: flex;
+		justify-content: space-between;
 		text-align: left;
-		max-width: 100rem;
+		/* max-width: 100rem; */
 		margin: 0 auto;
-		padding: 0 2rem 9rem 2rem;
 	}
-
-	.post-category {
-		text-transform: uppercase;
-		font-size: 1.4rem;
-		color: #fff;
-		background: #000;
-		padding: 0.3rem 0.5rem;
+	.post-content{
+		width: 77rem;
+		max-width: 65%;
+		margin-top: 1rem;
+	}
+	.post-card{
+		background: url(/images/BG-card.svg) no-repeat;
+		background-size: cover;
+		width: 37rem;
+		max-width: 35%;
+		border-radius: 2rem;
+		padding: 7.2rem 3.2rem 5.4rem 3.2rem;
+    	text-align: center;
+		height: 100%;
+		margin-top: 3rem;
+		border: 1px solid #354BAF;
+    	box-shadow: 0px 0px 45px 25px rgb(0 0 0 / 20%);
+	}
+	.post-card h4{
+		font-size: 4.2rem;
+	}
+	.post-card p{
+		margin-top: 0.5rem;
 	}
 	.post-date {
-		color: rgba(255, 255, 255, 0.637);
 		font-size: 1.4rem;
-		vertical-align: text-bottom;
+		display: block;
 	}
 	.post-image {
-		width: 100%;
-		height: 35rem;
-		margin-bottom: 1em;
+		width: 132rem;
+		max-width: 100%;
+		border-radius: 20px;
+		height: 48rem;
+		margin: 1em auto;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -122,28 +148,18 @@
 		font-size: 4.2rem;
 		margin: 0.5rem 0 0.7rem 0;
 	}
-	.post-tags {
-		width: 100%;
-		color: #8794a7;
-		font-size: 1.4rem;
-		margin-top: 4rem;
-		display: flex;
+	.post-title, .post-date{
+		text-align: center;
 	}
-	.post-tags .tag {
-		color: #fff;
-		padding: 0.7rem 1.1rem;
-		background: #000;
-		margin: 0 1rem;
-	}
-	/* .post-tags .tag:first-letter{
-		text-transform: uppercase;
-	} */
+
 	.share-buttons {
-		display: inline-flex;
-		margin-top: 3rem;
+		width: 17rem;
+    	display: inline-flex;
+    	margin-top: 3rem;
 	}
 	.content {
-		margin-top: 2.5rem;
+		margin-top: 4rem;
+		padding-right: 2rem;
 	}
 	.content :global(h2) {
 		font-size: 1.4em;
@@ -186,49 +202,22 @@
 	.content :global(p) {
 		margin-bottom: 2rem;
 	}
-	.any-news {
+	/* .any-news {
 		background: #000;
-	}
+	} */
 
-	.news {
-		display: flex;
-		justify-content: space-between;
-		text-align: left;
-		color: #fff;
-	}
 
-	a {
-		font-family: Furore;
-		font-size: 4.2rem;
-		font-weight: 400;
-	}
-
-	a:hover {
-		transition: 0.5s;
-		transform: scale(1.01);
-	}
-
-	.news-block {
-		padding: 8rem 4rem 5.7rem 4rem;
-		width: 124.5rem;
-		margin: 0 auto;
-	}
-
-	.news-block a {
-		display: flex;
-		color: #fff;
-	}
-
-	.title-p {
-		width: 66rem;
-		max-width: 100%;
-		margin: 1rem 0 3rem 0;
-		text-align: left;
-	}
-
-	@media (max-width: 820px) {
-		.article {
+	@media (max-width: 860px) {
+		article{
+			margin-top: 0;
+		}
+		/* .article {
 			padding: 0 3rem 9rem 3rem;
+		} */
+
+		.article{
+			display: flex;
+			flex-direction: column;
 		}
 
 		.post-image {
@@ -237,48 +226,24 @@
 
 		.content {
 			margin-top: 1rem;
+			padding: 0;
 		}
 
 		.post-title {
 			font-size: 3.2rem;
 		}
 
-		.any-news a {
-			font-size: 3.6rem;
-			display: block;
-			text-align: center;
+		.post-content{
+			max-width: 100%;
+    		margin: 0 auto;
 		}
 
-		.news-block {
-			padding: 5rem 3rem 1rem 3rem;
-			width: 100%;
+		.post-card{
+			max-width: 100%;
+			margin: 6rem auto;
 		}
 
-		.news {
-			display: block;
-		}
-
-		.title-p {
-			width: 50rem;
-			margin: 1.5rem auto 3rem auto;
-			text-align: center;
-		}
 	}
 
-	@media (max-width: 580px) {
-		a {
-			text-align: center;
-		}
 
-		.news-block {
-			padding: 6rem 3rem 1rem 3rem;
-			width: 100%;
-		}
-
-		.title-p {
-			width: 32rem;
-			margin: 2rem 0 4rem 0;
-			text-align: center;
-		}
-	}
 </style>

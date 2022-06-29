@@ -14,6 +14,7 @@
 		line-height: 2rem;
 		padding: 1.6rem 3rem;
 		text-decoration: none;
+		text-align: center;
 		display: inline-block;
 		background: #0D9F8E;
 		border-radius: 9999px;
@@ -37,9 +38,30 @@
 		color: #fff;
 	}
 
-	.header{
-		margin-top: 2rem;
+	.card{
+		padding: 1.8rem 4rem;
+		margin-top: 3.5rem;
 	}
 
+	.form{
+		max-width: 100%;
+		margin: 0 auto;
+	}
+
+	.header{
+		margin-top: -1rem;
+	}
+
+
+	@media (max-width: 1034px) {
+		.header{
+			display: none;
+		}
+
+		.form{
+			margin: 1rem auto 0 auto;
+		}
+
+	}
 
 </style>

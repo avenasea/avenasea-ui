@@ -7,6 +7,8 @@
 	<title>Privacy</title>
 </svelte:head>
 
+<section class="container">
+
 <h1>Privacy Statement</h1>
 
 <ul>
@@ -31,3 +33,19 @@
 		</p>
 	</li>
 </ul>
+
+</section>
+
+<style>
+
+	section{
+		margin: 0rem auto 35rem auto;
+		position: relative;
+		padding: 0 2rem;
+	}
+
+	h1{
+		font-size: 4.2rem;
+	}
+
+</style>

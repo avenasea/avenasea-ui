@@ -31,14 +31,19 @@ body {
 
 html {
 	font-size: 62.5%;
-	scroll-behavior: smooth;
 }
 
 body {
 	margin: 0;
 	font-family: Work Sans, sans-serif;
 	font-size: 1.8rem;
-	background: #0A133F;
+	background: url(/images/BG.svg) no-repeat;
+	background-color: #0A133F;
+}
+
+.home{
+	background: none;
+	background-color: #0A133F;
 }
 
 p {
@@ -80,6 +85,7 @@ a{
 
 .container{
 	width: 117rem;
+	max-width: 100%;
 	margin: 0 auto;
 }
 
@@ -130,6 +136,32 @@ a{
 	cursor: pointer;
 	font-size: 2rem;
 }
+
+@media (max-width: 700px) {
+
+
+
+	.color-heading{
+		font-size: 1.6rem;
+		line-height: 1.6rem;
+	}
+
+	h1{
+		font-size: 4rem;
+		line-height: 4rem;
+	}
+	
+	h2{
+		font-size: 2.8rem;
+		line-height: 3.1rem;
+	}
+
+	
+
+	
+
+}
+
 
 /* @media (min-width: 641px) {
 	body {
