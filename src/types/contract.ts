@@ -9,15 +9,14 @@ export interface Contract {
 	}[];
 	JSONschema: Record<any, any>;
 	currentData: Record<FieldKey, any>;
-	changeHistory?: Record<
-		FieldKey,
-		{
+	changeHistory?: {
+		[key: string]: Array<{
 			timestamp: Date;
 			userID: DbID;
 			changedFrom: string;
 			changedTo: string;
-		}[]
-	>;
+		}>;
+	};
 	comments?: Record<FieldKey, { text: string; timestamp: Date; userID: string }[]>;
 	id?: string;
 }
