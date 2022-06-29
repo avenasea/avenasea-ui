@@ -21,6 +21,7 @@
 	import DateInput from '$components/DateInput.svelte';
 	import Ajv from 'ajv';
 	import addFormats from 'ajv-formats';
+	import HistorySection from '$components/contracts/HistorySection.svelte';
 
 	export let contractID: string;
 	let contract: Contract;
@@ -56,6 +57,25 @@
 		}, 750);
 	};
 
+	const updateField = async (fieldName, value) => {
+		clearTimeout(debounceTimeout);
+		validateAll();
+		if (errors.length > 0) return;
+		try {
+			const res = await new Contracts().updateField(contractID, { fieldName, value });
+			if (typeof contract.changeHistory[fieldName] === 'undefined')
+				contract.changeHistory[fieldName] = [];
+			contract.changeHistory[fieldName].push(res);
+			contract.changeHistory[fieldName] = contract.changeHistory[fieldName];
+			contract.currentData[fieldName] = res.changedTo;
+			console.log(contract.changeHistory[fieldName]);
+		} catch (err) {
+			console.error(err);
+			// msg = err.message;
+			// type = 'error';
+		}
+	};
+
 	onMount(async () => {
 		contract = await new Contracts().getById(contractID);
 		schemaObject = contract.JSONschema;
@@ -85,11 +105,24 @@
 										{errors.filter((e) => e.instancePath.includes(fieldName))[0].message}
 									</div>
 								{/if}
-								{#each Object.entries(fieldValue) as [key, val]}
-									<p>{key}: {val}</p>
-								{/each}
+								<CollapsableSection collapsed={true} heading={'Details'}>
+									{#each Object.entries(fieldValue) as [key, val]}
+										<p>{key}: {val}</p>
+									{/each}
+								</CollapsableSection>
+								<CollapsableSection collapsed={true} heading={'Comments'} />
+								<CollapsableSection collapsed={true} heading={'History'}>
+									<HistorySection bind:historyArray={contract.changeHistory[fieldName]} />
+								</CollapsableSection>
+								<h3>Current Value: {contract.currentData[fieldName] || 'Not set'}</h3>
+								<label for={`val-${fieldName}`}>Change value:</label>
 								{#if fieldValue.type == 'number'}
-									<input type="number" bind:value={finalObject[fieldName]} on:keyup={debounce} />
+									<input
+										id={`val-${fieldName}`}
+										type="number"
+										bind:value={finalObject[fieldName]}
+										on:keyup={debounce}
+									/>
 								{:else if fieldValue.format == 'date'}
 									<DateInput
 										placeholder={new Date().toISOString().split('T')[0]}
@@ -97,8 +130,17 @@
 										bind:dateString={finalObject[fieldName]}
 									/>
 								{:else}
-									<input type="text" bind:value={finalObject[fieldName]} on:keyup={debounce} />
+									<input
+										id={`val-${fieldName}`}
+										type="text"
+										bind:value={finalObject[fieldName]}
+										on:keyup={debounce}
+									/>
 								{/if}
+								<button
+									on:click|preventDefault={() => updateField(fieldName, finalObject[fieldName])}
+									>Submit</button
+								>
 							</fieldset>
 							<hr />
 						{/each}
