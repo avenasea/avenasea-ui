@@ -112,7 +112,7 @@
 								</CollapsableSection>
 								<CollapsableSection collapsed={true} heading={'Comments'} />
 								<CollapsableSection collapsed={true} heading={'History'}>
-									<HistorySection bind:historyArray={contract.changeHistory[fieldName]} />
+									<HistorySection historyArray={contract.changeHistory[fieldName]} />
 								</CollapsableSection>
 								<h3>Current Value: {contract.currentData[fieldName] || 'Not set'}</h3>
 								<label for={`val-${fieldName}`}>Change value:</label>
