@@ -15,8 +15,8 @@
 
 	<div class="news">
 		<BlogListItem post={posts[0]} />
-		<BlogListItem post={posts[3]} />
-		<BlogListItem post={posts[7]} />
+		<BlogListItem post={posts[1]} />
+		<BlogListItem post={posts[2]} />
 	</div>
 </section>
 
@@ -34,7 +34,7 @@
 		font-weight: 400;
 		transition: 0.5s;
 	}
-	.any-news span{
+	.any-news span {
 		padding-left: 1rem;
 		font-weight: 700;
 	}
@@ -57,19 +57,17 @@
 	}
 
 	@media (max-width: 820px) {
-		.news-block{
+		.news-block {
 			padding: 0 2rem;
 			width: 100%;
 		}
 
-		.news{
+		.news {
 			display: block;
 		}
 
-		.any-news{
+		.any-news {
 			font-size: 2.8rem;
 		}
 	}
-
-	
 </style>

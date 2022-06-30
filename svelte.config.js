@@ -2,6 +2,12 @@
 import adapter from '@sveltejs/adapter-node';
 import preprocess from 'svelte-preprocess';
 import path from 'path';
+import dotenv from 'dotenv-flow';
+import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
+import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill';
+import rollupNodePolyFill from 'rollup-plugin-node-polyfills';
+import inject from '@rollup/plugin-inject';
+dotenv.config();
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,16 +16,10 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		// hydrate the <div id="svelte"> element in src/app.html
-		// target: '#svelte',
-		/*
 		adapter: adapter({
-			// default options are shown
-			pages: 'build',
-			assets: 'build',
-			fallback: 'index.html'
+			out: './build',
+			precompress: true
 		}),
-		*/
 
 		adapter: adapter({
 			out: './build',
@@ -33,8 +33,33 @@ const config = {
 					$api: path.resolve('./src/api')
 				}
 			},
+			optimizeDeps: {
+				esbuildOptions: {
+					// Node.js global to browser globalThis
+					define: {
+						global: 'globalThis'
+					},
+					// Enable esbuild polyfill plugins
+					plugins: [
+						NodeGlobalsPolyfillPlugin({
+							process: true,
+							buffer: true,
+							webworkers: true
+						}),
+						NodeModulesPolyfillPlugin()
+					]
+				}
+			},
 			build: {
-				minify: false
+				minify: true,
+				rollupOptions: {
+					plugins: [
+						// Enable rollup polyfills plugin
+						// used during production bundling
+						rollupNodePolyFill(),
+						inject({ Buffer: ['Buffer', 'Buffer'] })
+					]
+				}
 			}
 		}
 	}

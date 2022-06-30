@@ -1,5 +1,5 @@
 <script>
-	import {afterUpdate} from 'svelte';
+	import { afterUpdate } from 'svelte';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { affiliate } from '$stores/user.js';
@@ -7,7 +7,6 @@
 	import Footer from '../components/Footer.svelte';
 
 	let url = '';
-
 
 	onMount(() => {
 		const aff = $page?.url?.searchParams.get('aff');
@@ -19,17 +18,15 @@
 
 	afterUpdate(() => {
 		url = window.location.pathname;
-		let body = document.querySelector('body')
-		if(url === '/'){
+		let body = document.querySelector('body');
+		if (url === '/') {
 			body.classList.add('home');
-		}else{
+		} else {
 			body.classList.remove('home');
 		}
-	});	
-	
-
+	});
 </script>
 
-<Header {url}/>
+<Header {url} />
 <slot />
 <Footer />

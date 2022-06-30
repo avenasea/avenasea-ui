@@ -41,23 +41,22 @@
 	<title>Blog</title>
 </svelte:head>
 
-	<section class="posts container">
-			<span class="color-heading">Curabitur</span>
-			<h1 class="posts-heading">Latest news</h1>
-		<!-- <p class="posts-p">
+<section class="posts container">
+	<span class="color-heading">Curabitur</span>
+	<h1 class="posts-heading">Latest news</h1>
+	<!-- <p class="posts-p">
 			Cras feugiat nunc in accumsan pretium. Curabitur accumsan, lorem sed sodales pulvinar, felis
 			eros tincidunt.
 		</p> -->
-		<ul class="post-list">
-			{#each filteredPosts as post}
-				<BlogListItem {post} />
-			{/each}
-		</ul> 
-	</section>
-
+	<ul class="post-list">
+		{#each filteredPosts as post}
+			<BlogListItem {post} />
+		{/each}
+	</ul>
+</section>
 
 <style>
-	section{
+	section {
 		padding: 0 2rem 8rem 2rem;
 		position: relative;
 		margin-top: -4rem;
@@ -79,9 +78,7 @@
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		padding-bottom: 10.5rem;
-		margin: 0;
-    	padding: 0;
+		padding-bottom: 9.5rem;
 	}
 
 	/* .arrow-up {
@@ -112,11 +109,8 @@
 		margin: 1.5rem 0;
 	} */
 
-	
-
 	@media (max-width: 820px) {
-
-		section{
+		section {
 			margin-top: 0;
 			padding: 0 2rem;
 		}
@@ -124,14 +118,8 @@
 		.posts-heading {
 			flex-direction: column-reverse;
 		}
-		.posts-heading{
-   			padding-top: 1rem;
+		.posts-heading {
+			padding-top: 1rem;
 		}
-
-
 	}
-
-
-
-
 </style>
