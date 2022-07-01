@@ -11,7 +11,7 @@ export interface Contract {
 	currentData: Record<FieldKey, any>;
 	changeHistory?: {
 		[key: string]: Array<{
-			timestamp: Date;
+			timestamp: string;
 			userID: DbID;
 			changedFrom: string;
 			changedTo: string;

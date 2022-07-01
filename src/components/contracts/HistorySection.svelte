@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Contract } from '$types/contract';
-	import moment from 'moment';
+	import { formatDistance } from 'date-fns';
 
 	export let historyArray: Contract['changeHistory']['key'] = [];
 </script>
@@ -11,7 +11,12 @@
 	{#each historyArray as h}
 		<div class="history-container">
 			<!-- TODO: real username -->
-			<h4>{moment(h.timestamp).fromNow()} by {h.userID.slice(0, 6)}</h4>
+			<h4>
+				{formatDistance(new Date(h.timestamp), new Date(), { addSuffix: true })} by {h.userID.slice(
+					0,
+					6
+				)}
+			</h4>
 			<p class="from">- {h.changedFrom}</p>
 			<p class="to">+ {h.changedTo}</p>
 		</div>
