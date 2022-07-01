@@ -3,6 +3,7 @@ type FieldKey = string;
 
 export interface Contract {
 	name: string;
+	createdAt: string;
 	parties: {
 		userID: DbID;
 		creator: boolean;
@@ -10,7 +11,7 @@ export interface Contract {
 	JSONschema: Record<any, any>;
 	currentData: Record<FieldKey, any>;
 	changeHistory?: {
-		[key: string]: Array<{
+		[key: FieldKey]: Array<{
 			timestamp: string;
 			userID: DbID;
 			changedFrom: string;
