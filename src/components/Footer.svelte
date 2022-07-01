@@ -2,16 +2,18 @@
 	const name = import.meta.env.VITE_META_NAME;
 	const domain = import.meta.env.VITE_META_DOMAIN;
 	const twitter = import.meta.env.VITE_META_TWITTER;
-	import Link from "./Link.svelte";
+	import Link from './Link.svelte';
 </script>
+
 <footer>
 	<div class="footer container">
 		<div class="logo">
-			<a href="/" id="logo"><img src="/images/logo.svg"/></a>
-			<p class="footer-text">Mauris commodo massa nulla, non feugiat arcu ultricies quis. Vivamus eget vulputate elit.</p>
+			<a href="/" id="logo"><img src="/images/logo.svg" /></a>
+			<p class="footer-text">All rights reserved.</p>
 			<p>
 				Say <a href="mailto:hello@{domain}?subject={name}">hello@{domain}</a>
 			</p>
+			<p>Call us at <a href="tel:+1-888-690-2044">+1-888-690-2044</a></p>
 			<p>
 				<small>&copy; 2021-2022 {name} </small>
 			</p>
@@ -24,14 +26,22 @@
 			</div>
 			<div class="follow-us">
 				<h4>Follow us</h4>
-					<div class="links">
-						<Link href={"/"} className={'twitter footer'} src={"/images/twitter.svg"} alt={"Twitter link"}/>
-						<Link href={"/"} className={'facebook footer'} src={"/images/facebook.svg"} alt={"Facebook link"}/>
-					</div>
+				<div class="links">
+					<Link
+						href={'/'}
+						className={'twitter footer'}
+						src={'/images/twitter.svg'}
+						alt={'Twitter link'}
+					/>
+					<Link
+						href={'/'}
+						className={'facebook footer'}
+						src={'/images/facebook.svg'}
+						alt={'Facebook link'}
+					/>
+				</div>
 			</div>
 		</div>
-		
-		
 	</div>
 </footer>
 
@@ -44,67 +54,69 @@
 		/* margin-top: 4rem; */
 	}
 
-	.footer{
+	.footer {
 		display: flex;
 		justify-content: space-between;
 	}
 
-	#logo img{
+	#logo img {
 		width: 29rem;
 		max-width: 100%;
 	}
 
-	.links{
+	.links {
 		display: flex;
 		justify-content: space-between;
 	}
 
-	h4{
+	h4 {
 		font-size: 2.4rem;
 	}
 
-	.useful-links, .follow-us{
+	.useful-links,
+	.follow-us {
 		margin-right: 9rem;
 	}
 
-	.useful-links a{
-		color: #99AAFF;
+	.useful-links a {
+		color: #99aaff;
 	}
 
-	.links{
+	.links {
 		margin-top: 2rem;
 	}
 
-	.footer-links{
+	.footer-links {
 		display: flex;
 		justify-content: space-between;
 	}
 
-	.footer-text{
+	.footer-text {
 		width: 34rem;
 		max-width: 100%;
 		font-size: 1.4rem;
 		margin-top: 5px;
 	}
-	.logo p:last-child{
+	.logo p:last-child {
 		margin-top: -1.3rem;
 	}
 
+	footer a {
+		color: #fff;
+	}
 
 	@media (max-width: 780px) {
-		.footer{
+		.footer {
 			flex-direction: column;
 		}
 
-		.footer-links{
+		.footer-links {
 			margin-top: 4rem;
 		}
 
-		.follow-us, .useful-links{
+		.follow-us,
+		.useful-links {
 			margin: 0;
 		}
-
-		
 	}
-
 </style>
