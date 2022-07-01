@@ -1,54 +1,64 @@
 <script>
-    export let className;
-    export let href;
-    export let src;
-    export let alt;
+	export let className;
+	export let href;
+	export let src;
+	export let alt;
 </script>
 
-    <a href={href} class={className}>
-
-        <img src={src} alt={alt}>
-
-    </a>
-
+<a {href} class={className}>
+	{#if src}
+		<img {src} {alt} />
+	{:else}
+		{alt}
+	{/if}
+</a>
 
 <style>
+	a.team-link {
+		display: inline-block;
+		width: 5.2rem;
+		height: 5.2rem;
+		background-color: #0d9f8e;
+	}
 
-    a{
-        display: inline-block;
-        width: 5.7rem;
-		height: 5.7rem;
-		border-radius: 50%;
-		padding: 1.8rem 2.2rem;
-		margin: 0.2rem;
-        transition: all 0.5s;
-    }
+	a.team-link:hover {
+		background-color: #0d9f8e;
+		transition: 0.4s;
+	}
 
-    a:hover{
-		background-color: #0D9F8E;
-    }
+	.team-link {
+		padding-top: 1rem;
+	}
 
-    .footer{
-        background-color: #0D9F8E;
-        /* border: 1px solid #0D9F8E; */
-        margin: 0 2rem 0 0;
-    }
+	.team-twitter img {
+		padding-top: 0.7rem;
+	}
 
-    .footer:hover{
-		background: none;
-        /* border: 1px solid #fff; */
-    }
+	.reddit {
+		padding-top: 1rem;
+		padding-left: 1.1rem;
+	}
 
-    .twitter{
-        padding: 1.9rem;
-    }
+	.telegram {
+		padding-top: 1.6rem;
+		padding-left: 1rem;
+	}
 
-    .facebook{
-        padding: 1.6rem 2.2rem;
-    }
+	.twitter {
+		padding-top: 1.5rem;
+		padding-left: 1.4rem;
+	}
 
-    .git{
-        padding: 1.1rem;
-    }
+	.git-hub {
+		padding-top: 1.1rem;
+		padding-left: 1.2rem;
+	}
 
+	.team-phone {
+		color: #fff;
+	}
+	.email {
+		padding-top: 1.5rem;
+		padding-left: 1.2rem;
+	}
 </style>
