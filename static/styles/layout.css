@@ -6,6 +6,7 @@ body {
 
 html {
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -13,19 +14,19 @@ body {
 	font-family: Work Sans, sans-serif;
 	font-size: 1.8rem;
 	background: url(/images/BG.svg) no-repeat;
-	background-color: #0A133F;
+	background-color: #0a133f;
 }
 
-.home{
+.home {
 	background: none;
-	background-color: #0A133F;
+	background-color: #0a133f;
 }
 
 p {
 	margin: 1rem 0;
 	font-size: 1.6rem;
 	line-height: 2.6rem;
-	color: #99AAFF;
+	color: #99aaff;
 }
 
 ul,
@@ -39,27 +40,28 @@ h2 {
 	margin: 1.2rem 0;
 }
 
-h2{
+h2 {
 	font-size: 4.2rem;
 	line-height: 4.6rem;
 }
 
-a, a:visited{
+a,
+a:visited {
 	text-decoration: none;
 	color: #fff;
 }
 
-.color-heading{
+.color-heading {
 	font-weight: 900;
 	font-size: 2.2rem;
 	color: #fff;
 	text-transform: uppercase;
-	background-image: linear-gradient(90deg, #21A8F3, #C7F5C6);
+	background-image: linear-gradient(90deg, #21a8f3, #c7f5c6);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
-.container{
+.container {
 	width: 117rem;
 	max-width: 100%;
 	margin: 0 auto;
@@ -114,30 +116,21 @@ a, a:visited{
 }
 
 @media (max-width: 700px) {
-
-
-
-	.color-heading{
+	.color-heading {
 		font-size: 1.6rem;
 		line-height: 1.6rem;
 	}
 
-	h1{
+	h1 {
 		font-size: 4rem;
 		line-height: 4rem;
 	}
-	
-	h2{
+
+	h2 {
 		font-size: 2.8rem;
 		line-height: 3.1rem;
 	}
-
-	
-
-	
-
 }
-
 
 /* @media (min-width: 641px) {
 	body {
@@ -161,7 +154,7 @@ a, a:visited{
 /* } */
 /* @media (min-width: 961px) {
 	/* tablet, landscape iPad, lo-res laptops ands desktops */
-	/* body {
+/* body {
 		max-width: 50%;
 	}
 } */
