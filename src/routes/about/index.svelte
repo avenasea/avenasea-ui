@@ -13,7 +13,7 @@
 		<div class="dev">
 			<div class="photo" style="background-image: url('/images/dev1.jpg" />
 			<h5>ANTHONY and "WILEY"</h5>
-			<p>CTO/Co-founder</p>
+			<p>CTO/CO-FOUNDER</p>
 			<Link
 				href={'https://twitter.com/chovy'}
 				className={'team-link team-twitter'}
@@ -26,6 +26,13 @@
 				src={'/images/git.png'}
 				alt={'GitHub link'}
 			/>
+		</div>
+		<div class="dev">
+			<div class="photo" style="background-image: url('/images/dev6.jpg" />
+			<h5>PHIL</h5>
+			<p>CHIEF REVENUE OFFICER</p>
+			<Link href={'tel:18886902011'} className={'team-phone'} alt={'1-888-690-2011'} />
+			<!-- <Link href={'/'} className={'team-link'} src={'/images/git.png'} alt={'GitHub link'} /> -->
 		</div>
 
 		<div class="dev">
@@ -69,13 +76,6 @@
 				src={'/images/twitter.png'}
 				alt={'Twitter link'}
 			/>
-			<!-- <Link href={'/'} className={'team-link'} src={'/images/git.png'} alt={'GitHub link'} /> -->
-		</div>
-		<div class="dev">
-			<div class="photo" style="background-image: url('/images/dev6.jpg" />
-			<h5>PHIL</h5>
-			<p>Chief Revenue Officer</p>
-			<Link href={'tel:18886902011'} className={'team-phone'} alt={'1-888-690-2011'} />
 			<!-- <Link href={'/'} className={'team-link'} src={'/images/git.png'} alt={'GitHub link'} /> -->
 		</div>
 		<div class="dev">
