@@ -1,4 +1,4 @@
-// import adapter from '@sveltejs/adapter-static';
+//import adapter from '@sveltejs/adapter-auto';
 import adapter from '@sveltejs/adapter-node';
 import preprocess from 'svelte-preprocess';
 import path from 'path';
@@ -16,11 +16,6 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter({
-			out: './build',
-			precompress: true
-		}),
-
 		adapter: adapter({
 			out: './build',
 			precompress: true
@@ -51,7 +46,7 @@ const config = {
 				}
 			},
 			build: {
-				minify: true,
+				minify: false,
 				rollupOptions: {
 					plugins: [
 						// Enable rollup polyfills plugin

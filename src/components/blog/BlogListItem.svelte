@@ -1,4 +1,6 @@
 <script>
+	import SvelteMarkdown from 'svelte-markdown';
+
 	export let post;
 </script>
 
@@ -12,18 +14,20 @@
 				})`}
 			/>
 			<div class="right-container">
+				<span class="post-category">{post.category || 'news'}</span>
 				<h2 class="post-title">{post.title}</h2>
-					<span class="post-date color-heading"
-					>{post.timestamp
-						? new Date(post.timestamp).getDate()
-						: new Date().toLocaleDateString()}
+				{#if post.html}
+					<span class="post-text">{@html post.html}</span>
+				{:else if post.markdown}
+					<span class="post-text">
+						<SvelteMarkdown source={post.markdown} />
+					</span>
+				{/if}
+				<span class="post-date">
 					{post.timestamp
-						? new Date(post.timestamp).toLocaleDateString('eng', {month: 'long'})
+						? new Date(post.timestamp).toLocaleDateString()
 						: new Date().toLocaleDateString()}
-					{post.timestamp
-							? new Date(post.timestamp).getFullYear()
-							: new Date().toLocaleDateString()}</span>
-				<span class="post-text">{@html post.html}</span>
+				</span>
 			</div>
 		</div>
 	</a>
@@ -31,7 +35,7 @@
 
 <style>
 	article {
-		width: 32%;
+		width: 49%;
 		padding: 1em 0;
 		margin: 0.5em 0;
 		transition: transform 0.2s ease;
@@ -46,11 +50,11 @@
 	.post-text {
 		color: #8794a7;
 		text-align: left;
-		height: 9rem;
+		height: 6rem;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		display: -webkit-box;
-		-webkit-line-clamp: 3;
+		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
 	}
 	.post-content {
@@ -63,8 +67,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		width: 100%;
-		height: 28rem;
-		border-radius: 4%;
+		height: 30rem;
 	}
 	.right-container {
 		display: flex;
@@ -81,43 +84,33 @@
 	}
 	.post-date {
 		color: rgba(255, 255, 255, 0.637);
-		font-size: 1.6rem;
-		margin-top: -1rem;
+		font-size: 1.3rem;
+		margin-top: 0.5rem;
 	}
 	h2 {
 		letter-spacing: inherit;
 	}
 
 	@media (max-width: 820px) {
-
-		article{
+		article {
+			padding: 0 2rem;
 			width: 100%;
 			margin: 1rem 0 4rem 0;
 		}
 
-		.post-image{
+		.post-image {
 			height: 30rem;
 		}
-
-		.post-date{
-			margin-top: 0;
-		}
-
-
 	}
 
 	@media (max-width: 412px) {
-
-		article{
+		article {
 			padding: 0;
 			margin-bottom: 5rem;
 		}
 
-		.post-image{
+		.post-image {
 			height: 22rem;
 		}
-
 	}
-
-
 </style>

@@ -11,6 +11,23 @@
 
 	<div class="team">
 		<div class="dev">
+			<div class="photo" style="background-image: url('/images/dev9.jpg" />
+			<h5>BRYAN</h5>
+			<p>CEO/FOUNDER</p>
+			<!-- <Link
+				href={'https://twitter.com/chovy'}
+				className={'team-link team-twitter'}
+				src={'/images/twitter.png'}
+				alt={'Twitter link'}
+			/>
+			<Link
+				href={'https://github.com/ralyodio'}
+				className={'team-link'}
+				src={'/images/git.png'}
+				alt={'GitHub link'}
+			/> -->
+		</div>
+		<div class="dev">
 			<div class="photo" style="background-image: url('/images/dev1.jpg" />
 			<h5>ANTHONY and "WILEY"</h5>
 			<p>CTO/CO-FOUNDER</p>

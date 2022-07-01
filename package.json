@@ -52,6 +52,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"lice": "^1.1.0"
+		"lice": "^1.1.0",
+		"util": "^0.12.4"
 	}
 }
