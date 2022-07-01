@@ -1,7 +1,3 @@
-<script>
-	import formatRFC3339WithOptions from 'date-fns/fp/formatRFC3339WithOptions';
-</script>
-
 <section id="hotels">
 	<div class="container about-us">
 		<div class="booking-image">
