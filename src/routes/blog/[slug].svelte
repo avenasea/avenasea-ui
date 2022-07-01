@@ -114,7 +114,6 @@
 
 	.article {
 		text-align: left;
-		max-width: 100rem;
 		margin: 0 auto;
 		padding: 0 2rem 9rem 2rem;
 	}

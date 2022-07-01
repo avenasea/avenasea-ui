@@ -44,10 +44,7 @@
 <section class="posts container">
 	<span class="color-heading">Curabitur</span>
 	<h1 class="posts-heading">Latest news</h1>
-	<!-- <p class="posts-p">
-			Cras feugiat nunc in accumsan pretium. Curabitur accumsan, lorem sed sodales pulvinar, felis
-			eros tincidunt.
-		</p> -->
+
 	<ul class="post-list">
 		{#each filteredPosts as post}
 			<BlogListItem {post} />
@@ -65,9 +62,7 @@
 	h1 {
 		font-size: 4.2rem;
 	}
-	/* .posts-heading {
-		
-	} */
+
 	.posts-p {
 		width: 66rem;
 		max-width: 100%;
@@ -75,41 +70,16 @@
 		text-align: left;
 	}
 	.post-list {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		grid-gap: 1rem;
 		padding-bottom: 9.5rem;
 	}
 
-	/* .arrow-up {
-		transform: rotate(180deg);
-	}
-	.posts-heading a {
-		padding-top: 1.5rem;
-		color: #fff;
-	}
-	.category-link.category-link {
-		text-transform: capitalize;
-		padding: 0;
-	}
-	.category-dropdown {
-		list-style-type: none;
-		position: absolute;
-		background-color: #072031;
-		padding: 1em;
-		width: 20rem;
-		max-height: 25rem;
-		z-index: 1;
-		text-align: center;
-		box-shadow: 0.7rem 0.7rem 2rem #1c1c1cc7;
-		border: 0.1rem #000 solid;
-	}
-	
-	.category-dropdown > li {
-		margin: 1.5rem 0;
-	} */
-
 	@media (max-width: 820px) {
+			.post-list {
+				grid-template-columns: repeat(1, auto);
+			}
 		section {
 			margin-top: 0;
 			padding: 0 2rem;

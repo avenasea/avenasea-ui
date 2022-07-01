@@ -1,12 +1,6 @@
-html,
-body {
-	width: 100%;
-	color: #fff;
-}
-
 html {
-	font-size: 62.5%;
 	scroll-behavior: smooth;
+	font-size: 62.5%;
 }
 
 body {
@@ -15,6 +9,7 @@ body {
 	font-size: 1.8rem;
 	background: url(/images/BG.svg) no-repeat;
 	background-color: #0a133f;
+	color: #fff;
 }
 
 .home {
@@ -131,36 +126,3 @@ a:visited {
 		line-height: 3.1rem;
 	}
 }
-
-/* @media (min-width: 641px) {
-	body {
-		max-width: 80%;
-		margin: 0 auto;
-	}
-
-	.center {
-		text-align: left;
-	}
-}
-
-@media (min-width: 320px) {
-	/* smartphones, iPhone, portrait 480x320 phones */
-/* } */
-/* @media (min-width: 481px) {
-	/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-/* } */
-/* @media (min-width: 641px) {
-	/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-/* } */
-/* @media (min-width: 961px) {
-	/* tablet, landscape iPad, lo-res laptops ands desktops */
-/* body {
-		max-width: 50%;
-	}
-} */
-/* @media (min-width: 1025px) {
-	/* big landscape tablets, laptops, and desktops */
-/* } */
-/* @media (min-width: 1281px) {
-	/* hi-res laptops and desktops */
-/* }  */
