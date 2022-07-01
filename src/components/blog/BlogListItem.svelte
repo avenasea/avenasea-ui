@@ -35,13 +35,17 @@
 
 <style>
 	article {
-		width: 49%;
-		padding: 1em 0;
-		margin: 0.5em 0;
-		transition: transform 0.2s ease;
+		padding: 0;
+		margin: 1rem;
 	}
-	article:hover {
-		transform: scale(1.015);
+
+
+	article .post-image {
+		border: 2px solid transparent;
+		transition: border-color .2s linear;
+	}
+	article:hover .post-image {
+		border-color: #99aaff;
 	}
 	.post-title {
 		font-size: 2.5rem;
