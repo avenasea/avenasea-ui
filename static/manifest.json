@@ -1,13 +1,13 @@
 {
 	"background_color": "#ffffff",
 	"theme_color": "#ececec",
-	"name": "Grazily",
-	"short_name": "Grazily",
+	"name": "avenasea",
+	"short_name": "avenasea",
 	"display": "standalone",
 	"start_url": "/",
 	"icons": [
 		{
-			"src": "/icons/favicon-196x196.png",
+			"src": "/images/favicons/favicon-196x196.png",
 			"sizes": "196x196",
 			"type": "image/png"
 		}

@@ -26,121 +26,189 @@
 <script>
 	import Twitter from '$components/shareButtons/Twitter.svelte';
 	import Fb from '$components/shareButtons/Fb.svelte';
-	import Form from '$components/Form.svelte';
-	import BlogListItem from '$components/blog/BlogListItem.svelte';
+	import SvelteMarkdown from 'svelte-markdown';
+	import Contact from '$components/Contact.svelte';
+	import News from '$components/News.svelte';
+	import Button from '$components/Button.svelte';
 
 	export let post;
 </script>
 
 <svelte:head>
 	<title>{post.title}</title>
+	{#if post}
+		{#if post.image}
+			<meta property="og:image" content={`https://avenasea.com${post.image}`} />
+			<meta property="twitter:image" content={`https://avenasea.com${post.image}`} />
+			<meta name="twitter:card" content="summary_large_image" />
+		{/if}
+
+		{#if post.summary}
+			<meta property="og:description" content={post.summary} />
+			<meta property="description" content={post.summary} />
+		{/if}
+		{#if post.title}
+			<meta property="og:title" content={post.title} />
+			<meta name="twitter:title" content={post.title} />
+		{/if}
+		<meta name="twitter:url" content={`https://avenasea.com/blog/${post.slug}`} />
+		<meta property="og:url" content={`https://avenasea.com/blog/${post.slug}`} />
+	{/if}
 </svelte:head>
 
 <article>
-	<div class="container article">
-		<div
-			class="post-image"
-			style={`background-image: url(${
-				post.image || `https://picsum.photos/980/492?random=${Math.random()}`
-			})`}
-		/>
-		<span class="post-category">{post.category || 'news'}</span>
-		<h1 class="post-title">{post.title}</h1>
-		<span class="post-date"
-			>Date: {post.timestamp
-				? new Date(post.timestamp).toLocaleDateString()
-				: new Date().toLocaleDateString()} / Author: {post.author}</span
-		>
-		<div class="content">
-			{@html post.html}
+	<div class="post-image" style={`background-image: url(${
+		post.image || `https://picsum.photos/980/492?random=${Math.random()}`
+		})`} />
+	<div class="post container">
+		<div class="article">
+		<div class="post-content">
+			<h1 class="post-title">{post.title}</h1>
+				<span class="post-date color-heading"
+					>Date: {post.timestamp
+						? new Date(post.timestamp).toLocaleDateString()
+						: new Date().toLocaleDateString()} / Author: {post.author}</span
+				>
+				<div class="post-subheading"><span class="post-category">{post.category || 'news'}</span>
+				</div>
+			<div class="content">
+				{#if post.html}
+					{@html post.html}
+				{:else if post.markdown}
+					<SvelteMarkdown source={post.markdown} />
+				{/if}
+			</div>
 		</div>
-		<div class="post-tags">
-			<span class="post-tags"
-				>Tags:
-				{#each post.tags as tag}
-					<span class="tag">{tag}</span>
-				{/each}
-			</span>
-		</div>
-		<div class="share-buttons">
-			<Fb />
-			<Twitter />
+		<div class="post-card">
+			<span class="color-heading">Etiam et arcu enim</span>
+			<h2>Nam interdum velit ut lorem</h2>
+			<p>Nullam fermentum accumsan nibh, in ultricies elit lacinia in. Etiam viverra vel magna ut ultricies.</p>
+			<Button className={'card'} content={'Learn more'} href={'/'}/>
 		</div>
 	</div>
+	<div class="post-tags">
+		Tags:
+		{#each post.tags as tag}
+			<span class="tag">{tag}</span>
+		{/each}
+	</div>
+	<div class="share-buttons">
+		<Fb />
+		<Twitter />
+	</div>
+</div>
 </article>
 
-<section class="any-news">
-	<div class="news-block">
-		<a href="/blog">Related posts</a>
+<Contact className={'blog'} />
 
-		<p class="title-p">
-			Cras feugiat nunc in accumsan pretium. Curabitur accumsan, lorem sed sodales pulvinar, felis
-			eros tincidunt.
-		</p>
+<News className={'blog'} contentA={'Related'} contentSpan={''}/>
 
-		<div class="news">
-			<BlogListItem post={posts[5]} />
-			<BlogListItem post={posts[3]} />
-		</div>
-	</div>
-</section>
 
 <style>
 	article {
 		background: url(/images/texture-bg-2.png) no-repeat;
 		background-position: 0 100%;
+		margin-top: -6rem;
+		padding: 0 2rem;
 	}
 
 	.article {
+		display: flex;
+		justify-content: space-between;
 		text-align: left;
-		max-width: 100rem;
 		margin: 0 auto;
-		padding: 0 2rem 9rem 2rem;
+	}
+
+	.post{
+		padding: 0 2rem;
+	}
+
+	.post-content{
+		width: 77rem;
+		max-width: 65%;
+		margin-top: 1rem;
+		padding-right: 2rem;
+	}
+	
+	.post-card{
+		background: url(/images/BG-card.svg) no-repeat;
+		background-size: cover;
+		width: 37rem;
+		max-width: 35%;
+		border-radius: 2rem;
+		padding: 7.2rem 3.2rem 5.4rem 3.2rem;
+    	text-align: center;
+		height: 100%;
+		margin-top: 3rem;
+		border: 1px solid #354BAF;
+    	box-shadow: 0px 0px 45px 25px rgb(0 0 0 / 20%);
+	}
+	.post-card h2{
+		font-size: 4.2rem;
+	}
+	.post-card p{
+		margin-top: 0.5rem;
+	}
+	.post-subheading{
+		text-align: center;
 	}
 
 	.post-category {
 		text-transform: uppercase;
 		font-size: 1.4rem;
+		font-weight: 700;
 		color: #fff;
-		background: #000;
-		padding: 0.3rem 0.5rem;
+		padding: 0.5rem 0.7rem;
+		background: #0d9f8e;
+		border-radius: 30px;
+		width: 65px;
+    	display: block;
+    	margin: 0 auto;	
 	}
 	.post-date {
-		color: rgba(255, 255, 255, 0.637);
-		font-size: 1.4rem;
-		vertical-align: text-bottom;
+		font-size: 1.6rem;
+		text-align: center;
+		display: block;
+		margin: 1rem 0 2rem 0;
 	}
 	.post-image {
-		width: 100%;
-		height: 35rem;
-		margin-bottom: 1em;
+		width: 132rem;
+		max-width: 100%;
+    	margin: 0 auto;
+    	height: 48rem;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
+		border-radius: 25px;
 	}
 	.post-title {
 		font-size: 4.2rem;
-		margin: 0.5rem 0 0.7rem 0;
+		margin: 1rem 0 0.7rem 0;
+		text-align: center;
 	}
 	.post-tags {
-		width: 100%;
-		color: #8794a7;
-		font-size: 1.4rem;
-		margin-top: 4rem;
 		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center;
+		font-size: 1.6rem;
+		margin-top: 1rem;
+		max-width: 100%;
 	}
 	.post-tags .tag {
 		color: #fff;
 		padding: 0.7rem 1.1rem;
-		background: #000;
-		margin: 0 1rem;
+		background: #0d9f8e;
+		margin: 0.5rem 1rem;
+		border-radius: 30px;
 	}
 	/* .post-tags .tag:first-letter{
 		text-transform: uppercase;
 	} */
 	.share-buttons {
 		display: inline-flex;
-		margin-top: 3rem;
+		margin-top: 2rem;
+		width: 16rem;
 	}
 	.content {
 		margin-top: 2.5rem;
@@ -186,49 +254,22 @@
 	.content :global(p) {
 		margin-bottom: 2rem;
 	}
-	.any-news {
-		background: #000;
-	}
 
-	.news {
-		display: flex;
-		justify-content: space-between;
-		text-align: left;
-		color: #fff;
-	}
 
-	a {
-		font-family: Furore;
-		font-size: 4.2rem;
-		font-weight: 400;
-	}
-
-	a:hover {
-		transition: 0.5s;
-		transform: scale(1.01);
-	}
-
-	.news-block {
-		padding: 8rem 4rem 5.7rem 4rem;
-		width: 124.5rem;
-		margin: 0 auto;
-	}
-
-	.news-block a {
-		display: flex;
-		color: #fff;
-	}
-
-	.title-p {
-		width: 66rem;
-		max-width: 100%;
-		margin: 1rem 0 3rem 0;
-		text-align: left;
-	}
-
-	@media (max-width: 820px) {
+	@media (max-width: 900px) {
 		.article {
-			padding: 0 3rem 9rem 3rem;
+			padding: 0 1rem;
+			flex-direction: column;
+		}
+
+		.post-content{
+			max-width: 100%;
+    		padding: 0;
+		}
+
+		.post-card{
+			max-width: 100%;
+    		margin: 2rem auto;
 		}
 
 		.post-image {
@@ -243,42 +284,16 @@
 			font-size: 3.2rem;
 		}
 
-		.any-news a {
-			font-size: 3.6rem;
-			display: block;
-			text-align: center;
+	}	
+
+
+	@media (max-width: 680px) {
+		
+		article{
+			margin: 0;
+			padding: 8rem 2rem;
 		}
 
-		.news-block {
-			padding: 5rem 3rem 1rem 3rem;
-			width: 100%;
-		}
-
-		.news {
-			display: block;
-		}
-
-		.title-p {
-			width: 50rem;
-			margin: 1.5rem auto 3rem auto;
-			text-align: center;
-		}
-	}
-
-	@media (max-width: 580px) {
-		a {
-			text-align: center;
-		}
-
-		.news-block {
-			padding: 6rem 3rem 1rem 3rem;
-			width: 100%;
-		}
-
-		.title-p {
-			width: 32rem;
-			margin: 2rem 0 4rem 0;
-			text-align: center;
-		}
+		
 	}
 </style>

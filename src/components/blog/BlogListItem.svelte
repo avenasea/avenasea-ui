@@ -1,4 +1,6 @@
 <script>
+	import SvelteMarkdown from 'svelte-markdown';
+
 	export let post;
 </script>
 
@@ -14,12 +16,18 @@
 			<div class="right-container">
 				<span class="post-category">{post.category || 'news'}</span>
 				<h2 class="post-title">{post.title}</h2>
-				<span class="post-text">{@html post.html}</span>
-				<span class="post-date">
+				<span class="post-date color-heading">
 					{post.timestamp
 						? new Date(post.timestamp).toLocaleDateString()
 						: new Date().toLocaleDateString()}
 				</span>
+				{#if post.html}
+					<span class="post-text">{@html post.html}</span>
+				{:else if post.markdown}
+					<span class="post-text">
+						<SvelteMarkdown source={post.markdown} />
+					</span>
+				{/if}
 			</div>
 		</div>
 	</a>
@@ -27,13 +35,17 @@
 
 <style>
 	article {
-		width: 49%;
-		padding: 1em 0;
-		margin: 0.5em 0;
-		transition: transform 0.2s ease;
+		padding: 0;
+		margin: 1rem;
+		width: 100%;
 	}
-	article:hover {
-		transform: scale(1.015);
+
+	article .post-image {
+		border: 2px solid transparent;
+		transition: border-color .2s linear;
+	}
+	article:hover .post-image {
+		border-color: #99aaff;
 	}
 	.post-title {
 		font-size: 2.5rem;
@@ -42,11 +54,11 @@
 	.post-text {
 		color: #8794a7;
 		text-align: left;
-		height: 6rem;
+		height: 8rem;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		display: -webkit-box;
-		-webkit-line-clamp: 2;
+		-webkit-line-clamp: 3;
 		-webkit-box-orient: vertical;
 	}
 	.post-content {
@@ -69,47 +81,44 @@
 	.post-category {
 		text-transform: uppercase;
 		font-size: 1.2rem;
+		font-weight: 700;
 		color: #fff;
-		background: #000;
-		padding: 0.3rem 0.5rem;
+		padding: 0.5rem 0.7rem;
+		background: #0d9f8e;
+		border-radius: 30px;
 		margin: 0.7rem 0;
 	}
 	.post-date {
 		color: rgba(255, 255, 255, 0.637);
-		font-size: 1.3rem;
-		margin-top: 0.5rem;
+		font-size: 1.6rem;
+		margin-top: -1rem;
 	}
 	h2 {
+		font-size: 2.5rem;
+    	line-height: 3rem;
 		letter-spacing: inherit;
+		margin-top: 0;
 	}
 
 	@media (max-width: 820px) {
-
-		article{
-			padding: 0 2rem;
+		article {
+			padding: 0;
 			width: 100%;
 			margin: 1rem 0 4rem 0;
 		}
 
-		.post-image{
+		.post-image {
 			height: 30rem;
 		}
-
-
 	}
 
 	@media (max-width: 412px) {
-
-		article{
-			padding: 0;
+		article {
 			margin-bottom: 5rem;
 		}
 
-		.post-image{
+		.post-image {
 			height: 22rem;
 		}
-
 	}
-
-
 </style>

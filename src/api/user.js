@@ -45,9 +45,6 @@ class User extends Api {
 		return await this.api('/password/reset', { token, password }, { method: 'PUT' });
 	}
 
-	async newsletter(user) {
-		return await this.api('/newsletters', user, { method: 'POST' });
-	}
 }
 
 export default User;

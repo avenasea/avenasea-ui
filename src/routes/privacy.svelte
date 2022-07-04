@@ -7,6 +7,8 @@
 	<title>Privacy</title>
 </svelte:head>
 
+<section class="container">
+
 <h1>Privacy Statement</h1>
 
 <ul>
@@ -31,3 +33,25 @@
 		</p>
 	</li>
 </ul>
+
+</section>
+
+<style>
+
+	section{
+		margin: 0rem auto 35rem auto;
+		padding: 7rem 2rem;
+	}
+
+	h1{
+		font-size: 4.2rem;
+	}
+
+	@media (max-width: 680px) {
+		section {
+			padding: 7rem 2rem;
+			margin: 0 auto;
+		}
+	}
+
+</style>

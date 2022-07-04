@@ -38,96 +38,77 @@
 </script>
 
 <svelte:head>
-	<title>{category.charAt(0).toUpperCase() + category.slice(1)} | Blog | $HSKO</title>
+	<title>Blog</title>
 </svelte:head>
 
-<div class="background">
-	<section class="posts-container">
-		<div class="posts-heading">
-			<a href="#" on:click|preventDefault={() => (showCategoryDropdown = !showCategoryDropdown)}>
-				Categories
-				<img class:arrow-up={showCategoryDropdown} src="/images/icons/down-arrow.svg" alt="" />
-			</a>
-			{#if showCategoryDropdown}
-				<ul class="category-dropdown">
+<section class="posts container">
+	<div class="posts-heading">
+		<a href="#" on:click|preventDefault={() => (showCategoryDropdown = !showCategoryDropdown)}>
+			Categories
+			<img class:arrow-up={showCategoryDropdown} src="/images/icons/down-arrow.svg" alt="" />
+		</a>
+		{#if showCategoryDropdown}
+			<ul class="category-dropdown">
+				<li>
+					<a
+						class="category-link"
+						href={`/blog?category=all`}
+						on:click={() => (showCategoryDropdown = false)}
+					>
+						all news
+					</a>
+				</li>
+				{#each categories as category}
 					<li>
 						<a
 							class="category-link"
-							href={`/blog?category=all`}
+							href={`/blog?category=${category}`}
 							on:click={() => (showCategoryDropdown = false)}
 						>
-							all news
+							{category}
 						</a>
 					</li>
-					{#each categories as category}
-						<li>
-							<a
-								class="category-link"
-								href={`/blog?category=${category}`}
-								on:click={() => (showCategoryDropdown = false)}
-							>
-								{category}
-							</a>
-						</li>
-					{/each}
-				</ul>
-			{/if}
-			<h1>Latest news</h1>
+				{/each}
+			</ul>
+		{/if}
+
+		<div class="heading-list">
+			<span class="color-heading">Curabitur</span>
+			<h1>Latest <span>news</span></h1>
 		</div>
-		<p class="posts-p">
-			Cras feugiat nunc in accumsan pretium. Curabitur accumsan, lorem sed sodales pulvinar, felis
-			eros tincidunt.
-		</p>
-		<ul class="post-list">
-			{#each filteredPosts as post}
-				<BlogListItem {post} />
-			{/each}
-		</ul>
-	</section>
-</div>
+	</div>
+
+	<ul class="post-list">
+		{#each filteredPosts as post}
+			<BlogListItem {post} />
+		{/each}
+	</ul>
+</section>
 
 <style>
-	section{
-		padding: 0 2rem;
+	section {
+		padding: 0 2rem 8rem 2rem;
+		margin-top: -4rem;
 	}
-	.background {
-		background: url(/images/texture-bg-2.png) no-repeat;
-		background-position: 0 100%;
-		width: 100%;
-		height: 100%;
-	}
-	.posts-container {
-		margin: 0 auto;
-		/* padding: 3em 1em; */
-		max-width: 100rem;
-	}
+
 	h1 {
 		font-size: 4.2rem;
+		font-weight: 400;
 	}
-	.posts-heading {
-		display: flex;
-		justify-content: space-between;
-		flex-direction: row-reverse;
+
+	h1 span{
+		font-weight: 700;
 	}
-	.posts-p {
-		width: 66rem;
-		max-width: 100%;
-		margin: 1rem 0;
-		text-align: left;
-	}
+
 	.post-list {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
+		display: grid;
+		grid-gap: 2rem;
 		padding-bottom: 9.5rem;
+		grid-template-columns: repeat(auto-fill, 35rem);
+		justify-content: space-evenly;
+		padding-left: 0;
 	}
-	.arrow-up {
-		transform: rotate(180deg);
-	}
-	.posts-heading a {
-		padding-top: 1.5rem;
-		color: #fff;
-	}
+
 	.category-link.category-link {
 		text-transform: capitalize;
 		padding: 0;
@@ -135,69 +116,70 @@
 	.category-dropdown {
 		list-style-type: none;
 		position: absolute;
-		background-color: #072031;
+		/* background-color: #072031; */
+		background: #0a133f;
 		padding: 1em;
 		width: 20rem;
 		max-height: 25rem;
 		z-index: 1;
 		text-align: center;
-		box-shadow: 0.7rem 0.7rem 2rem #1c1c1cc7;
+		box-shadow: 0.1rem 0.1rem 1rem #fff;
 		/* border: 0.1rem #000 solid; */
 	}
-	
+
 	.category-dropdown > li {
 		margin: 1.5rem 0;
 	}
 
-	
+	.posts-heading{
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+	}
+
+	.posts-heading a{
+		margin-top: 6rem;
+	}
+
 
 	@media (max-width: 820px) {
+		.post-list {
+			grid-template-columns: repeat(1, auto);
+			padding: 0;
+		}
+			
+		section {
+			margin-top: 0;
+			padding: 0 2rem;
+		}
 
 		.posts-heading {
 			flex-direction: column-reverse;
 		}
-
-		h1{
+		.posts-heading {
+			padding-top: 1rem;
 			text-align: center;
 		}
-
-		.posts-p{
-		    text-align: center;
-			margin: 1rem auto 2rem auto;
+		.posts-heading a{
+			margin-top: 2rem;
 		}
-
-		.posts-heading{
-   			padding-top: 1rem;
-		}
-
-		.post-list{
-			padding: 0 2rem 5.5rem 2rem;
-		}
-
 		.category-dropdown{
-			top: 18rem;
-    		left: 27rem;
+			top: 26.5rem;
+    		left: 30rem;
 		}
-	}
-
-	@media (max-width: 580px) {
-
-		.posts-p{
-			width: 35rem;
-		}
-
-		.post-list{
-			padding: 0 2rem 2.5rem 2rem;
-		}
-
 		
-		.category-dropdown{
-			top: 16rem;
-    		left: 9rem;
-		}
 	}
 
+	@media (max-width: 680px) {
+			
+		section {
+			padding: 8rem 2rem;
+		}
 
+		.category-dropdown{
+			top: 17.5rem;
+			left: 15rem;
+		}
 
-
+	}
 </style>

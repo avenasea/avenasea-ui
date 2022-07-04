@@ -7,6 +7,8 @@
 	<title>Terms</title>
 </svelte:head>
 
+<section class="container">
+
 <h1>Terms of Service</h1>
 
 <ul>
@@ -63,3 +65,25 @@
 		<p>Registering an account on {name} is acceptance of these terms and conditions.</p>
 	</li>
 </ul>
+
+</section>
+
+<style>
+
+	section{
+		margin: 0rem auto 15rem auto;
+		padding: 0 2rem;
+	}
+
+	h1{
+		font-size: 4.2rem;
+	}
+
+	@media (max-width: 680px) {
+		section {
+			padding: 7rem 2rem;
+			margin: 0 auto;
+		}
+	}
+
+</style>
