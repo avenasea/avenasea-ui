@@ -40,12 +40,18 @@
 
 	section{
 		margin: 0rem auto 35rem auto;
-		position: relative;
-		padding: 0 2rem;
+		padding: 7rem 2rem;
 	}
 
 	h1{
 		font-size: 4.2rem;
+	}
+
+	@media (max-width: 680px) {
+		section {
+			padding: 7rem 2rem;
+			margin: 0 auto;
+		}
 	}
 
 </style>

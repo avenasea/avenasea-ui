@@ -28,7 +28,7 @@
 				<h4>Follow us</h4>
 				<div class="links">
 					<Link
-						href={'/'}
+						href={'https://twitter.com/avenasea'}
 						className={'twitter footer'}
 						src={'/images/twitter.svg'}
 						alt={'Twitter link'}

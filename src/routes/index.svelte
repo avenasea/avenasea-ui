@@ -36,5 +36,5 @@
 
 	<Contact className={''} />
 
-	<News contentSpan={'Curabitur'} contentA={'Latest '} />
+	<News className={'home'} contentSpan={'Curabitur'} contentA={'Latest '} />
 </div>

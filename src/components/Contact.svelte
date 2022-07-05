@@ -1,18 +1,23 @@
 <script>
+	import { onMount } from 'svelte';
 	import Button from './Button.svelte';
+	import Message from './Message.svelte';
 
 	export let className;
 
-	import { onMount } from 'svelte';
+	let user = {};
+	let msg;
+	let type;
 
-	const styles = 'box-shadow: 0 0 15px red';
+	const contractAddr = import.meta.env.VITE_HUSKO_CONTRACT_MAIN;
+	const styles = 'box-shadow: 0 0 1.5rem red';
 
 	let styles_name = false;
 	let styles_mail = false;
 
 	onMount(() => {
 		const form = document.querySelector('form.newsletter-block');
-		// form.addEventListener("submit", formSend);
+		form.addEventListener('submit', formSend);
 	});
 
 	// form.addEventListener("submit", formSend);
@@ -25,6 +30,18 @@
 		// let formData = new FormData(form)
 
 		if (error === 0) {
+			try {
+				msg = '';
+				type = '';
+				const res = await new User(fetch).newsletter(user);
+				type = 'success';
+				msg = 'You have been subscribed!';
+				user = {};
+			} catch (err) {
+				type = 'error';
+				msg = err;
+				console.error(err);
+			}
 		} else {
 			alert('Fill in the required field');
 		}
@@ -77,6 +94,7 @@
 	}
 </script>
 
+
 <section id="contact" class={className}>
 	<div class="form container">
 		<div class="form-text">
@@ -85,13 +103,34 @@
 			<p>Get periodic updates about avenasea and when we officially launch.</p>
 		</div>
 
-		<form>
-			<input id="input-name" class="_req  input" placeholder="First name" />
+		<form class="newsletter-block">
+			{#if msg}
+				<Message {type} {msg} />
+			{/if}
 
-			<input id="input-email" class="_req _email input" placeholder="Email address" />
+				<!-- <label for="input-name">FIRST NAME</label> -->
+				<input
+					id="input-name"
+					class="_req input"
+					placeholder="First name"
+					bind:value={user.name}
+					style={styles_name ? styles : ''}
+				/>
 
-			<Button className={'form'} content={'Subscribe now'} href={'/'} />
+				<!-- <label for="input-email">EMAIL ADDRESS</label> -->
+				<input
+					id="input-email"
+					class="_req _email input"
+					placeholder="Email"
+					bind:value={user.email}
+					style={styles_mail ? styles : ''}
+				/>
+
+			<button type="submit" value="Subscribe now">Subscribe now</button>
+
 		</form>
+
+
 	</div>
 </section>
 
@@ -101,6 +140,40 @@
 		padding: 26rem 2rem 50rem 2rem;
 		background: url(/images/Group.png) no-repeat;
 		background-position-x: -10.5rem;
+	}
+
+	button{
+		font-family: Work Sans;
+		font-weight: 700;
+		font-size: 2rem;
+		line-height: 2rem;
+		padding: 1.6rem 3rem;
+		text-decoration: none;
+		text-align: center;
+		display: inline-block;
+		background: #0D9F8E;
+		border-radius: 9999px;
+		border: none;
+		color: #fff;
+		text-transform: uppercase;
+		transition: 0.4s all;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+
+	button:hover {
+		background: #fff;
+		color: #0D9F8E;
+	}
+
+	.contact-page{
+		padding: 27rem 2rem 20rem 2rem;
+    	margin-top: -18rem;
+	}
+
+	.blog{
+		background: none;
+		padding: 23rem 2rem 10rem 2rem;
 	}
 
 	.form-text {
@@ -117,7 +190,8 @@
 	}
 
 	input:focus {
-		box-shadow: 0 0 15 #7a956b;
+		box-shadow: 0 0 1.5rem #7a956b;
+		/* border: 1px solid #ddd446; */
 	}
 
 	.form {
@@ -139,7 +213,7 @@
 		border-radius: 15rem;
 		border: none;
 		font-size: 1.8rem;
-		padding: 1.7rem 2.8rem;
+		padding: 1.8rem 2.8rem;
 		width: 38rem;
 		max-width: 100%;
 		/* display: block; */
@@ -181,6 +255,17 @@
 		input {
 			margin: 1rem auto;
 		}
+
+		button{
+			margin: 1rem auto 0 auto;
+		}
+
+		.contact-page{
+			padding: 20rem 2rem;
+			margin-top: 0;
+		}
+
+
 	}
 
 	@media (max-width: 680px) {
@@ -192,5 +277,9 @@
 			width: 100%;
 			padding: 4rem 2rem;
 		}
+		.contact-page{
+			padding: 15rem 2rem;
+		}
+
 	}
 </style>

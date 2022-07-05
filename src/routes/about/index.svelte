@@ -113,7 +113,6 @@
 <style>
 	section {
 		margin-top: 0;
-		position: relative;
 		padding: 0 2rem;
 	}
 
@@ -167,8 +166,8 @@
 		padding: 2rem 0;
 		display: grid;
 		grid-template-columns: repeat(auto-fill, 33rem);
-		justify-content: space-between;
-		grid-gap: 2rem;
+		justify-content: space-evenly;
+		grid-gap: 4rem;
 	}
 
 	@media (max-width: 820px) {
@@ -193,7 +192,10 @@
 		}
 	}
 
-	@media (max-width: 580px) {
+	@media (max-width: 690px) {
+		section{
+			padding: 7rem 2rem;
+		}
 		.team {
 			padding: 0 0 5rem;
 		}

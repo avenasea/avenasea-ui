@@ -4,15 +4,15 @@
 
 	export let contentA;
 	export let contentSpan;
+	export let className;
 
 	console.log(posts.length);
 	// export let title;
 </script>
 
-<section id="news" class="news-block">
-	<span class="color-heading">{contentSpan}</span>
+<section id="news" class={className}>
+		<span class="color-heading">{contentSpan}</span>
 	<a href="/blog" class="any-news">{contentA}<span>news</span></a>
-
 	<div class="news">
 		<BlogListItem post={posts[0]} />
 		<BlogListItem post={posts[1]} />
@@ -22,7 +22,7 @@
 
 <style>
 	.news {
-		margin-top: 1rem;
+		margin-top: 3rem;
 		display: flex;
 		justify-content: space-between;
 		text-align: left;
@@ -44,19 +44,27 @@
 		transform: scale(1.01);
 	}
 
-	.news-block {
-		padding: 7.7rem 4rem;
+	section {
+		background: none;
 		max-width: 124.5rem;
 		width: 100%;
-		margin: -45.5rem auto 4rem auto;
+		padding: 7.7rem 4rem;
 	}
 
-	.news-block a {
+	.home{
+		margin: -44.5rem auto 4rem auto;
+	}
+
+	.blog{
+		margin: -8.5rem auto 4rem auto;
+	}
+
+	a {
 		display: flex;
 		color: #fff;
 	}
 
-	@media (max-width: 820px) {
+	@media (max-width: 900px) {
 		.news-block {
 			padding: 0 2rem;
 			width: 100%;

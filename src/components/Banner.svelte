@@ -62,6 +62,7 @@
 	}
 
 	@media (max-width: 1034px) {
+		
 		.banner-text {
 			padding-left: 5rem;
 		}
@@ -69,6 +70,7 @@
 
 	@media (max-width: 680px) {
 		section {
+			margin: 0;
 			padding: 0 2rem;
 		}
 
@@ -80,6 +82,8 @@
 		.color-heading {
 			font-size: 1.6rem;
 			line-height: 1.6rem;
+			padding-top: 11.5rem;
+
 		}
 		.banner {
 			width: 100%;

@@ -73,11 +73,17 @@
 	section{
 		margin: 0rem auto 15rem auto;
 		padding: 0 2rem;
-    	position: relative;
 	}
 
 	h1{
 		font-size: 4.2rem;
+	}
+
+	@media (max-width: 680px) {
+		section {
+			padding: 7rem 2rem;
+			margin: 0 auto;
+		}
 	}
 
 </style>

@@ -34,12 +34,15 @@
 
 <section>
 
-	<nav style={active ? "right: 0; top: 0; width: 34rem; height: 100%; padding: 5rem 3rem; background: #14235B; display: flex " : ""}>
+	<nav style={active ? "right: 0; top: 0; width: 100%; height: 35rem; padding: 7rem 3rem; background: #14235B; display: flex " : ""}>
 		<a href="/" class={`${url === '/' ? 'active' : ''}`}  on:click={close}>Home</a>
 		<!-- <a href="/"  on:click={close}>Hotels</a> -->
 		<a href="/about" class={`${url === '/about' ? 'active' : ''}`}  on:click={close}>About us</a>
 		<a href="/blog" class={`${url.includes('/blog') ? 'active' : ''}`}  on:click={close}>Blog</a>
-		<!-- <a href="/#contact" class={`${url === '/#contact' ? 'active' : ''}`}  on:click={close}>Contact us</a> -->
+		<a href="/contact" class={`${url === '/contact' ? 'active' : ''}`}  on:click={close}>Contact us</a>
+
+	<hr size="8" width="100%">
+
 	</nav>
 
 	<div class="menu">
@@ -52,6 +55,7 @@
 			<span class="line" style={active ? "display: none" : ""}></span>
 
 		</div>
+
 	</div>
 
 
@@ -143,6 +147,15 @@
         bottom: 0.7rem;
     }
 
+	hr{
+		display: none;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background: linear-gradient(90deg, #21a8f3, #c7f5c6);
+		border: none;
+	}
+
 	/* nav{
 		margin-top: 2rem;
 	} */
@@ -157,6 +170,10 @@
 	} */
 
 	@media (max-width: 1034px) {
+		
+		hr{
+			display: block;
+		}
 
 		:global(body) {
 			overflow-x: hidden;
@@ -165,8 +182,8 @@
 		nav {
 			position: fixed;
 			z-index: 99;
-			top: 0;
-			right: -100%;
+			top: -100%;
+			right: 0;
 			flex-direction: column;
 			align-items: flex-start;
 			transition: all 0.5s;
@@ -196,9 +213,10 @@
 		}
 
 		.active{
-			background-image: linear-gradient(90deg, #21A8F3, #C7F5C6);
+			/* background-image: linear-gradient(90deg, #21A8F3, #C7F5C6);
 			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
+			-webkit-text-fill-color: transparent; */
+			color: #21A8F3;
 		}
 	}
 

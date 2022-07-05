@@ -30,18 +30,20 @@
 		text-decoration: none;
 	}
 
-	/* #logo{
-		margin-top: 2rem;
-	} */
-
 	#logo img {
 		width: 22.7rem;
 		max-width: 100%;
 	}
 
+	#logo{
+		z-index: 999;
+	}
+
 	@media (max-width: 680px) {
 		header {
+			position: fixed;
 			padding: 2rem 2rem 3rem 2rem;
 		}
+
 	}
 </style>

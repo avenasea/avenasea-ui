@@ -20,10 +20,10 @@
 		border-radius: 9999px;
 		color: #fff;
 		text-transform: uppercase;
+		transition: 0.4s all;
 	}
 
 	a:hover {
-		transition: 0.4s;
 		background: #fff;
 		color: #0D9F8E;
 	}
@@ -43,11 +43,6 @@
 		margin-top: 3.5rem;
 	}
 
-	.form{
-		max-width: 100%;
-		margin: 0 auto;
-	}
-
 	.header{
 		margin-top: -1rem;
 	}
@@ -58,9 +53,6 @@
 			display: none;
 		}
 
-		.form{
-			margin: 1rem auto 0 auto;
-		}
 
 	}
 

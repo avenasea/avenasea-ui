@@ -44,7 +44,7 @@
 		background-size: cover;
 		border-radius: 20px;
 		border: 1px solid #354baf;
-		padding: 10rem 2.9rem;
+		padding: 11rem 2.9rem;
 		box-shadow: 0px 0px 45px 25px rgb(0 0 0 / 20%);
 	}
 
@@ -74,7 +74,7 @@
 		}
 
 		.about-us-text {
-			margin: 2rem 0 0 0;
+			margin: 5rem 0 1rem 0;
 			max-width: 100%;
 		}
 
