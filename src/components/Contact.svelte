@@ -9,7 +9,6 @@
 	let msg;
 	let type;
 
-	const contractAddr = import.meta.env.VITE_HUSKO_CONTRACT_MAIN;
 	const styles = 'box-shadow: 0 0 1.5rem red';
 
 	let styles_name = false;

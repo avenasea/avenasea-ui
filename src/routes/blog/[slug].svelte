@@ -104,8 +104,6 @@
 <News className={'blog'} contentA={'Related'} contentSpan={''}/>
 
 
-<Form />
-
 <style>
 	article {
 		background: url(/images/texture-bg-2.png) no-repeat;
