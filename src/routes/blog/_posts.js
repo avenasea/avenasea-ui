@@ -34,7 +34,7 @@ Planning an event is challenging enough without having to work out how to respon
 
 ## Have questions?
 
-If you have any questions, please <a href="mailto:hello@avenasea.com">contact us</a>. We’re happy to help!
+If you have any questions, please [email us](mailto:hello@avenasea.com?subject=avenasea) or [call us](tel:18886902044). We're happy to help!
 
 Our team is available 24/7 and we respond within 24 hours.
 
