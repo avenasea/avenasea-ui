@@ -136,20 +136,126 @@ Making sure that your RFPs are targeted and personalized is important in this in
 We hope that our tips and tricks for improving your RFPs have helped you win more bids. We know that this is a competitive industry, but if you know how to reach out to potential clients and make them want your services then there's no reason why you shouldn't be successful!`
 	},
 	{
-		title: 'Fusce non tellus hendrerit',
-		image: '',
+		title: 'How to Reach Luxury Planners for Hotel Events',
+		image: '/images/blog/event-planner.jpg',
 		author: 'chovy',
 		category: 'news',
-		timestamp: new Date('2022-06-17'),
-		html: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue maximus euismod. Etiam egestas quis sapien id pretium. Etiam consequat lacus sem, eu tempor elit egestas ac. Mauris vel justo vehicula, imperdiet erat tincidunt, fermentum quam. Ut sit amet libero venenatis, sollicitudin nisl vel, bibendum leo. Aliquam erat volutpat. Sed odio nibh, interdum sed aliquet non, posuere ac turpis. Etiam efficitur sollicitudin sem, eget dapibus dui dapibus in. Donec ligula purus, sodales at tristique sodales, ultrices at erat. Ut suscipit urna ac massa semper, vel consequat leo consequat. Sed id sapien ante. Nunc lacus felis, mollis at hendrerit eget, pulvinar vel dolor. In at neque non sem cursus ullamcorper. Nam nec felis id enim imperdiet molestie. Nulla sed blandit libero, vitae aliquet risus. Maecenas eu quam elementum, ultrices sem sit amet, fermentum dui.</p>
-
-		<p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris condimentum quam ac tortor interdum, sed vehicula erat suscipit. Integer quis felis non urna aliquet tempor vel vel eros. Duis arcu neque, vehicula convallis rhoncus eget, faucibus id turpis. Fusce et tellus vehicula, convallis nibh non, molestie dui. Mauris vel dolor nisi. Fusce tristique varius enim id tristique. Mauris in velit pellentesque, maximus dui nec, interdum purus. Maecenas nec nibh vitae augue luctus lobortis. Donec nec facilisis enim. Nullam a ligula mauris. In rutrum mi cursus sodales interdum. Sed non elit ut erat tincidunt sagittis eget non ligula.</p>
-		
-		<p>Duis vitae convallis dui. Phasellus sagittis auctor ornare. Nam vel eros eu tortor dictum rhoncus. Etiam dictum risus diam, et dapibus est faucibus sit amet. Vestibulum ut auctor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in ornare lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque quis ultrices sem, mattis molestie mauris. Nulla facilisi. Phasellus ex nulla, rhoncus ac sem at, mollis tempus ante. Pellentesque vel ligula sed augue tristique feugiat.</p>
-		
-		<p>Aliquam et diam rutrum dui iaculis pharetra vitae eget enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at neque ac erat posuere accumsan id eu arcu. Nam pellentesque pulvinar commodo. Nulla id lorem sapien. Praesent vitae tortor rhoncus ante commodo efficitur at nec lacus. Vestibulum nisi dui, varius non vulputate pellentesque, iaculis pharetra massa. Sed arcu nisl, finibus sed hendrerit ac, rutrum a dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam nec dapibus turpis.</p>
-		
-		<p>Sed viverra sed turpis eget condimentum. Pellentesque sit amet ipsum neque. Vivamus risus nisl, lobortis eu leo et, auctor sollicitudin tortor. Morbi posuere tellus tortor, id eleifend urna dictum sed. Aliquam ultrices dignissim urna, ultrices vestibulum tellus faucibus vel. Nullam placerat ac ligula non tempor. Etiam scelerisque, lacus eget dignissim tincidunt, lorem magna vulputate magna, in faucibus sem massa ac felis. Praesent nulla magna, facilisis at pretium sed, commodo vitae velit.</p>`
+		timestamp: new Date('2022-07-06'),
+		html: `<h1>
+<p>Luxury planners are
+a group of highly-sought after people with the power to influence
+hotels in their decisions. They have high standards, but they also
+know that luxury comes at a price—and they're willing to pay it. In
+order for you to get their business, you need to be able to show them
+why your hotel is worth every penny.</p>
+<h2>Personalize your approach.</h2>
+<p>Personalize your
+approach.</p>
+<p>The luxury hotel
+event planner is a busy, on-the-go professional who is responsible
+for creating and executing fantastic events at luxury hotels. They
+are a combination of marketing, operations and sales all rolled into
+one. As such, they have many demands on their time. Make it easy for
+them to respond to your request by using their name when contacting
+them. Also use their title (if applicable), company name and location
+(if applicable), as well as their industry or role within the
+organization (if applicable). If you can find out their contact
+information and include that in any communication with them as well –
+even better!</p>
+<h2>Understand the importance of customer
+relationships.</h2>
+<p>Customer
+relationship management (CRM) is the process of managing
+relationships with customers, while simultaneously improving their
+enjoyment and loyalty. It's a critical aspect of business growth and
+success, but it isn't as simple as it sounds.</p>
+<p>If you want to build
+strong customer relationships, you need to communicate with those
+customers on a regular basis. You also need to be able to listen
+closely when they talk back—as well as react quickly when they have
+an issue or concern. In order for this process to work smoothly, it's
+important that all your employees are trained in effective
+communication techniques like active listening and empathy-based
+problem solving skills (EBS).</p>
+<h2>Show off your unique selling proposition.</h2>
+<p>Every good business
+has a unique selling proposition (USP). It's the one thing that makes
+your company stand out from the competition. A USP can be something
+as simple as a product feature or price point, but it can also be
+something more intangible, like your brand identity and personality.
+If you want to reach luxury planners for hotel events, you need to
+develop an attention-grabbing USP—and then convey it in every email
+and conversation you have with potential clients.</p>
+<p>The best way to
+create a compelling USP is through research into your target
+audience's needs and desires. Think about what they're looking for in
+their ideal event planner: how much experience do they have? What
+kind of service do they expect? What are their budget limitations?
+Once you've identified these factors, think about how they affect
+what kinds of events you offer—and why those events will resonate
+with this particular clientele.</p>
+<p>Once you've got this
+figured out, it's time for the fun part: sharing your findings with
+potential clients! You'll want to find ways of communicating this
+information that reflect both who your target audience is (i.e.,
+affluent) and what makes them unique (their desire for high-quality
+products).</p>
+<h2>Give them something to talk about.</h2>
+<p>Give them something
+to talk about.</p>
+<p>The best and most
+effective way to attract luxury planners is by giving them a reason
+to talk about your hotel, your event, and/or your brand. If they have
+something interesting to share with their followers and their
+clients, they'll be happy that you provided it for them.</p>
+<h2>Emphasize the value of face-to-face
+communications.</h2>
+<p>We live in a world
+where we think we can do everything online. But events are not an
+easy task to plan. If you want to get the best results from your
+event, there are some things that work better in person than over
+email or chat. Let's look at some of them:</p>
+<ul>
+	<li><p>A
+	creative process requires creative thinking and a lot of
+	communication. Planning an event is often a collaborative process
+	between different departments within the organization and external
+	vendors. You need all these people to brainstorm together in order
+	for your idea to come alive for your attendees. In other words, it
+	requires face-to-face communications or video calls so everyone can
+	see each other's ideas at once, rather than just reading them on a
+	screen or having one person send emails back and forth with another
+	person who might not be available right away due to time zone
+	differences (or just because they don't check their emails every
+	second).</p>
+</ul>
+<h2>Direct engagement with planners is the key to
+winning their business.</h2>
+<p>It's important to
+understand that planners are often working on tight deadlines, with
+multiple clients and competing demands. They need to know that you
+can deliver what they need—and that it will be worth their while.
+Show them how your company can set them apart from the competition by
+providing personalized service and top-notch food and beverage.</p>
+<p>Make sure that you
+can answer questions about your own unique approach, highlight its
+value in a clear way, and show how it will benefit the planner's
+clients. For example: “My winemaking philosophy emphasizes terroir,
+which means that each vintage is unique because it reflects its
+environment. In addition to having an established reputation for
+selecting excellent grapes from vineyards around the world (which
+makes my wines special), we also have our own production facility
+here in Napa Valley where we craft our wines with care every step of
+the way.&quot;</p>
+<h2>Conclusion</h2>
+<p>To sum up, we've
+covered a lot of ground in this post. We've looked at the ways that
+luxury planners can be reached, and how you should approach them. We
+hope that you've found some useful tips here to help guide your
+plans for meeting with luxury planners. The bottom line is that there
+are many different types of planners out there, so it's important
+that you understand what makes each group tick in order to reach them
+effectively</p>`
 	},
 	{
 		title: 'Curabitur et convallis nibh',
