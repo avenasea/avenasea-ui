@@ -141,8 +141,7 @@ We hope that our tips and tricks for improving your RFPs have helped you win mor
 		author: 'chovy',
 		category: 'news',
 		timestamp: new Date('2022-07-06'),
-		html: `<h1>
-<p>Luxury planners are
+		html: `<p>Luxury planners are
 a group of highly-sought after people with the power to influence
 hotels in their decisions. They have high standards, but they also
 know that luxury comes at a price—and they're willing to pay it. In
