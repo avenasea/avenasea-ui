@@ -256,6 +256,182 @@ are many different types of planners out there, so it's important
 that you understand what makes each group tick in order to reach them
 effectively</p>`
 	},
+	{
+		title: 'Corporate Travel Managers: What do they do?',
+		image: '/images/blog/ctm.jpg',
+		author: 'chovy',
+		category: 'news',
+		timestamp: new Date('2022-07-13'),
+		html: null,
+		markdown: `A corporate travel manager is responsible for managing the travel needs
+and requirements for an organization. They help with organizing business
+trips and provide tactical direction specific to the industry they are
+in. The role of a corporate travel manager has evolved over time. It
+used to just include booking flights and hotels for employees but now
+there are many more responsibilities that fall under this job
+description.
+
+## A corporate travel manager is responsible for managing the travel needs
+and requirements for an organization.
+
+A corporate travel manager is responsible for managing the travel needs
+and requirements for an organization.
+
+According to the U.S Bureau of Labor Statistics, a corporate travel
+manager\'s responsibilities include researching and booking travel,
+ensuring that employees receive their travel documents on time and
+advising management on travel policies.
+
+A typical day as a corporate travel manager may involve researching
+airlines, hotels and rental cars through online tools or phone calls;
+arranging for flights; following up with clients about upcoming
+reservations; answering questions about various aspects of business
+trips (including airline regulations); preparing expense reports for
+reimbursement; communicating with vendors regarding billing issues or
+other problems.
+
+A bachelor's degree in business administration is required, as well as
+previous experience managing teams within an organization or working in
+another related field such as human resources management or marketing
+communications.\*
+
+## Because of their specialised knowledge, they are better able to
+negotiate with travel agents, hotels, and airlines to get the best
+services at minimal cost.
+
+A corporate travel manager can often negotiate better deals for their
+clients. This is because they have a better understanding of the
+industry and will know what is available, as well as what isn't. They
+also have in-depth knowledge of the various options available and will
+be able to recommend the best option for a particular need. For example,
+if you need to book flights from Melbourne to London but don't want to
+pay \$1000 per person per night at an airport hotel, your CTM may know
+about a nearby hotel that offers rooms for half that price and includes
+free shuttle service between there and the airport.
+
+In short: A corporate travel manager knows all about booking trips for
+employees---and because of their specialised knowledge, they are better
+able to negotiate with travel agents, hotels, airlines or any other
+suppliers involved in organising business trips. By negotiating directly
+with these suppliers themselves (instead of going through third parties
+like Expedia), CTM\'s can often save money on services like room
+upgrades or car rentals - which means more cash left over when it comes
+time
+
+## Corporate travel managers impact organizations in many ways. They save
+companies money by negotiating lower rates with all types of travel
+suppliers.
+
+Corporate travel managers impact organizations in many ways. They save
+companies money by negotiating lower rates with all types of travel
+suppliers. They do this by having more knowledge of the industry than
+most other people, which makes them great negotiators. Corporate
+travelers may have a lot on their plate, but they can rest assured
+knowing that the CTM is working hard to make sure that their trip goes
+smoothly and efficiently.
+
+## They help with organizing business trips and provide tactical direction
+specific to the industry they are in.
+
+Corporate travel managers are usually assigned to a specific industry.
+They know the best places to go, they know which hotels are best for the
+industry, they know which airlines have the best deals, they know which
+airports have the best facilities, and they know which travel deals are
+best for the company and its employees.
+
+The role of corporate travel manager is a big one---you\'re not just
+booking flights and hotels anymore; you have an entire team working
+under you.
+
+## Prior to the Internet, it was very difficult to find out about airfare
+and hotel prices.
+
+Before the Internet, it was very difficult to find out about airfare and
+hotel prices.
+
+You had to call travel agents. You had to call hotels. And you had to
+call airlines. If you wanted information on a particular destination,
+then you had to wait for brochures from the hotel or resort itself and
+make sure they arrived in time before your meeting date! Travel agents
+also sent out brochures with information on destinations in them, but if
+you wanted advice on which airline/hotel combination would work best for
+your group trip, again---more waiting around for someone else's
+schedule!
+
+## Sometimes you would spend hours going through brochures just to get
+basic information before you could start planning a trip.
+
+In the past, corporate travel managers had to rely on a team of
+associates to handle all of their travel needs. Often times, this meant
+that it would take weeks or even months before you could get any
+information about your trip. You may have had to visit a library or sit
+in front of a computer for hours just to find out basic details about
+flights, hotels and rental cars. In fact, sometimes you would spend
+hours going through brochures just to get basic information before you
+could start planning a trip.
+
+Nowadays this has all changed thanks to technology that allows
+individuals from anywhere with access internet access (think
+smartphones) make reservations for everything from rental cars through
+companies like Hertz Rent-a-Car and Avis Car Rental Companies as well as
+purchase tickets for airlines such as Southwest Airlines and United
+Airlines without leaving home!
+
+## But today, everything has gone online. You can book flights and reserve
+hotels in just a few clicks using your laptop or smartphone.
+
+But today, everything has gone online. You can book flights and reserve
+hotels in just a few clicks using your laptop or smartphone. The process
+is so fast that most people prefer travelling on their own without
+consulting any travel agent at all!
+
+This shift in the way travel is done has reduced the need for corporate
+travel managers to do their job personally. Instead, they now spend more
+of their time managing budgets and ensuring that all employees adhere to
+policies related to financial reporting. In addition to these tasks,
+corporate travel managers are also responsible for training employees on
+how to use various tools like Expedia and Orbitz so that they know how
+to find flight deals without having to go through the company\'s
+internal systems.
+
+## The process is so fast that most people prefer travelling on their own
+without consulting any travel agent at all!
+
+The Internet has made it possible for you to find prices and book travel
+without any help from a travel agent. It is also easy to find
+information about hotels, flights and car rental. If you have a problem
+with your flight, you can call the airline directly or contact them
+through their website.
+
+The process is so fast that most people prefer travelling on their own
+without consulting any travel agent at all!
+
+## Corporate travel managers play an important role in making your company
+run smoothly.
+
+Corporate travel managers play an important role in making your company
+run smoothly. They are responsible for managing the travel needs and
+requirements for an organization. They are better able to negotiate with
+travel agents, hotels, and airlines to get the best services at minimal
+cost. In addition to negotiating on behalf of companies, they help with
+organizing business trips and provide tactical direction specific to the
+industry they are in.
+
+## Conclusion
+
+Corporate travel managers are an essential part of any company that
+needs to make frequent business trips. They save companies money by
+negotiating lower rates with all types of travel suppliers and providing
+tactical direction specific to the industry they are in. They also help
+with organizing business trips and provide tactical direction specific
+to the industry they are in. Prior to the Internet, it was very
+difficult to find out about airfare and hotel prices but today
+everything has gone online so you can book flights or reserve hotels in
+just a few clicks using your laptop or smartphone! The process is so
+fast that most people prefer travelling on their own without consulting
+any travel agent at all!
+`
+	}
 ]
 	.map((post) => {
 		post.html = post.html?.replace(/^\t{3}/gm, '');
