@@ -3,6 +3,9 @@
 	import Button from './Button.svelte';
 	import Message from './Message.svelte';
 
+	const name = import.meta.env.VITE_META_NAME;
+	const domain = import.meta.env.VITE_META_DOMAIN;
+
 	export let className;
 
 	let user = {};
@@ -93,7 +96,6 @@
 	}
 </script>
 
-
 <section id="contact" class={className}>
 	<div class="form container">
 		<div class="form-text">
@@ -107,29 +109,33 @@
 				<Message {type} {msg} />
 			{/if}
 
-				<!-- <label for="input-name">FIRST NAME</label> -->
-				<input
-					id="input-name"
-					class="_req input"
-					placeholder="First name"
-					bind:value={user.name}
-					style={styles_name ? styles : ''}
-				/>
+			<!-- <label for="input-name">FIRST NAME</label> -->
+			<input
+				id="input-name"
+				class="_req input"
+				placeholder="First name"
+				bind:value={user.name}
+				style={styles_name ? styles : ''}
+			/>
 
-				<!-- <label for="input-email">EMAIL ADDRESS</label> -->
-				<input
-					id="input-email"
-					class="_req _email input"
-					placeholder="Email"
-					bind:value={user.email}
-					style={styles_mail ? styles : ''}
-				/>
+			<!-- <label for="input-email">EMAIL ADDRESS</label> -->
+			<input
+				id="input-email"
+				class="_req _email input"
+				placeholder="Email"
+				bind:value={user.email}
+				style={styles_mail ? styles : ''}
+			/>
 
 			<button type="submit" value="Subscribe now">Subscribe now</button>
-
 		</form>
 
-
+		<footer>
+			<p>
+				Say <a href="mailto:hello@{domain}?subject={name}">hello@{domain}</a>
+			</p>
+			<p>Call us at <a href="tel:+1-888-690-2044">+1-888-690-2044</a></p>
+		</footer>
 	</div>
 </section>
 
@@ -141,7 +147,7 @@
 		background-position-x: -10.5rem;
 	}
 
-	button{
+	button {
 		font-family: Work Sans;
 		font-weight: 700;
 		font-size: 2rem;
@@ -150,7 +156,7 @@
 		text-decoration: none;
 		text-align: center;
 		display: inline-block;
-		background: #0D9F8E;
+		background: #0d9f8e;
 		border-radius: 9999px;
 		border: none;
 		color: #fff;
@@ -162,15 +168,15 @@
 
 	button:hover {
 		background: #fff;
-		color: #0D9F8E;
+		color: #0d9f8e;
 	}
 
-	.contact-page{
+	.contact-page {
 		padding: 27rem 2rem 20rem 2rem;
-    	margin-top: -18rem;
+		margin-top: -18rem;
 	}
 
-	.blog{
+	.blog {
 		background: none;
 		padding: 23rem 2rem 10rem 2rem;
 	}
@@ -186,6 +192,11 @@
 		margin-top: 5rem;
 		display: flex;
 		justify-content: space-between;
+	}
+
+	footer {
+		margin: 4rem 0 0;
+		text-align: center;
 	}
 
 	input:focus {
@@ -255,16 +266,14 @@
 			margin: 1rem auto;
 		}
 
-		button{
+		button {
 			margin: 1rem auto 0 auto;
 		}
 
-		.contact-page{
+		.contact-page {
 			padding: 20rem 2rem;
 			margin-top: 0;
 		}
-
-
 	}
 
 	@media (max-width: 680px) {
@@ -276,9 +285,8 @@
 			width: 100%;
 			padding: 4rem 2rem;
 		}
-		.contact-page{
+		.contact-page {
 			padding: 15rem 2rem;
 		}
-
 	}
 </style>
