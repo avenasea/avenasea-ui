@@ -1,13 +1,20 @@
 <script>
 	import Link from '$components/Link.svelte';
+
+	const name = import.meta.env.VITE_META_NAME;
+	const domain = import.meta.env.VITE_META_DOMAIN;
 </script>
 
 <section class="container">
 	<h4>TEAM MEMBERS</h4>
 	<p class="title-p">
-		Cras feugiat nunc in accumsan pretium. Curabitur accumsan, lorem sed sodales pulvinar, felis
-		eros tincidunt.
+		We are proud to have assembled a team of top-tier talent in their specific domains. If you are
+		interested in talking to us please call or contact us:
 	</p>
+	<p>
+		Say <a href="mailto:hello@{domain}?subject={name}">hello@{domain}</a>
+	</p>
+	<p>Call us at <a href="tel:+1-888-690-2044">+1-888-690-2044</a></p>
 
 	<div class="team">
 		<div class="dev">
@@ -193,7 +200,7 @@
 	}
 
 	@media (max-width: 690px) {
-		section{
+		section {
 			padding: 7rem 2rem;
 		}
 		.team {
