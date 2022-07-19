@@ -37,9 +37,9 @@
 	<nav style={active ? "right: 0; top: 0; width: 100%; height: 35rem; padding: 7rem 3rem; background: #14235B; display: flex " : ""}>
 		<a href="/" class={`${url === '/' ? 'active' : ''}`}  on:click={close}>Home</a>
 		<!-- <a href="/"  on:click={close}>Hotels</a> -->
-		<a href="/about" class={`${url === '/about' ? 'active' : ''}`}  on:click={close}>About us</a>
+		<a href="/about" class={`${url === '/about' ? 'active' : ''}`}  on:click={close}>About Us</a>
 		<a href="/blog" class={`${url.includes('/blog') ? 'active' : ''}`}  on:click={close}>Blog</a>
-		<a href="/contact" class={`${url === '/contact' ? 'active' : ''}`}  on:click={close}>Contact us</a>
+		<a href="/contact" class={`${url === '/contact' ? 'active' : ''}`}  on:click={close}>Contact Us</a>
 
 	<hr size="8" width="100%">
 
