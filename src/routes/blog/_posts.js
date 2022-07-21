@@ -431,6 +431,50 @@ just a few clicks using your laptop or smartphone! The process is so
 fast that most people prefer travelling on their own without consulting
 any travel agent at all!
 `
+	},
+	{
+		title: 'What is a corporate travel and why is so important to hire a specialized agency?',
+		image: '/images/blog/corporate.jpg',
+		author: 'Marco Lanz',
+		category: 'news',
+		timestamp: new Date('2022-07-21'),
+		html: null,
+		markdown: `# What is Corporate Travel?
+
+Corporate Travel is a work tool used by many companies when bringing together their executives, clients or suppliers, who are in different locations, regardless of whether it is nationally or internationally.
+		
+Despite all the current means of communication that are available, such as Facebook, Telegram, Zoom, etc., in some cases companies consider it a key point that their employees can travel to meet personally in order to achieve better results.
+		
+The most effective way to make this process flow properly is to implement clear corporate travel policies and communicate them to employees, thus avoiding problems and gaining better control over expenses.
+		
+It is important that this set of rules be written down to ensure that executives are aware of them so that they can enforce compliance.
+Among the aspects that must be addressed when establishing these travel policies we have: the rules for travel, classes or hierarchies to choose, prior approval processes, among others.
+		
+## Avenasea offers the best prices when planning your trips
+		
+If corporate trips are frequent in your company, it is best to hire an external agency such as Avenasea, to take care of all the management at an economical price, without the bureaucracy required by large travel agencies.
+		
+Although the objective of a corporate trip is the effective culmination of all its goals, it is important that this can be accomplished respecting the costs destined for it. Some companies even calculate the "return" on the investment they are making in their corporate travel.
+		
+Our specialized team can help you save on unnecessary expenses so that your employees and clients can enjoy their well-deserved rest to the fullest.
+				
+Having a specialized travel agency like Avenasea can help you achieve the best planning for your corporate travel, so that your employees can make the most of this rewarding experience.
+		
+### What services we offer to our customers
+		
+1. Contacting suppliers and reaching agreements, depending on the number of trips, being able to get discounts in airlines, hotels and restaurants. 
+		
+2. Our specialized team can help you get the best reservations at a lower cost.
+		
+3. We help you to plan your trips with time to be able to make comparisons between various alternatives for accommodation, transfers, meals, among others.
+		
+4. We use technologies such as online comparators, mobile apps, to better manage travel without complications and take advantage of their offers.
+		
+So, don't wait any longer and contact us.
+		
+		
+		
+`
 	}
 ]
 	.map((post) => {
