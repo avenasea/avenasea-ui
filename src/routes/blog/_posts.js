@@ -433,7 +433,7 @@ any travel agent at all!
 `
 	},
 	{
-		title: 'What is a corporate travel and why is so important to hire a specialized agency?',
+		title: 'What is corporate travel and why is so important to hire a specialized agency?',
 		image: '/images/blog/corporate.jpg',
 		author: 'Marco Lanz',
 		category: 'news',
