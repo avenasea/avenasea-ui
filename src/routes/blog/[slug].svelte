@@ -80,9 +80,8 @@
 			</div>
 		</div>
 		<div class="post-card">
-			<span class="color-heading">Etiam et arcu enim</span>
-			<h2>Nam interdum velit ut lorem</h2>
-			<p>Nullam fermentum accumsan nibh, in ultricies elit lacinia in. Etiam viverra vel magna ut ultricies.</p>
+			<span class="color-heading">Negotiate the best hotel RFPs in the industry</span>
+			<p>We have vast experience building applications in the hotel RFP space.</p>
 			<Button className={'card'} content={'Learn more'} href={'/'}/>
 		</div>
 	</div>
