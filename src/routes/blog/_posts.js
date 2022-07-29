@@ -475,6 +475,54 @@ So, don't wait any longer and contact us.
 		
 		
 `
+	},
+	{
+		title: 'Steps to manage corporate travel',
+		image: '/images/blog/corporate1.jpg',
+		author: 'Marco Lanz',
+		category: 'news',
+		timestamp: new Date('2022-07-29'),
+		html: null,
+		markdown: `
+
+A corporate travel manager must find harmony in a travel management approach that is functional and helps you control your company's expenses to save as much as possible.
+		
+A well-implemented travel system results in productive, cost-effective and well-organized business travel - and satisfied travelers! 
+		
+Here are some essential steps to choose the best travel management proposal to match your company's travel policy.
+		
+1. Identify the advantages and disadvantages of your current approach
+The first thing to consider is to check which categories are met to make it an optimal proposal and which problems you need to solve. Once you have done this review, you will have a clearer idea of the solution you should choose. 
+### The most common categories in business travel management methods are:
+Manage the booking directly on leisure travel management websites (Booking.com, Expedia, Kayak, Trivago...).
+Manage the booking in travel agencies or travel management companies.
+Use specialized tools such as virtual travel assistance chatbots.
+Use specific travel management tools for companies.
+Use travel management platforms. 
+2. Planning and booking business travel shouldn't take forever.
+Our tools allow executives to book policy-compliant travel in minutes through our online platform, transforming time spent booking travel into time spent getting work done.
+3. Determine the criteria for choosing a business trip for your company.
+Once you have established the specific issues your company has, it will be easier to determine which criteria are important to your company when choosing a travel management option.
+In addition to the criteria, you need to define the specific features your company should look for such as:
+Equipping a particular executive's options for accessing low-cost flights and hotels.
+Obtain a simple, easy and fast procedure for managers.
+Achieve a customer service that is available 24 hours a day, without surcharges or commissions.
+Unify the actions and procedures in the same web site without having to jump to other pages or redirections.		
+4. Execute the travel plan of each staff member 
+Execute your travel plan by faces, paying attention, first of all, to the director of the corporate travel department, who will start the booking process of all company trips, inviting some employees who will carry out their business trip. 
+5. A solid expense accounting makes future business travel easier
+Business travelers need to know how to record their expenses and the process needs to be quick and easy. The best solution to achieve this is to use a travel booking platform or expense/accounting software like the one we offer at Avenasea. 
+	
+By following these steps, you can ensure a smooth implementation of the best travel management platform for your company.
+		
+1. Get a head start by adding the details of the executives in your company who will use the new tool the most so that they can start using it right away.
+2. Define the limits of your company's travel policy and set up approval procedures before sending invitations to employees.
+3. Spread the name of the platform throughout the company so that employees know as soon as possible what they will need for their business travel.
+4. Set up a financial reporting procedure for the financial reporting department.
+5. Plan and write an introductory message that clarifies instructions to the employees you will invite to join.
+		
+		
+`
 	}
 ]
 	.map((post) => {
