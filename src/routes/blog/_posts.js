@@ -588,7 +588,7 @@ The main purpose of this trip is to review the operation of your company's offic
 		
 This is one of the business trips that will please your staff the most, because it seeks to create and strengthen interpersonal and working relationships. The main objective of this trip is to motivate the work team after the execution of a good project, so that the leisure time and the time dedicated to work will keep your executives happy.
 		
-7. Training travels
+# 7. Training travels
 		
 In this type of trip, employees receive some kind of training to better perform their work in a certain area or to learn about a new work method or industry trend, generally they are short trips, one or two days.
 	
