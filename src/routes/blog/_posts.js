@@ -475,6 +475,124 @@ So, don't wait any longer and contact us.
 		
 		
 `
+	},
+	{
+		title: 'Steps to manage corporate travel',
+		image: '/images/blog/corporate1.jpg',
+		author: 'Marco Lanz',
+		category: 'news',
+		timestamp: new Date('2022-07-29'),
+		html: null,
+		markdown: `
+
+A corporate travel manager must find harmony in a travel management approach that is functional and helps you control your company's expenses to save as much as possible.
+		
+A well-implemented travel system results in productive, cost-effective and well-organized business travel - and satisfied travelers! 
+		
+Here are some essential steps to choose the best travel management proposal to match your company's travel policy.
+		
+### 1. Identify the advantages and disadvantages of your current approach
+The first thing to consider is to check which categories are met to make it an optimal proposal and which problems you need to solve. Once you have done this review, you will have a clearer idea of the solution you should choose. 
+
+ ### The most common categories in business travel management methods are:
+-Manage the booking directly on leisure travel management websites (Booking.com, Expedia, Kayak, Trivago...).
+
+-Manage the booking in travel agencies or travel management companies.
+
+-Use specialized tools such as virtual travel assistance chatbots.
+
+-Use specific travel management tools for companies.
+
+-Use travel management platforms. 
+
+### 2. Planning and booking business travel shouldn't take forever.
+Our tools allow executives to book policy-compliant travel in minutes through our online platform, transforming time spent booking travel into time spent getting work done.
+### 3. Determine the criteria for choosing a business trip for your company.
+Once you have established the specific issues your company has, it will be easier to determine which criteria are important to your company when choosing a travel management option.
+In addition to the criteria, you need to define the specific features your company should look for such as:
+Equipping a particular executive's options for accessing low-cost flights and hotels.
+Obtain a simple, easy and fast procedure for managers.
+Achieve a customer service that is available 24 hours a day, without surcharges or commissions.
+Unify the actions and procedures in the same web site without having to jump to other pages or redirections.		
+### 4. Execute the travel plan of each staff member 
+Execute your travel plan by faces, paying attention, first of all, to the director of the corporate travel department, who will start the booking process of all company trips, inviting some employees who will carry out their business trip. 
+### 5. A solid expense accounting makes future business travel easier
+Business travelers need to know how to record their expenses and the process needs to be quick and easy. The best solution to achieve this is to use a travel booking platform or expense/accounting software like the one we offer at Avenasea. 
+	
+By following these steps, you can ensure a smooth implementation of the best travel management platform for your company.
+		
+1. Get a head start by adding the details of the executives in your company who will use the new tool the most so that they can start using it right away.
+2. Define the limits of your company's travel policy and set up approval procedures before sending invitations to employees.
+3. Spread the name of the platform throughout the company so that employees know as soon as possible what they will need for their business travel.
+4. Set up a financial reporting procedure for the financial reporting department.
+5. Plan and write an introductory message that clarifies instructions to the employees you will invite to join.
+		
+		
+`
+	},
+	{
+		title: 'Know the benefits of corporates travels',
+		image: '/images/blog/corporate2.jpg',
+		author: 'Marco Lanz',
+		category: 'news',
+		timestamp: new Date('2022-07-29'),
+		html: null,
+		markdown: `
+
+Organizing a business trip is an enriching experience for your company. Corporate travels are essential for the development of any company, either to establish direct contact with employees or to strengthen relationships with other companies.
+		
+### Corporate travel has the following benefits
+		
+- Establish new partnerships with other companies.
+
+- Discover new countries and business opportunities.
+
+- Expand a company's customer base by increasing revenue.
+
+- Broaden the distribution and promotion channels of a product, good or service.
+
+- Learn about other products for new projections in products, goods and services.
+
+- Your employees can learn new languages, to establish new links.
+		
+Business trips do not always have the same objective, there is always something that differentiates them, since each one of them is carried out looking for different purposes according to the interests of your company.
+		
+### Here are some typologies that will stand out in your business area
+		 
+# 1. Business travel
+		
+One of the positive aspects of this type of business trip is that it allows the company to know which could be its potential clients, as well as the distribution and promotion channels of its products, goods or services, allowing it to negotiate new contracts or carry out new renewals.
+		
+# 2. Executive travel
+		
+Executive trips are usually made by senior executives of the company with the purpose of establishing and strengthening relationships with other companies. These trips are used to conquer new alliances with suppliers, adjust pending collaborations, concession of facilities, or also to inform about a project they are carrying out together.
+		
+The links through digital channels are dispensable for business relationships where there is a direct and personal contact, as they are executed with greater seriousness, speed and strength.
+		
+# 3. Internal meetings
+		
+As a recommendation for this type of travel, the logistics must be perfect, also you have to know how to use automation tools that allow you to carry out the planning optimally, since in this type of internal meetings gather all the most important executives of the company.
+		
+# 4. Events, congresses or conventions
+		
+These types of events are held throughout the year, bringing together a large number of people, and are mandatory attendance due to the advantages they can bring to your company.
+		
+These events serve to expand your network of contacts, as well as to learn from other companies, allowing you to study your competition and your area of activity.
+		
+# 5. Technical trips
+		
+Technical trips can be given individually, by department or include all members of a team.
+The main purpose of this trip is to review the operation of your company's offices, an inauguration or to study new working methods in their respective new headquarters.
+		
+# 6. Incentive trips
+		
+This is one of the business trips that will please your staff the most, because it seeks to create and strengthen interpersonal and working relationships. The main objective of this trip is to motivate the work team after the execution of a good project, so that the leisure time and the time dedicated to work will keep your executives happy.
+		
+# 7. Training travels
+		
+In this type of trip, employees receive some kind of training to better perform their work in a certain area or to learn about a new work method or industry trend, generally they are short trips, one or two days.
+	
+`
 	}
 ]
 	.map((post) => {
