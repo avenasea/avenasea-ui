@@ -541,7 +541,7 @@ By following these steps, you can ensure a smooth implementation of the best tra
 
 Organizing a business trip is an enriching experience for your company. Corporate travels are essential for the development of any company, either to establish direct contact with employees or to strengthen relationships with other companies.
 		
-### Corporate travel has the following benefits
+## Corporate travel has the following benefits
 		
 - Establish new partnerships with other companies.
 
@@ -557,40 +557,90 @@ Organizing a business trip is an enriching experience for your company. Corporat
 		
 Business trips do not always have the same objective, there is always something that differentiates them, since each one of them is carried out looking for different purposes according to the interests of your company.
 		
-### Here are some typologies that will stand out in your business area
+## Here are some typologies that will stand out in your business area
 		 
-# 1. Business travel
+### 1. Business travel
 		
 One of the positive aspects of this type of business trip is that it allows the company to know which could be its potential clients, as well as the distribution and promotion channels of its products, goods or services, allowing it to negotiate new contracts or carry out new renewals.
 		
-# 2. Executive travel
+### 2. Executive travel
 		
 Executive trips are usually made by senior executives of the company with the purpose of establishing and strengthening relationships with other companies. These trips are used to conquer new alliances with suppliers, adjust pending collaborations, concession of facilities, or also to inform about a project they are carrying out together.
 		
 The links through digital channels are dispensable for business relationships where there is a direct and personal contact, as they are executed with greater seriousness, speed and strength.
 		
-# 3. Internal meetings
+### 3. Internal meetings
 		
 As a recommendation for this type of travel, the logistics must be perfect, also you have to know how to use automation tools that allow you to carry out the planning optimally, since in this type of internal meetings gather all the most important executives of the company.
 		
-# 4. Events, congresses or conventions
+### 4. Events, congresses or conventions
 		
 These types of events are held throughout the year, bringing together a large number of people, and are mandatory attendance due to the advantages they can bring to your company.
 		
 These events serve to expand your network of contacts, as well as to learn from other companies, allowing you to study your competition and your area of activity.
 		
-# 5. Technical trips
+### 5. Technical trips
 		
 Technical trips can be given individually, by department or include all members of a team.
 The main purpose of this trip is to review the operation of your company's offices, an inauguration or to study new working methods in their respective new headquarters.
 		
-# 6. Incentive trips
+### 6. Incentive trips
 		
 This is one of the business trips that will please your staff the most, because it seeks to create and strengthen interpersonal and working relationships. The main objective of this trip is to motivate the work team after the execution of a good project, so that the leisure time and the time dedicated to work will keep your executives happy.
 		
-# 7. Training travels
+### 7. Training travels
 		
 In this type of trip, employees receive some kind of training to better perform their work in a certain area or to learn about a new work method or industry trend, generally they are short trips, one or two days.
+	
+`
+	},
+	{
+		title: 'Key points to consider for travel in 2022',
+		image: '/images/blog/executive.jpg',
+		author: 'Marco Lanz',
+		category: 'news',
+		timestamp: new Date('2022-08-05'),
+		html: null,
+		markdown: `
+		
+We have gone through two years of uncertainty, measures, restrictions and many changes in our personal and working lives, but we can say that in 2022 corporate travel is back.
+		
+Our whole environment has been affected, from corporate decisions, to company travel policy. Therefore, it is necessary to study and restructure all aspects that affect travel.
+		
+Fortunately, vaccinations and prevention have allowed us to return to travel of all kinds, but not everything is back to normal. 
+		
+If you are afraid of getting lost among so many restrictions and limitations or you are not sure how you should organize your company's next corporate travel. 
+		
+Here is a selection of important points to consider for corporate travel in 2022.
+		
+### Choose a travel agency 
+		
+First of all, you must choose a travel agency that suits your tastes. Today there are thousands of virtual agencies, however, Avenasea has trained and updated personnel in the area of corporate travel to carry out the trip of your dreams.
+		
+Depending on each company's travel policy and guidelines, we can advise you in the best way for your trips to be carried out in the most optimal way possible.
+		
+We can help you plan everything from booking accommodation to the most comfortable transportation option or the one that best fits your budget. Whatever trip we plan, we will be choosing the best options available for you.
+		
+### Safety and comfort
+		
+Each country, region and even organization has a specific security protocol to prevent mass Covid infection. It is important to take this into account when selecting both accommodation and transportation, as we do not want to expose your workers to possible contagions or uncontrolled environments.
+		
+Comfort is a key consideration before planning travel so that workers can enjoy a relaxed and calm environment while conducting meetings.
+		
+The balance between safety and comfort is the key to an excellent business trip.
+		
+### Study travel schedules
+		
+When planning corporate travel in this post-pandemic era, the company's calendar should be well studied in order to be able to space out travel dates and avoid any type of mishap that may exist.
+		
+In this sense, it is not necessary to extend the trips more than necessary. This means that two meetings could be grouped on the same day to expedite travel, shortening the time that workers are exposed away from home.
+		
+### Minimize bureaucracy
+		
+One of the most common complaints of workers is the work they have to do when it comes to submitting the expense control after each trip, since for many of them this exhausting task is perceived as a great waste of time. 
+		
+To streamline this activity you can acquire a travel management software that will help make life easier for your employees. This tool is sure to be appreciated.
+		
 	
 `
 	}
