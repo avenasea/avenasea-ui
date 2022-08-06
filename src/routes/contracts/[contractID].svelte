@@ -22,6 +22,7 @@
 	import Ajv from 'ajv';
 	import addFormats from 'ajv-formats';
 	import HistorySection from '$components/contracts/HistorySection.svelte';
+	import CommentSection from '$components/contracts/CommentSection.svelte';
 
 	export let contractID: string;
 	let contract: Contract;
@@ -110,7 +111,9 @@
 										<p>{key}: {val}</p>
 									{/each}
 								</CollapsableSection>
-								<CollapsableSection collapsed={true} heading={'Comments'} />
+								<CollapsableSection collapsed={true} heading={'Comments'}>
+									<CommentSection bind:contractData={contract} {fieldName} />
+								</CollapsableSection>
 								<CollapsableSection collapsed={true} heading={'History'}>
 									<HistorySection historyArray={contract.changeHistory[fieldName]} />
 								</CollapsableSection>
