@@ -20,9 +20,8 @@
 	let borderColor = `rgb(${level * 30}, ${level * 30}, 210)`;
 
 	$: {
-		allFieldComments = contractData.comments.filter((el) => el.field == fieldName);
-		comments = allFieldComments.filter((el) => el.parentID == parentID);
-		console.log(comments);
+		allFieldComments = contractData?.comments?.filter((el) => el.field == fieldName);
+		comments = allFieldComments?.filter((el) => el.parentID == parentID);
 	}
 
 	const updateField = async (id) => {
@@ -46,7 +45,11 @@
 	};
 </script>
 
-<section class="comment-section" style={`margin-left: 1em; border-color:${borderColor};`}>
+<section
+	class:child-comment-section={level != 1}
+	class="comment-section"
+	style={`border-color:${borderColor};`}
+>
 	<Message {type} {msg} />
 
 	{#if comments?.length > 0}
@@ -62,14 +65,16 @@
 					)}
 				</h4>
 				<p>{comment.text}</p>
-				<a
-					href="javascript:void(0)"
-					on:click={() => (showReplyInput[comment.id] = !showReplyInput[comment.id])}>Reply</a
+				<button
+					class="text-btn"
+					on:click|preventDefault={() => (showReplyInput[comment.id] = !showReplyInput[comment.id])}
+					>Reply</button
 				>
 				{#if allFieldComments.some((c) => c.parentID == comment.id)}
-					<a
-						href="javascript:void(0)"
-						on:click={() => (showChildren[comment.id] = !showChildren[comment.id])}>Show Replies</a
+					<button
+						class="text-btn"
+						on:click|preventDefault={() => (showChildren[comment.id] = !showChildren[comment.id])}
+						>&nbsp; {showChildren[comment.id] ? `Hide` : `Show`} Replies</button
 					>
 				{/if}
 				{#if showReplyInput[comment.id]}
@@ -97,9 +102,12 @@
 </section>
 
 <style>
-	.comment-section {
-		padding: 0.8em;
+	.child-comment-section {
+		margin-left: 0.6em !important;
 		border-left: 2px solid;
+	}
+	.comment-section {
+		padding: 0.8em 0 0.8em 0.8em;
 		margin: 0.4em 0;
 	}
 	.comment-container {

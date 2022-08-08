@@ -90,6 +90,13 @@ a:visited {
 	padding: 0;
 	margin: 1.2rem 0;
 }
+
+.text-btn {
+	border: none;
+	padding: 0;
+	background: none;
+	cursor: pointer;
+}
 /* 
 .tags li {
 	display: inline-flex;
