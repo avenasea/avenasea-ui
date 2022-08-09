@@ -95,6 +95,12 @@
 		<form on:submit|preventDefault={() => {}}>
 			{#if schemaObject}
 				<h1>Contract name: {contract.name}</h1>
+				<h3>Parties:</h3>
+				<ul>
+					{#each contract.parties as user}
+						<li>{user.username}</li>
+					{/each}
+				</ul>
 				<h3>Modules:</h3>
 				{#each Object.entries(splitObject) as [moduleName, moduleValue]}
 					<CollapsableSection collapsed={true} heading={moduleName}>
