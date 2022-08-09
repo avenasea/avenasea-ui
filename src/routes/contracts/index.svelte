@@ -20,7 +20,7 @@
 		msg = '';
 		type = '';
 		try {
-			const res = await new Contracts().create({ name });
+			const res = await new Contracts().create(newContractData);
 			if (res.id) goto(`/contracts/${res.id}`);
 		} catch (err) {
 			msg = err.message;
@@ -39,11 +39,7 @@
 	<h2>Create a new contract</h2>
 	<label for="name">Contract Name</label>
 	<input type="text" id="name" bind:value={newContractData.name} />
-	<UserEditableList
-		label="Add user by email:"
-		type="email"
-		bind:list={newContractData.otherParties}
-	/>
+	<UserEditableList label="Add user by email:" type="email" bind:list={newContractData.parties} />
 	<button>Create</button>
 </form>
 
