@@ -4,12 +4,13 @@
 	import Contracts from '$api/contracts';
 	import { goto } from '$app/navigation';
 	import Message from '$components/Message.svelte';
+	import UserEditableList from '$components/form/UserEditableList.svelte';
 
 	let me;
 	let msg;
 	let type;
 
-	let name;
+	let newContractData = {};
 
 	onMount(async () => {
 		me = await new User(fetch).me();
@@ -37,7 +38,12 @@
 <form on:submit|preventDefault={create}>
 	<h2>Create a new contract</h2>
 	<label for="name">Contract Name</label>
-	<input type="text" id="name" bind:value={name} />
+	<input type="text" id="name" bind:value={newContractData.name} />
+	<UserEditableList
+		label="Add user by email:"
+		type="email"
+		bind:list={newContractData.otherParties}
+	/>
 	<button>Create</button>
 </form>
 
