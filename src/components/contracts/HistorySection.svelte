@@ -2,10 +2,10 @@
 	import type { Contract } from '$types/contract';
 	import { formatDistance } from 'date-fns';
 
-	export let historyArray: Contract['changeHistory']['key'] = [];
+	export let historyArray: Contract['changeHistory']['key'];
 </script>
 
-{#if historyArray.length == 0}
+{#if !historyArray || historyArray?.length == 0}
 	<h4>Unchanged</h4>
 {:else}
 	{#each historyArray as h}
