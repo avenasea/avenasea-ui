@@ -1,5 +1,6 @@
 <script context="module">
 	import Contracts from '$api/contracts';
+	import { userStore } from '$stores/user.js';
 
 	export async function load({ fetch, params }) {
 		const { contractID } = params;
@@ -76,6 +77,19 @@
 			// type = 'error';
 		}
 	};
+	const updateApproval = async (fieldName, choice: 'approved' | 'rejected') => {
+		try {
+			const res = await new Contracts().approveField(contractID, { fieldName, choice });
+			const index = contract.parties.findIndex((user) => user.userID == res.userID);
+			if (typeof index !== 'undefined')
+				contract.parties[index].fieldsApproved[fieldName] = { choice };
+			console.log(contract.parties[index]);
+		} catch (err) {
+			console.error(err);
+			// msg = err.message;
+			// type = 'error';
+		}
+	};
 
 	onMount(async () => {
 		contract = await new Contracts().getById(contractID);
@@ -123,6 +137,15 @@
 								<CollapsableSection collapsed={true} heading={'History'}>
 									<HistorySection historyArray={contract.changeHistory[fieldName]} />
 								</CollapsableSection>
+								<CollapsableSection collapsed={true} heading={'Approval Details'}>
+									<ul>
+										{#each contract.parties as user}
+											<li>
+												{user.username}: {user.fieldsApproved?.[fieldName]?.choice || 'awaiting'}
+											</li>
+										{/each}
+									</ul>
+								</CollapsableSection>
 								<h3>Current Value: {contract.currentData[fieldName] || 'Not set'}</h3>
 								<label for={`val-${fieldName}`}>Change value:</label>
 								{#if fieldValue.type == 'number'}
@@ -150,6 +173,14 @@
 									on:click|preventDefault={() => updateField(fieldName, finalObject[fieldName])}
 									>Submit</button
 								>
+								<div class="approval-container">
+									<button class="approve-btn" on:click={() => updateApproval(fieldName, 'approved')}
+										>Approve</button
+									>
+									<button class="reject-btn" on:click={() => updateApproval(fieldName, 'rejected')}
+										>Reject</button
+									>
+								</div>
 							</fieldset>
 							<hr />
 						{/each}
@@ -174,5 +205,13 @@
 	}
 	.text-container {
 		display: flex;
+	}
+	.approval-container > button {
+		margin: 0.3em;
+		font-size: 19px;
+		padding: 0.8rem 1.7rem;
+	}
+	.approve-btn {
+		background-color: green;
 	}
 </style>

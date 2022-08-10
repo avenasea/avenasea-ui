@@ -54,6 +54,7 @@ form button {
 	background-color: red;
 	border-color: red;
 	color: white;
+	cursor: pointer;
 }
 
 form footer {
