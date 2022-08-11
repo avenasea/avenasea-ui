@@ -24,6 +24,11 @@ export interface Contract {
 	parties: {
 		userID: DbID;
 		creator: boolean;
+		fieldsApproved: {
+			[key: FieldKey]: {
+				choice: 'approved' | 'rejected';
+			};
+		};
 		username?: string;
 	}[];
 	JSONschema: Record<any, any>;

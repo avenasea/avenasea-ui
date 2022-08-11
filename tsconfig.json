@@ -28,6 +28,7 @@
 			"$components": ["src/components"],
 			"$components/*": ["src/components/*"],
 			"$stores": ["src/stores"],
+			"$stores/*": ["src/stores/*"],
 			"$api": ["src/api"],
 			"$api/*": ["src/api/*"],
 			"$types": ["src/types"],
