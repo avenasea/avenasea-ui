@@ -16,6 +16,10 @@ class Jobs extends Api {
 	async updateField(id, data) {
 		return await this.api(`/contracts/${id}/update-field`, data, { method: 'POST' });
 	}
+
+	async createComment(id, data) {
+		return await this.api(`/contracts/${id}/comments`, data, { method: 'POST' });
+	}
 	
 }
 
