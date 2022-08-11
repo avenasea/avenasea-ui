@@ -24,7 +24,6 @@ class Jobs extends Api {
 	async approveField(id, data) {
 		return await this.api(`/contracts/${id}/approve-field`, data, { method: 'POST' });
 	}
-	
 }
 
 export default Jobs;
