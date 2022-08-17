@@ -1,8 +1,9 @@
 <script lang="ts">
-	import type { Contract } from '$types/contract';
+	import type { ChangeHistory, Contract } from '$types/contract';
 	import { formatDistance } from 'date-fns';
 
-	export let historyArray: Contract['changeHistory']['key'];
+	export let historyArray: ChangeHistory[];
+	export let parties: Contract['parties'];
 </script>
 
 {#if !historyArray || historyArray?.length == 0}
@@ -10,12 +11,10 @@
 {:else}
 	{#each historyArray as h}
 		<div class="history-container">
-			<!-- TODO: real username -->
 			<h4>
-				{formatDistance(new Date(h.timestamp), new Date(), { addSuffix: true })} by {h.userID.slice(
-					0,
-					6
-				)}
+				{formatDistance(new Date(h.timestamp), new Date(), { addSuffix: true })} by {parties.find(
+					(p) => p.userID == h.userID
+				).username}
 			</h4>
 			<p class="from">- {h.changedFrom}</p>
 			<p class="to">+ {h.changedTo}</p>

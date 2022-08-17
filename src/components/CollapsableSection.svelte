@@ -1,10 +1,21 @@
 <script>
+	import { createEventDispatcher } from 'svelte';
 	export let heading = '';
 	export let collapsed = false;
+
+	const dispatch = createEventDispatcher();
+
+	const clicked = () => {
+		dispatch('click');
+		collapsed = !collapsed;
+	};
+	const hovered = () => {
+		dispatch('hover');
+	};
 </script>
 
 <section>
-	<h3 on:click={() => (collapsed = !collapsed)}>{heading} {collapsed ? '↓' : '↑'}</h3>
+	<h3 on:click={clicked} on:pointerenter={hovered}>{heading} {collapsed ? '↓' : '↑'}</h3>
 	{#if !collapsed}
 		<slot />
 	{/if}
