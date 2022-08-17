@@ -8,11 +8,11 @@
 	export let fieldName: string;
 	export let parentID = null;
 	export let level = 0;
+	export let allFieldComments: Comment[];
 	let comments: Comment[];
 	let replyText = {};
 	let showReplyInput = {};
 	let showChildren = {};
-	let allFieldComments: Comment[] = [];
 	let type;
 	let msg;
 
@@ -20,7 +20,6 @@
 	let borderColor = `rgb(${level * 30}, ${level * 30}, 210)`;
 
 	$: {
-		allFieldComments = contractData?.comments?.filter((el) => el.field == fieldName);
 		comments = allFieldComments?.filter((el) => el.parentID == parentID);
 	}
 
@@ -34,7 +33,7 @@
 				fieldName
 			});
 
-			contractData.comments = [...contractData.comments, res];
+			allFieldComments = [...allFieldComments, res];
 			replyText[id] = '';
 			showChildren[id] = true;
 			showReplyInput[id] = false;
@@ -87,7 +86,13 @@
 
 			<!-- recursive CommentSection when comment has children -->
 			{#if showChildren[comment.id] && allFieldComments.some((c) => c.parentID == comment.id)}
-				<svelte:self bind:contractData {fieldName} {level} parentID={comment.id} />
+				<svelte:self
+					{contractData}
+					{fieldName}
+					{level}
+					parentID={comment.id}
+					bind:allFieldComments
+				/>
 			{/if}
 		{/each}
 	{/if}

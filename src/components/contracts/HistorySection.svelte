@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { Contract } from '$types/contract';
+	import type { ChangeHistory } from '$types/contract';
 	import { formatDistance } from 'date-fns';
 
-	export let historyArray: Contract['changeHistory']['key'];
+	export let historyArray: ChangeHistory[];
 </script>
 
 {#if !historyArray || historyArray?.length == 0}
