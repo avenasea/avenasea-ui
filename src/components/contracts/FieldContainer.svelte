@@ -89,7 +89,7 @@
 			/>
 		</CollapsableSection>
 		<CollapsableSection collapsed={true} heading={'History'}>
-			<HistorySection historyArray={fieldData.changeHistory} />
+			<HistorySection historyArray={fieldData.changeHistory} parties={contract.parties} />
 		</CollapsableSection>
 		<CollapsableSection collapsed={true} heading={'Approval Details'}>
 			<ul>
