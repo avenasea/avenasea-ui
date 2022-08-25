@@ -100,6 +100,9 @@
 				{/each}
 			</ul>
 		</CollapsableSection>
+		<h3>
+			Previous Value: {fieldData?.changeHistory?.slice(-1)?.[0]?.changedFrom || ''}
+		</h3>
 		<h3>Current Value: {fieldData.currentValue || 'Not set'}</h3>
 		<label for={`val-${fieldData.fieldName}`}>Change value:</label>
 		{#if fieldData.schemaData.type == 'number'}
