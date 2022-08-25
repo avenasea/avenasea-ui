@@ -5,6 +5,10 @@ class Jobs extends Api {
 		super(fetch);
 	}
 
+	async getMyContracts() {
+		return await this.api('/contracts');
+	}
+
 	async create(data) {
 		return await this.api('/contracts', data, { method: 'POST' });
 	}
