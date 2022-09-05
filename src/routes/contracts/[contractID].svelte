@@ -15,19 +15,26 @@
 </script>
 
 <script lang="ts">
-	import type { Contract } from '$types/contract';
+	import type { Contract, ContractField } from '$types/contract';
 	import { onMount } from 'svelte';
 	import CollapsableSection from '$components/CollapsableSection.svelte';
 	import FieldContainer from '$components/contracts/FieldContainer.svelte';
+	import { getStatusSummary } from '$lib/getStatusSummary';
 
 	export let contractID: string;
 	let contract: Contract;
 	let splitObject = {};
 
+	let totalApprovedFields = 0;
+	$: totalApprovedFields = contract?.fields?.filter(
+		(val) => val.statusSummary == 'fullyApproved'
+	).length;
+
 	onMount(async () => {
 		contract = await new Contracts().getById(contractID);
 		contract.fields.forEach((val) => {
 			if (!splitObject[val.schemaData.module]) splitObject[val.schemaData.module] = {};
+			val.statusSummary = getStatusSummary(val, contract.parties);
 			splitObject[val.schemaData.module][val.fieldName] = val;
 		});
 	});
@@ -43,6 +50,7 @@
 					<li>{user.username}</li>
 				{/each}
 			</ul>
+			<h3>Fields Approved: {totalApprovedFields}/{contract.fields.length}</h3>
 			<h3>Modules:</h3>
 			{#each Object.entries(splitObject) as [moduleName, moduleValue]}
 				<CollapsableSection collapsed={true} heading={moduleName}>
