@@ -24,6 +24,13 @@ export interface ContractField {
 	currentValue: string | Date | number | null;
 	changeHistory: ChangeHistory[] | [];
 	comments: Comment[] | [];
+	statusSummary:
+		| 'fullyApproved'
+		| 'awaitingMe'
+		| 'awaitingOther'
+		| 'rejectedByMe'
+		| 'rejectedByOther'
+		| 'unset';
 	approvalStatus:
 		| {
 				userID: UUID;

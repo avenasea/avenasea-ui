@@ -6,11 +6,22 @@
 	import DateInput from '$components/DateInput.svelte';
 	import Contracts from '$api/contracts';
 	import schemaValidation from '$lib/schemaValidation';
+	import { getStatusSummary } from '$lib/getStatusSummary';
+	import { userStore } from '$stores/user';
 
 	export let contract: Contract;
 	export let fieldData: ContractField;
 	let newFieldValue: unknown;
 	let error: true | string;
+
+	$: updateStatusSummary(fieldData.approvalStatus);
+	const updateStatusSummary = (_) => {
+		fieldData.statusSummary = getStatusSummary(fieldData, contract.parties);
+		const index = contract.fields.findIndex((val) => val.fieldName == fieldData.fieldName);
+		contract.fields[index].statusSummary = fieldData.statusSummary;
+		contract.fields[index].approvalStatus = fieldData.approvalStatus;
+		contract.fields[index].currentValue = fieldData.currentValue;
+	};
 
 	let loaded = false;
 	const triggerLoad = async () => {
@@ -36,9 +47,9 @@
 				fieldName: fieldData.fieldName,
 				value: newFieldValue
 			});
-			fieldData.changeHistory = [...fieldData.changeHistory, res];
-			fieldData.currentValue = res.changedTo;
-			fieldData.approvalStatus = {};
+			fieldData.changeHistory = [...fieldData.changeHistory, res.changeData];
+			fieldData.currentValue = res.changeData.changedTo;
+			fieldData.approvalStatus = res.approvalStatus;
 		} catch (err) {
 			console.error(err);
 			// msg = err.message;
@@ -52,7 +63,7 @@
 				fieldName: fieldData.fieldName,
 				choice
 			});
-			fieldData.approvalStatus[res.userID] = { choice };
+			fieldData.approvalStatus[$userStore.id] = { choice };
 		} catch (err) {
 			console.error(err);
 			// msg = err.message;
@@ -70,6 +81,7 @@
 <CollapsableSection
 	collapsed={true}
 	heading={fieldData.fieldName}
+	statusSummary={fieldData.statusSummary}
 	on:click={triggerLoad}
 	on:hover={() => {
 		/*triggerLoad()*/
