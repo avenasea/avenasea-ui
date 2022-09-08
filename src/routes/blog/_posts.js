@@ -1,5 +1,5 @@
 import slugify from 'slugify';
-import in_a from 'in-a-nutshell';
+import { stripHtml } from 'string-strip-html';
 import keyword_extractor from 'keyword-extractor';
 
 const posts = [
@@ -649,7 +649,7 @@ To streamline this activity you can acquire a travel management software that wi
 		post.html = post.html?.replace(/^\t{3}/gm, '');
 		post.markdown = post.markdown?.replace(/^\t{3}/gm, '');
 		post.slug = slugify(post.title, { lower: true });
-		post.summary = in_a.nutshell(post.html || post.markdown, 3);
+		post.summary = ((post.html && stripHtml(post.html).result) || post.markdown).slice(0, 255);
 		post.tags = keyword_extractor
 			.extract(`${post.title} - ${post.html || post.markdown}`, {
 				language: 'english',
