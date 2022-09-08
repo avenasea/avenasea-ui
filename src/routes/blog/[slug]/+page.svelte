@@ -84,7 +84,7 @@
 
 <style>
 	article {
-		background: url(/images/texture-bg-2.png) no-repeat;
+		/* background: url(/images/texture-bg-2.png) no-repeat; */
 		background-position: 0 100%;
 		margin-top: -6rem;
 		padding: 0 2rem;
