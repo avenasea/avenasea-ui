@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 	import Searches from '$api/searches';
 	import User from '$api/user';
-	import Index from '../index.svelte';
 
 	let searchType = 'candidate';
 	let warning;
