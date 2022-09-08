@@ -1,7 +1,7 @@
 <script lang="ts">
-	import User from '../api/user';
+	import User from '../../api/user';
 	import { onMount } from 'svelte';
-	import { userStore } from '../stores/user';
+	import { userStore } from '../../stores/user';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import Message from '$components/Message.svelte';

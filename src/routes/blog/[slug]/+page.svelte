@@ -1,28 +1,3 @@
-<script context="module">
-	import posts from './_posts.js';
-
-	export async function load({ url, params }) {
-		const { slug } = params;
-		const lookup = new Map();
-		posts.forEach((post) => {
-			lookup.set(post.slug, post);
-		});
-
-		if (lookup.get(slug)) {
-			return {
-				props: {
-					post: lookup.get(slug)
-				}
-			};
-		} else {
-			return {
-				status: 404,
-				error: 'Post not found'
-			};
-		}
-	}
-</script>
-
 <script>
 	import Twitter from '$components/shareButtons/Twitter.svelte';
 	import Fb from '$components/shareButtons/Fb.svelte';
@@ -31,7 +6,8 @@
 	import News from '$components/News.svelte';
 	import Button from '$components/Button.svelte';
 
-	export let post;
+	export let data;
+	const { post } = data;
 </script>
 
 <svelte:head>
@@ -57,51 +33,54 @@
 </svelte:head>
 
 <article>
-	<div class="post-image" style={`background-image: url(${
-		post.image || `https://picsum.photos/980/492?random=${Math.random()}`
-		})`} />
+	<div
+		class="post-image"
+		style={`background-image: url(${
+			post.image || `https://picsum.photos/980/492?random=${Math.random()}`
+		})`}
+	/>
 	<div class="post container">
 		<div class="article">
-		<div class="post-content">
-			<h1 class="post-title">{post.title}</h1>
+			<div class="post-content">
+				<h1 class="post-title">{post.title}</h1>
 				<span class="post-date color-heading"
 					>Date: {post.timestamp
 						? new Date(post.timestamp).toLocaleDateString()
 						: new Date().toLocaleDateString()} / Author: {post.author}</span
 				>
-				<div class="post-subheading"><span class="post-category">{post.category || 'news'}</span>
+				<div class="post-subheading">
+					<span class="post-category">{post.category || 'news'}</span>
 				</div>
-			<div class="content">
-				{#if post.html}
-					{@html post.html}
-				{:else if post.markdown}
-					<SvelteMarkdown source={post.markdown} />
-				{/if}
+				<div class="content">
+					{#if post.html}
+						{@html post.html}
+					{:else if post.markdown}
+						<SvelteMarkdown source={post.markdown} />
+					{/if}
+				</div>
+			</div>
+			<div class="post-card">
+				<span class="color-heading">Negotiate the best hotel RFPs in the industry</span>
+				<p>We have vast experience building applications in the hotel RFP space.</p>
+				<Button className={'card'} content={'Learn more'} href={'/'} />
 			</div>
 		</div>
-		<div class="post-card">
-			<span class="color-heading">Negotiate the best hotel RFPs in the industry</span>
-			<p>We have vast experience building applications in the hotel RFP space.</p>
-			<Button className={'card'} content={'Learn more'} href={'/'}/>
+		<div class="post-tags">
+			Tags:
+			{#each post.tags as tag}
+				<span class="tag">{tag}</span>
+			{/each}
+		</div>
+		<div class="share-buttons">
+			<Fb />
+			<Twitter />
 		</div>
 	</div>
-	<div class="post-tags">
-		Tags:
-		{#each post.tags as tag}
-			<span class="tag">{tag}</span>
-		{/each}
-	</div>
-	<div class="share-buttons">
-		<Fb />
-		<Twitter />
-	</div>
-</div>
 </article>
 
 <Contact className={'blog'} />
 
-<News className={'blog'} contentA={'Related'} contentSpan={''}/>
-
+<News className={'blog'} contentA={'Related'} contentSpan={''} />
 
 <style>
 	article {
@@ -118,37 +97,37 @@
 		margin: 0 auto;
 	}
 
-	.post{
+	.post {
 		padding: 0 2rem;
 	}
 
-	.post-content{
+	.post-content {
 		width: 77rem;
 		max-width: 65%;
 		margin-top: 1rem;
 		padding-right: 2rem;
 	}
-	
-	.post-card{
+
+	.post-card {
 		background: url(/images/BG-card.svg) no-repeat;
 		background-size: cover;
 		width: 37rem;
 		max-width: 35%;
 		border-radius: 2rem;
 		padding: 7.2rem 3.2rem 5.4rem 3.2rem;
-    	text-align: center;
+		text-align: center;
 		height: 100%;
 		margin-top: 3rem;
-		border: 1px solid #354BAF;
-    	box-shadow: 0px 0px 45px 25px rgb(0 0 0 / 20%);
+		border: 1px solid #354baf;
+		box-shadow: 0px 0px 45px 25px rgb(0 0 0 / 20%);
 	}
-	.post-card h2{
+	.post-card h2 {
 		font-size: 4.2rem;
 	}
-	.post-card p{
+	.post-card p {
 		margin-top: 0.5rem;
 	}
-	.post-subheading{
+	.post-subheading {
 		text-align: center;
 	}
 
@@ -161,8 +140,8 @@
 		background: #0d9f8e;
 		border-radius: 30px;
 		width: 65px;
-    	display: block;
-    	margin: 0 auto;	
+		display: block;
+		margin: 0 auto;
 	}
 	.post-date {
 		font-size: 1.6rem;
@@ -173,8 +152,8 @@
 	.post-image {
 		width: 132rem;
 		max-width: 100%;
-    	margin: 0 auto;
-    	height: 48rem;
+		margin: 0 auto;
+		height: 48rem;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -254,21 +233,20 @@
 		margin-bottom: 2rem;
 	}
 
-
 	@media (max-width: 900px) {
 		.article {
 			padding: 0 1rem;
 			flex-direction: column;
 		}
 
-		.post-content{
+		.post-content {
 			max-width: 100%;
-    		padding: 0;
+			padding: 0;
 		}
 
-		.post-card{
+		.post-card {
 			max-width: 100%;
-    		margin: 2rem auto;
+			margin: 2rem auto;
 		}
 
 		.post-image {
@@ -282,17 +260,12 @@
 		.post-title {
 			font-size: 3.2rem;
 		}
-
-	}	
-
+	}
 
 	@media (max-width: 680px) {
-		
-		article{
+		article {
 			margin: 0;
 			padding: 8rem 2rem;
 		}
-
-		
 	}
 </style>

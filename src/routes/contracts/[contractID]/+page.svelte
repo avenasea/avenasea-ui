@@ -1,27 +1,13 @@
-<script context="module">
-	import Contracts from '$api/contracts';
-
-	export async function load({ fetch, params }) {
-		const { contractID } = params;
-		// TODO: ssr with auth routes
-		//const contract = await new Contracts(fetch).getById(contractID);
-
-		return {
-			props: {
-				contractID
-			}
-		};
-	}
-</script>
-
 <script lang="ts">
 	import type { Contract, ContractField } from '$types/contract';
 	import { onMount } from 'svelte';
 	import CollapsableSection from '$components/CollapsableSection.svelte';
 	import FieldContainer from '$components/contracts/FieldContainer.svelte';
 	import { getStatusSummary } from '$lib/getStatusSummary';
+	import Contracts from '$api/contracts';
 
-	export let contractID: string;
+	export let data;
+	const { contractID } = data;
 	let contract: Contract;
 	let splitObject = {};
 

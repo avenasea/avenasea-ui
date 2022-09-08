@@ -1,35 +1,10 @@
-<script context="module">
-	import User from '$api/user';
-	import Jobs from '$api/jobs';
-	import Searches from '$api/searches';
-
-	const name = import.meta.env.VITE_META_NAME;
-
-	export async function load({ fetch, params }) {
-		const { username } = params;
-		const user = await new User(fetch).getByUsername(username);
-		const jobs = await new Jobs(fetch).getByUsername(username);
-		const searches = await new Searches(fetch).getByUsername(username);
-
-		return {
-			props: {
-				jobs,
-				user,
-				searches,
-				username
-			}
-		};
-	}
-</script>
-
 <script>
 	import { fromNow } from '$lib/dates';
 	import { onMount } from 'svelte';
+	import User from '$api/user';
 
-	export let user = {};
-	export let username = null;
-	export let jobs = [];
-	export let searches = [];
+	export let data;
+	let { user, username, jobs, searches } = data;
 
 	onMount(async () => {
 		user = await new User().getByUsername(username);

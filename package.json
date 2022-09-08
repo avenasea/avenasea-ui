@@ -4,9 +4,9 @@
 	"license": "WTFPL",
 	"scripts": {
 		"start": "./bin/start.sh",
-		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
-		"preview": "svelte-kit preview",
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
 		"deploy": "npm run build; ./bin/deploy.sh",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
@@ -18,9 +18,9 @@
 		"@esbuild-plugins/node-modules-polyfill": "^0.1.4",
 		"@rollup/plugin-inject": "^4.0.4",
 		"@stripe/stripe-js": "^1.24.0",
-		"@sveltejs/adapter-node": "^1.0.0-next.73",
 		"@sveltejs/adapter-static": "^1.0.0-next.20",
-		"@sveltejs/kit": "next",
+		"@sveltejs/adapter-node": "^1.0.0-next.87",
+		"@sveltejs/kit": "^1.0.0-next.477",
 		"@typescript-eslint/eslint-plugin": "^5.18.0",
 		"@typescript-eslint/parser": "^5.18.0",
 		"ajv": "^8.11.0",
@@ -47,7 +47,8 @@
 		"svelte-preprocess": "^4.9.4",
 		"topojson": "^3.0.2",
 		"tslib": "^2.3.1",
-		"typescript": "^4.4.3"
+		"typescript": "^4.4.3",
+		"vite": "^3.1.0"
 	},
 	"type": "module",
 	"dependencies": {

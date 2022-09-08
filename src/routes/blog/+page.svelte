@@ -1,39 +1,8 @@
-<script context="module">
-	import posts from './_posts';
-
-	export async function load({ url, params }) {
-		const category = url.search.replace('?category=', '') || 'all';
-
-		// get list of categories
-		let categories = [];
-		posts.forEach((post) => {
-			if (post.category && !categories.includes(post.category)) {
-				categories.push(post.category);
-			}
-		});
-
-		// filter posts by category
-		let filteredPosts =
-			category == 'all' ? posts : posts.filter((post) => post.category == category);
-
-		console.log(categories);
-		console.log(category);
-		return {
-			props: {
-				category,
-				categories,
-				filteredPosts
-			}
-		};
-	}
-</script>
-
 <script>
 	import BlogListItem from '$components/blog/BlogListItem.svelte';
 
-	export let category;
-	export let categories;
-	export let filteredPosts;
+	export let data;
+	const { categories, filteredPosts } = data;
 	let showCategoryDropdown = false;
 </script>
 
@@ -96,7 +65,7 @@
 		font-weight: 400;
 	}
 
-	h1 span{
+	h1 span {
 		font-weight: 700;
 	}
 
@@ -131,23 +100,22 @@
 		margin: 1.5rem 0;
 	}
 
-	.posts-heading{
+	.posts-heading {
 		display: flex;
 		justify-content: space-between;
 		flex-direction: row-reverse;
 	}
 
-	.posts-heading a{
+	.posts-heading a {
 		margin-top: 6rem;
 	}
-
 
 	@media (max-width: 820px) {
 		.post-list {
 			grid-template-columns: repeat(1, auto);
 			padding: 0;
 		}
-			
+
 		section {
 			margin-top: 0;
 			padding: 0 2rem;
@@ -160,26 +128,23 @@
 			padding-top: 1rem;
 			text-align: center;
 		}
-		.posts-heading a{
+		.posts-heading a {
 			margin-top: 2rem;
 		}
-		.category-dropdown{
+		.category-dropdown {
 			top: 26.5rem;
-    		left: 30rem;
+			left: 30rem;
 		}
-		
 	}
 
 	@media (max-width: 680px) {
-			
 		section {
 			padding: 8rem 2rem;
 		}
 
-		.category-dropdown{
+		.category-dropdown {
 			top: 17.5rem;
 			left: 15rem;
 		}
-
 	}
 </style>

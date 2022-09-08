@@ -1,18 +1,11 @@
-<script context="module">
-	export async function load({ url }) {
-		const token = url.searchParams.get('token');
-		const expiry = url.searchParams.get('expiry');
-		return { props: { token, expiry } };
-	}
-</script>
-
 <script lang="ts">
 	import Password from '$components/Password.svelte';
 	import User from '$api/user';
 	import { goto } from '$app/navigation';
 	import Message from '$components/Message.svelte';
-	export let token: string;
-	export let expiry: string;
+
+	export let data;
+	let { token, expiry } = data;
 	let password = '';
 	let msg;
 	let type;
