@@ -1,29 +1,11 @@
-<script context="module">
-	export async function load({ url, params }) {
-		const planID = url.searchParams.get('planID');
-		const type = url.searchParams.get('type');
-
-		if (!planID) {
-			return {
-				status: 400,
-				error: 'No plan selected'
-			};
-		}
-
-		return {
-			props: { planID, type }
-		};
-	}
-</script>
-
 <script>
 	import Payments from '$api/payments';
 	import { goto } from '$app/navigation';
 	import PaymentArea from '$components/payments/PaymentArea.svelte';
 	import { userStore } from '$stores/user';
 
-	export let planID;
-	export let type;
+	export let data;
+	let { planID, type } = data;
 	let stripe;
 
 	const plans = {

@@ -1,26 +1,9 @@
-<script context="module">
-	import Searches from '$api/searches';
-
-	export async function load({ fetch, params }) {
-		const { id } = params;
-
-		const search = await new Searches(fetch).getById(id);
-
-		return {
-			props: {
-				id,
-				search
-			}
-		};
-	}
-</script>
-
 <script>
 	import Tags from '$components/Tags.svelte';
 	import { fromNow } from '$lib/dates';
 
-	export let search = {};
-	export let id = null;
+	export let data;
+	const { search, id } = data;
 
 	const types = {
 		fulltime: 'Fulltime',

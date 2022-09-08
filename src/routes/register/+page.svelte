@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import User from '../api/user';
+	import User from '../../api/user';
 	import { affiliate, location } from '$stores/user.js';
 	import { getLocation } from '$lib/location';
 	import { onMount } from 'svelte';

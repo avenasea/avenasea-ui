@@ -1,25 +1,8 @@
-<script context="module">
-	import Searches from '$api/searches';
-
-	export async function load({ fetch, params }) {
-		const { tag } = params;
-
-		const searches = await new Searches(fetch).getByTag(tag);
-
-		return {
-			props: {
-				tag,
-				searches
-			}
-		};
-	}
-</script>
-
 <script>
 	import { fromNow } from '$lib/dates';
 
-	export let searches = [];
-	export let tag = null;
+	export let data;
+	const { searches, tag } = data;
 
 	const title = `${tag} candidate profiles`;
 </script>

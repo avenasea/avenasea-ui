@@ -1,6 +1,7 @@
 <script>
+	import SearchNavBar from '$components/SearchNavBar.svelte';
 	import { goto } from '$app/navigation';
-	import { browser } from '$app/env';
+	import { browser } from '$app/environment';
 	import { userStore } from '$stores/user.js';
 	import { page } from '$app/stores';
 
@@ -12,5 +13,6 @@
 </script>
 
 {#if $userStore}
+	<SearchNavBar />
 	<slot />
 {/if}

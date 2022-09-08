@@ -1,14 +1,9 @@
-<script context="module">
-	export async function load({ url }) {
-		const email = url.searchParams.get('email') || '';
-		return { props: { email } };
-	}
-</script>
-
 <script lang="ts">
 	import User from '$api/user';
 	import Message from '$components/Message.svelte';
-	export let email: string;
+
+	export let data;
+	let { email } = data;
 	let type;
 	let msg;
 
