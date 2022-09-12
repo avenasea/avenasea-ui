@@ -14,8 +14,8 @@
 	let newFieldValue: unknown;
 	let error: true | string;
 
-	$: updateStatusSummary(fieldData.approvalStatus);
-	const updateStatusSummary = (_) => {
+	$: updateStatusSummary(fieldData.approvalStatus, contract.parties);
+	const updateStatusSummary = (..._) => {
 		fieldData.statusSummary = getStatusSummary(fieldData, contract.parties);
 		const index = contract.fields.findIndex((val) => val.fieldName == fieldData.fieldName);
 		contract.fields[index].statusSummary = fieldData.statusSummary;

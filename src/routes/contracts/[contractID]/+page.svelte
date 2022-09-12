@@ -13,6 +13,7 @@
 	let fieldFilter: ContractField['statusSummary'];
 	let searchText;
 	let collapseModules = true;
+	let emailInputElement: HTMLInputElement;
 
 	let totalApprovedFields = 0;
 	$: totalApprovedFields = contract?.fields?.filter(
@@ -21,10 +22,7 @@
 
 	onMount(async () => {
 		contract = await new Contracts().getById(contractID);
-		contract.fields = contract.fields.map((val) => {
-			val.statusSummary = getStatusSummary(val, contract.parties);
-			return val;
-		});
+		addStatusSummaryToFields();
 		filterFields();
 	});
 
@@ -44,6 +42,26 @@
 		});
 		collapseModules = filtered.length < 100 ? false : true;
 	};
+
+	const addPartyToContract = async (e) => {
+		if (!emailInputElement.reportValidity()) return;
+		const email = emailInputElement.value;
+		try {
+			const res = await new Contracts().addParty(contractID, email);
+			contract.parties = res;
+			emailInputElement.value = '';
+			addStatusSummaryToFields();
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
+	const addStatusSummaryToFields = () => {
+		contract.fields = contract.fields.map((val) => {
+			val.statusSummary = getStatusSummary(val, contract.parties);
+			return val;
+		});
+	};
 </script>
 
 {#if contract}
@@ -56,6 +74,9 @@
 					<li>{user.username}</li>
 				{/each}
 			</ul>
+			<label for="email-input">Add user by email:</label>
+			<input bind:this={emailInputElement} type="email" id="email-input" />
+			<button on:click|preventDefault={addPartyToContract}>Submit</button>
 			<h3>Fields Approved: {totalApprovedFields}/{contract.fields.length}</h3>
 			<br />
 			<h3>Modules:</h3>
