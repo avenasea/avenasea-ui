@@ -1,4 +1,5 @@
 <script>
+	import { userStore } from '$stores/user';
 
 	let active = false;
 
@@ -18,31 +19,39 @@
 		}
 	}
 
-
-
-
-	// import { goto } from '$app/navigation';
-	// import { userStore } from '$stores/user';
-
-	// const logout = () => {
-	// 	localStorage.removeItem('token');
-	// 	localStorage.removeItem('user');
-	// 	userStore.set(null);
-	// 	goto('/');
-	// };
+	const logout = () => {
+		localStorage.removeItem('token');
+		localStorage.removeItem('user');
+		userStore.set(null);
+	};
 </script>
 
 <section>
-
-	<nav style={active ? "right: 0; top: 0; width: 100%; height: 35rem; padding: 7rem 3rem; background: #14235B; display: flex " : ""}>
-		<a href="/" class={`${url === '/' ? 'active' : ''}`}  on:click={close}>Home</a>
+	<nav
+		style={active
+			? 'right: 0; top: 0; width: 100%; height: 38rem; padding: 7rem 3rem; background: #14235B; display: flex '
+			: ''}
+	>
+		<a href="/" class={`${url === '/' ? 'active' : ''}`} on:click={close}>Home</a>
 		<!-- <a href="/"  on:click={close}>Hotels</a> -->
-		<a href="/about" class={`${url === '/about' ? 'active' : ''}`}  on:click={close}>About Us</a>
-		<a href="/blog" class={`${url.includes('/blog') ? 'active' : ''}`}  on:click={close}>Blog</a>
-		<a href="/contact" class={`${url === '/contact' ? 'active' : ''}`}  on:click={close}>Contact Us</a>
+		<a href="/about" class={`${url === '/about' ? 'active' : ''}`} on:click={close}>About Us</a>
+		<a href="/blog" class={`${url.includes('/blog') ? 'active' : ''}`} on:click={close}>Blog</a>
+		<a href="/contact" class={`${url === '/contact' ? 'active' : ''}`} on:click={close}
+			>Contact Us</a
+		>
+		{#if $userStore}
+			<a href="/contracts" class={`${url === '/contracts' ? 'active' : ''}`} on:click={close}
+				>Contracts</a
+			>
+			<a href="/" on:click={logout}>Logout</a>
+		{:else}
+			<a href="/login" class={`${url === '/login' ? 'active' : ''}`} on:click={close}>Login</a>
+			<!-- <a href="/register" class={`${url === '/register' ? 'active' : ''}`} on:click={close}
+				>Register</a
+			> -->
+		{/if}
 
-	<hr size="8" width="100%">
-
+		<hr size="8" width="100%" />
 	</nav>
 
 	<div class="menu">
@@ -169,9 +178,8 @@
 		margin: 0 0.4rem;
 	} */
 
-	@media (max-width: 1034px) {
-		
-		hr{
+	@media (max-width: 1175px) {
+		hr {
 			display: block;
 		}
 

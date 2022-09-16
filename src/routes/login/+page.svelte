@@ -32,7 +32,7 @@
 	}
 
 	onMount(() => {
-		ref = $page?.url?.searchParams.get('ref') || '/dashboard';
+		ref = $page?.url?.searchParams.get('ref') || '/contracts';
 		console.log('ref: ', ref);
 	});
 </script>
