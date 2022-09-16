@@ -47,13 +47,9 @@
 		margin-top: -1rem;
 	}
 
-
-	@media (max-width: 1034px) {
-		.header{
+	@media (max-width: 1175px) {
+		.header {
 			display: none;
 		}
-
-
 	}
-
 </style>
