@@ -14,6 +14,7 @@
 	let searchText;
 	let collapseModules = true;
 	let emailInputElement: HTMLInputElement;
+	let showHiddenFields = false;
 
 	let totalApprovedFields = 0;
 	$: totalApprovedFields = contract?.fields?.filter(
@@ -26,7 +27,7 @@
 		filterFields();
 	});
 
-	$: filterFields(searchText, fieldFilter);
+	$: filterFields(searchText, fieldFilter, showHiddenFields);
 
 	const filterFields = (..._) => {
 		if (!contract?.fields) return;
@@ -34,7 +35,8 @@
 		let filtered = contract.fields.filter(
 			(val) =>
 				(fieldFilter ? val.statusSummary == fieldFilter : true) &&
-				(searchText ? val.fieldName.toLowerCase().includes(searchText.toLowerCase()) : true)
+				(searchText ? val.fieldName.toLowerCase().includes(searchText.toLowerCase()) : true) &&
+				(showHiddenFields ? true : !val.hidden)
 		);
 		filtered.forEach((val) => {
 			if (!splitObject[val.schemaData.module]) splitObject[val.schemaData.module] = {};
@@ -77,7 +79,9 @@
 			<label for="email-input">Add user by email:</label>
 			<input bind:this={emailInputElement} type="email" id="email-input" />
 			<button on:click|preventDefault={addPartyToContract}>Submit</button>
-			<h3>Fields Approved: {totalApprovedFields}/{contract.fields.length}</h3>
+			<h3>
+				Fields Approved: {totalApprovedFields}/{contract.fields.filter((val) => !val.hidden).length}
+			</h3>
 			<br />
 			<h3>Modules:</h3>
 			<label class="filter-label" for="filter">Filter:</label>
@@ -93,6 +97,8 @@
 			<label class="filter-label" for="search">Search:</label>
 			<input type="text" name="search" id="search" bind:value={searchText} />
 			<button class="text-btn" on:click={() => (searchText = undefined)}>clear</button>
+			<label class="filter-label" for="showHiddenFields">Show Hidden Fields:</label>
+			<input id="showHiddenFields" type="checkbox" bind:checked={showHiddenFields} />
 			{#if Object.keys(splitObject).length}
 				{#each Object.entries(splitObject) as [moduleName, moduleValue]}
 					<CollapsableSection collapsed={collapseModules} heading={moduleName}>

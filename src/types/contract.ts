@@ -24,6 +24,7 @@ export interface ContractField {
 	currentValue: string | Date | number | null;
 	changeHistory: ChangeHistory[] | [];
 	comments: Comment[] | [];
+	hidden: boolean;
 	statusSummary:
 		| 'fullyApproved'
 		| 'awaitingMe'
