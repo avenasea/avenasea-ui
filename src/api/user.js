@@ -1,9 +1,6 @@
 import Api from './create-api';
 import { userStore } from '../stores/user';
 
-let user;
-userStore.subscribe((val) => (user = val));
-
 class User extends Api {
 	constructor(fetch) {
 		super(fetch);
@@ -18,11 +15,14 @@ class User extends Api {
 	}
 
 	async me() {
-		const res = await this.api('/me');
-		user.status = res.status;
-		userStore.set(user);
-		localStorage.setItem('user', JSON.stringify(user));
-		return res;
+		try {
+			const res = await this.api('/me');
+			userStore.set(res);
+			return res;
+		} catch (err) {
+			console.log('here');
+			userStore.set(null);
+		}
 	}
 
 	async getByUsername(username) {
@@ -45,6 +45,9 @@ class User extends Api {
 		return await this.api('/password/reset', { token, password }, { method: 'PUT' });
 	}
 
+	async logout() {
+		return await this.api('/logout');
+	}
 }
 
 export default User;

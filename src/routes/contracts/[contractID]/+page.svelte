@@ -5,10 +5,10 @@
 	import FieldContainer from '$components/contracts/FieldContainer.svelte';
 	import { getStatusSummary } from '$lib/getStatusSummary';
 	import Contracts from '$api/contracts';
+	import type { PageData } from './$types';
 
-	export let data;
-	const { contractID } = data;
-	let contract: Contract;
+	export let data: PageData;
+	let { contract, contractID } = data;
 	let splitObject = {};
 	let fieldFilter: ContractField['statusSummary'];
 	let searchText;
@@ -22,7 +22,6 @@
 	).length;
 
 	onMount(async () => {
-		contract = await new Contracts().getById(contractID);
 		addStatusSummaryToFields();
 		filterFields();
 	});

@@ -4,13 +4,14 @@
 	import User from '$api/user';
 	import Message from '$components/Message.svelte';
 	import { getLocation } from '$lib/location';
-	import { location } from '$stores/user';
+	import { location, userStore } from '$stores/user';
 	import Payments from '$api/payments';
 	import Password from '$components/Password.svelte';
 
-	let me = {};
 	let type;
 	let msg;
+	let me;
+	userStore.subscribe((val) => (me = val));
 
 	async function onUpdate() {
 		try {
@@ -27,10 +28,8 @@
 	}
 
 	onMount(async () => {
-		me = await new User(fetch).me();
 		getLocation(() => {
 			me.location = $location;
-			console.log(me);
 		});
 	});
 
