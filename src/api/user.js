@@ -20,7 +20,6 @@ class User extends Api {
 			userStore.set(res);
 			return res;
 		} catch (err) {
-			console.log('here');
 			userStore.set(null);
 		}
 	}
