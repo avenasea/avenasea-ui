@@ -76,11 +76,25 @@
 		error = valid === true ? null : valid;
 		return valid;
 	};
+
+	const toggleHidden = async () => {
+		try {
+			fieldData.hidden
+				? await new Contracts().unhideField(contract.id, fieldData.fieldName)
+				: await new Contracts().hideField(contract.id, fieldData.fieldName);
+
+			fieldData.hidden = !fieldData.hidden;
+			const index = contract.fields.findIndex((val) => val.fieldName == fieldData.fieldName);
+			contract.fields[index].hidden = fieldData.hidden;
+		} catch (err) {
+			console.error(err);
+		}
+	};
 </script>
 
 <CollapsableSection
 	collapsed={true}
-	heading={fieldData.fieldName}
+	heading={`${fieldData.fieldName}${fieldData.hidden ? ' - (Hidden)' : ''}`}
 	statusSummary={fieldData.statusSummary}
 	on:click={triggerLoad}
 	on:hover={() => {
@@ -148,6 +162,7 @@
 			<button class="approve-btn" on:click={() => updateApproval('approved')}>Approve</button>
 			<button class="reject-btn" on:click={() => updateApproval('rejected')}>Reject</button>
 		</div>
+		<button on:click={toggleHidden}>{fieldData.hidden ? 'Unhide' : 'Hide'} Field</button>
 	</fieldset>
 </CollapsableSection>
 

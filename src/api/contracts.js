@@ -21,6 +21,14 @@ class Jobs extends Api {
 		return await this.api(`/contracts/${id}/fields/${fieldName}`);
 	}
 
+	async hideField(id, fieldName) {
+		return await this.api(`/contracts/${id}/fields/${fieldName}/hidden/hide`, {}, { method: 'POST' });
+	}
+
+	async unhideField(id, fieldName) {
+		return await this.api(`/contracts/${id}/fields/${fieldName}/hidden/unhide`, {}, { method: 'POST' });
+	}
+
 	async updateField(id, data) {
 		return await this.api(`/contracts/${id}/update-field`, data, { method: 'POST' });
 	}
