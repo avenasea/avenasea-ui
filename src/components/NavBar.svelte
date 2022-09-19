@@ -1,12 +1,13 @@
 <script>
 	import { userStore } from '$stores/user';
+	import User from '$api/user';
+	import { goto } from '$app/navigation';
 
 	let active = false;
 
 	export let url;
 
-
-	function addClass(e){
+	function addClass(e) {
 		e.target.classList.toggle('active');
 		active = !active;
 	}
@@ -19,10 +20,10 @@
 		}
 	}
 
-	const logout = () => {
-		localStorage.removeItem('token');
-		localStorage.removeItem('user');
+	const logout = async () => {
+		await new User(fetch).logout();
 		userStore.set(null);
+		await goto('/');
 	};
 </script>
 
@@ -55,56 +56,48 @@
 	</nav>
 
 	<div class="menu">
-
-		<div class="burger-menu" 
+		<div
+			class="burger-menu"
 			on:click|preventDefault={(e) => {
 				addClass(e);
-			}}>
-
-			<span class="line" style={active ? "display: none" : ""}></span>
-
+			}}
+		>
+			<span class="line" style={active ? 'display: none' : ''} />
 		</div>
-
 	</div>
-
-
-
 </section>
 
-
-
-	<!-- <a href="/jobs">Jobs</a>
+<!-- <a href="/jobs">Jobs</a>
 	<a href="/pricing">Pricing</a>
 	{#if $userStore}
 		<a href="/dashboard">Dashboard</a>
 		<a href="/account/settings">Settings</a>
 		<a href="/account/settings">Settings</a> -->
-		<!--<a href="#" on:click|preventDefault={logout}>Logout</a>
+
+<!--<a href="#" on:click|preventDefault={logout}>Logout</a>
 	{:else}
 		<a href="/login">Login</a>
 		<a href="/register">Signup</a>
 	{/if} -->
-
 <style>
-
-	a{
+	a {
 		font-size: 1.8rem;
 		font-weight: 400;
 		line-height: 2.9rem;
-		color: #99AAFF;
+		color: #99aaff;
 		margin: 0 2rem;
 	}
 
-	.active{
+	.active {
 		color: #fff;
 		font-weight: 700;
 	}
 
-	.menu{
+	.menu {
 		display: none;
 	}
-	
-	.burger-menu{
+
+	.burger-menu {
 		display: none;
 	}
 
@@ -115,7 +108,8 @@
 		height: 2rem;
 	}
 
-	.burger-menu:before, .burger-menu:after {
+	.burger-menu:before,
+	.burger-menu:after {
 		content: '';
 		background-color: #fff;
 		position: absolute;
@@ -125,11 +119,11 @@
 		transition: all 0.3s ease 0s;
 	}
 
-	.burger-menu:before{
+	.burger-menu:before {
 		top: 0.1rem;
 	}
 
-	.burger-menu:after{
+	.burger-menu:after {
 		bottom: 0;
 	}
 	.burger-menu span {
@@ -142,21 +136,21 @@
 		pointer-events: none;
 	}
 
-	.active span{
-		display: none; 
-    }
+	.active span {
+		display: none;
+	}
 
-    .active:before {
-        transform: rotate(45deg);
-        top: 1.1rem;
-    }
+	.active:before {
+		transform: rotate(45deg);
+		top: 1.1rem;
+	}
 
-    .active:after {
-        transform: rotate(-45deg);
-        bottom: 0.7rem;
-    }
+	.active:after {
+		transform: rotate(-45deg);
+		bottom: 0.7rem;
+	}
 
-	hr{
+	hr {
 		display: none;
 		position: absolute;
 		bottom: 0;
@@ -199,33 +193,33 @@
 			padding-top: 2rem;
 		}
 
-		.burger-menu{
+		.burger-menu {
 			display: block;
 			position: fixed;
 			z-index: 999;
 		}
 
-		.menu{
+		.menu {
 			width: 100%;
 			display: flex;
 			justify-content: flex-end;
 		}
 
-		.active:before, .active:after{
-			background-color: #0D9F8E;
+		.active:before,
+		.active:after {
+			background-color: #0d9f8e;
 		}
 
-		a{
+		a {
 			padding: 1rem 0;
 			margin: 0;
 		}
 
-		.active{
+		.active {
 			/* background-image: linear-gradient(90deg, #21A8F3, #C7F5C6);
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent; */
-			color: #21A8F3;
+			color: #21a8f3;
 		}
 	}
-
 </style>

@@ -4,18 +4,14 @@
 	import { goto } from '$app/navigation';
 	import Message from '$components/Message.svelte';
 	import UserEditableList from '$components/form/UserEditableList.svelte';
-	import type { Contract } from '$types/contract';
+	import type { PageData } from './$types';
 
+	export let data: PageData;
+	let { contracts } = data;
 	let msg;
 	let type;
 
 	let newContractData: Record<string, any> = {};
-	let contracts: Pick<Contract, 'id' | 'name' | 'created_at'>[] = [];
-
-	onMount(async () => {
-		const res = await new Contracts().getMyContracts();
-		contracts = res;
-	});
 
 	const create = async () => {
 		msg = '';

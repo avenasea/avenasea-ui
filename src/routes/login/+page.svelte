@@ -16,12 +16,8 @@
 			msg = null;
 			type = null;
 			const res = await new User(fetch).login(user);
-			if (res.user && res.token) {
-				localStorage.setItem('token', res.token);
-				delete res.user.token;
-				localStorage.setItem('user', JSON.stringify(res.user));
+			if (res.user) {
 				userStore.set(res.user);
-				console.log(ref);
 				goto(ref);
 			}
 		} catch (err) {
