@@ -14,7 +14,7 @@
 	<p>
 		Say <a href="mailto:hello@{domain}?subject={name}">hello@{domain}</a>
 	</p>
-	<p>Call us at <a href="tel:+1-888-690-2044">+1-888-690-2044</a></p>
+	<p>Call us at <a href="tel:+1-888-690-2204">+1-888-690-2204</a></p>
 
 	<div class="team">
 		<div class="dev">
