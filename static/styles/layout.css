@@ -118,6 +118,33 @@ a:visited {
 	font-size: 2rem;
 } */
 
+
+
+button {
+	font-family: Work Sans;
+	font-weight: 700;
+	font-size: 2rem;
+	line-height: 2rem;
+	padding: 1.6rem 3rem;
+	text-decoration: none;
+	text-align: center;
+	display: inline-block;
+	background: #0d9f8e;
+	border-radius: 9999px;
+	border: none;
+	color: #fff;
+	text-transform: uppercase;
+	transition: 0.4s all;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+button:hover {
+	background: #fff;
+	color: #0d9f8e;
+}
+
+
 @media (max-width: 700px) {
 	.color-heading {
 		font-size: 1.6rem;

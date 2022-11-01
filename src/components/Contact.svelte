@@ -199,9 +199,10 @@
 		text-align: center;
 	}
 
-	input:focus {
-		box-shadow: 0 0 1.5rem #7a956b;
-		/* border: 1px solid #ddd446; */
+	form input:focus{
+		box-shadow: 0 0 1rem #7a956b;
+		border: none;
+		outline: none;
 	}
 
 	.form {
@@ -229,7 +230,6 @@
 		/* display: block; */
 		/* margin: 0 20px; */
 	}
-
 	input {
 		margin: 0 auto;
 	}

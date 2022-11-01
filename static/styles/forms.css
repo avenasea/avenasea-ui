@@ -26,7 +26,10 @@ form label {
 form input[type='checkbox'] + label {
 	display: inline-block;
 }
-
+form input[type]:not([type='checkbox']):not([type='radio']) {
+	width: 100%;
+}
+/* 
 form input[type]:not([type='radio']),
 button,
 textarea {
@@ -34,7 +37,7 @@ textarea {
 	font-size: 1.6rem;
 	border: 1px solid black;
 	border-radius: 0.4rem;
-}
+} */
 
 textarea {
 	height: 30rem;
@@ -42,25 +45,37 @@ textarea {
 
 form input[type]:focus,
 textarea:focus {
-	outline: 1px solid black;
+	box-shadow: 0 0 1rem #7a956b;
+	border: none;
+	outline: none;
 }
 
 form input:not([type='checkbox']):not([type='radio']),
 textarea {
 	width: 100%;
 }
-
-form button {
+/* form button {
 	background-color: red;
 	border-color: red;
 	color: white;
 	cursor: pointer;
-}
+} */
 
 form footer {
 	text-align: right;
 }
-
+form input,  form .input{
+	background: #0a1134;
+	color: #fff;
+	border-radius: 15rem;
+	border: none;
+	font-size: 1.8rem;
+	padding: 1.8rem 2.8rem;
+	width: 38rem;
+	max-width: 100%;
+	/* display: block; */
+	/* margin: 0 20px; */
+}
 .select {
 	padding: 0.4rem;
 	border-radius: 8px;
@@ -70,10 +85,9 @@ form footer {
 	text-align: center;
 }
 
-@media (min-width: 961px) {
-	/* tablet, landscape iPad, lo-res laptops ands desktops */
+/* @media (min-width: 961px) {
 
 	form input[type]:not([type='checkbox']):not([type='radio']) {
 		width: 50%;
 	}
-}
+} */
