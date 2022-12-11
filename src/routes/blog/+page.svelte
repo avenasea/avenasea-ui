@@ -12,34 +12,35 @@
 
 <section class="posts container">
 	<div class="posts-heading">
-		<a href="#" on:click|preventDefault={() => (showCategoryDropdown = !showCategoryDropdown)}>
-			Categories
-			<img class:arrow-up={showCategoryDropdown} src="/images/icons/down-arrow.svg" alt="" />
-		</a>
-		{#if showCategoryDropdown}
-			<ul class="category-dropdown">
-				<li>
-					<a
-						class="category-link"
-						href={`/blog?category=all`}
-						on:click={() => (showCategoryDropdown = false)}
+		<div class="categories">
+			<a href="/" on:click|preventDefault={() => (showCategoryDropdown = !showCategoryDropdown)}>
+				Categories
+			</a>
+			{#if showCategoryDropdown}
+				<ul class="category-dropdown">
+					<li>
+						<a
+							class="category-link"
+							href={`/blog?category=all`}
+							on:click={() => (showCategoryDropdown = false)}
 					>
 						all news
 					</a>
 				</li>
 				{#each categories as category}
-					<li>
-						<a
-							class="category-link"
-							href={`/blog?category=${category}`}
-							on:click={() => (showCategoryDropdown = false)}
-						>
-							{category}
-						</a>
-					</li>
-				{/each}
-			</ul>
-		{/if}
+						<li>
+							<a
+								class="category-link"
+								href={`/blog?category=${category}`}
+								on:click={() => (showCategoryDropdown = false)}
+							>
+								{category}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			{/if}
+		</div>
 
 		<div class="heading-list">
 			<span class="color-heading">Curabitur</span>
@@ -49,7 +50,7 @@
 
 	<ul class="post-list">
 		{#each filteredPosts as post}
-			<BlogListItem {post} />
+		<BlogListItem className={''} {post} />
 		{/each}
 	</ul>
 </section>
@@ -92,8 +93,11 @@
 		max-height: 25rem;
 		z-index: 1;
 		text-align: center;
-		box-shadow: 0.1rem 0.1rem 1rem #fff;
+		box-shadow: 0rem 0rem 1rem #99aaff;
 		/* border: 0.1rem #000 solid; */
+		right: 0;
+		top: 35px;
+		margin: 0;
 	}
 
 	.category-dropdown > li {
@@ -106,14 +110,26 @@
 		flex-direction: row-reverse;
 	}
 
-	.posts-heading a {
+	.categories {
 		margin-top: 6rem;
+		position: relative;
+		top: 0;
+    	left: 0;
 	}
 
 	@media (max-width: 820px) {
+
+		.category-dropdown {
+			position: absolute;
+			top: 95px;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
 		.post-list {
 			grid-template-columns: repeat(1, auto);
 			padding: 0;
+			margin: 3rem 0;
 		}
 
 		section {
@@ -131,20 +147,24 @@
 		.posts-heading a {
 			margin-top: 2rem;
 		}
-		.category-dropdown {
-			top: 26.5rem;
-			left: 30rem;
+		.categories {
+			margin-top: 0;
 		}
 	}
 
 	@media (max-width: 680px) {
+
 		section {
 			padding: 8rem 2rem;
 		}
 
-		.category-dropdown {
-			top: 17.5rem;
-			left: 15rem;
+		.categories{
+			position: static;
 		}
+
+		.category-dropdown {
+			top: 275px;
+		}
+
 	}
 </style>

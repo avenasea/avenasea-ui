@@ -9,7 +9,7 @@
 <header>
 	<a href="/" id="logo"><img src="/images/logo.svg" /></a>
 	<NavBar {url} />
-	<Button className={'white header'} content={'GET NOTIFIED'} href={'/#contact'} />
+	<Button className={'white header'} content={'GET NOTIFIED'} href={'/contact'} />
 </header>
 
 <style>

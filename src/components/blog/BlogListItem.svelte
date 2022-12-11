@@ -2,9 +2,10 @@
 	import SvelteMarkdown from 'svelte-markdown';
 
 	export let post;
+	export let className;
 </script>
 
-<article>
+<article class={className}>
 	<a href={`/blog/${post.slug}`}>
 		<div class="post-content">
 			<div
@@ -36,8 +37,13 @@
 <style>
 	article {
 		padding: 0;
-		margin: 1rem;
+		margin: 0 0 20px 0;
 		width: 100%;
+	}
+
+	.home{
+		margin: 1rem;
+		background: transparent;
 	}
 
 	article .post-image {
@@ -54,7 +60,7 @@
 	.post-text {
 		color: #8794a7;
 		text-align: left;
-		height: 8rem;
+		max-height: 11rem;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		display: -webkit-box;
@@ -110,6 +116,11 @@
 		.post-image {
 			height: 30rem;
 		}
+
+		.home{
+			margin: 0 0 3rem 0;
+		}
+		
 	}
 
 	@media (max-width: 412px) {

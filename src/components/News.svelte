@@ -6,7 +6,7 @@
 	export let contentSpan;
 	export let className;
 
-	console.log(posts.length);
+	// console.log(posts.length);
 	// export let title;
 </script>
 
@@ -14,9 +14,9 @@
 		<span class="color-heading">{contentSpan}</span>
 	<a href="/blog" class="any-news">{contentA}<span>news</span></a>
 	<div class="news">
-		<BlogListItem post={posts[0]} />
-		<BlogListItem post={posts[1]} />
-		<BlogListItem post={posts[2]} />
+		<BlogListItem className={'home'} post={posts[0]} />
+		<BlogListItem className={'home'} post={posts[1]} />
+		<BlogListItem className={'home'} post={posts[2]} />
 	</div>
 </section>
 
@@ -48,7 +48,7 @@
 		background: none;
 		max-width: 124.5rem;
 		width: 100%;
-		padding: 7.7rem 4rem;
+		padding: 7.7rem 2rem;
 	}
 
 	.home{
