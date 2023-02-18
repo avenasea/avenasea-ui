@@ -47,6 +47,10 @@ class User extends Api {
 	async logout() {
 		return await this.api('/logout');
 	}
+
+	async newsletter(user) {
+		return await this.api('/newsletters', user, { method: 'POST' });
+	}
 }
 
 export default User;

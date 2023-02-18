@@ -16,7 +16,7 @@
 			user = {};
 		} catch (err) {
 			type = 'error';
-			msg = err;
+			msg = err.message;
 			console.error(err);
 		}
 	}

@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import Button from './Button.svelte';
 	import Message from './Message.svelte';
+	import User from '$api/user';
 
 	const name = import.meta.env.VITE_META_NAME;
 	const domain = import.meta.env.VITE_META_DOMAIN;
@@ -41,7 +42,7 @@
 				user = {};
 			} catch (err) {
 				type = 'error';
-				msg = err;
+				msg = err.message;
 				console.error(err);
 			}
 		} else {
