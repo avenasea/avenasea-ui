@@ -12,7 +12,7 @@
 				Use our custom negotiation interface for defining RFP agreements between corporations and
 				hotels.
 			</p>
-			<Button className={''} content={'SUBSCRIBE'} href={'/'} />
+			<Button className={''} content={'SUBSCRIBE'} href={'/#contact'} />
 		</div>
 		<img src="/images/hotel-1.svg" />
 	</div>
