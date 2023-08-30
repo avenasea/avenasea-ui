@@ -19,7 +19,7 @@
 	<div class="team">
 		<div class="dev">
 			<div class="photo" style="background-image: url('/images/dev9.jpg" />
-			<h5>BRYAN</h5>
+			<h5>BRYAN MURTHA</h5>
 			<p>CEO/FOUNDER</p>
 			<!-- <Link
 				href={'https://twitter.com/chovy'}
@@ -51,6 +51,13 @@
 				alt={'GitHub link'}
 			/>
 		</div>
+		<div class="dev">
+			<div class="photo" style="background-image: url('/images/lester-strouse.jpg" />
+			<h5>LESTER STROUSE</h5>
+			<p>DATA SCIENCE</p>
+
+		</div>
+
 		<div class="dev">
 			<div class="photo" style="background-image: url('/images/dev6.jpg" />
 			<h5>PHIL</h5>
