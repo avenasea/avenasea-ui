@@ -15,7 +15,7 @@
 			</p>
 			<p>Call us at <a href="tel:+1-888-690-2204">+1-888-690-2204</a></p>
 			<p>
-				<small>&copy; 2021-2024 {name}, Inc. </small>
+				<small>&copy; 2021-2025 {name}, Inc. </small>
 			</p>
 		</div>
 		<div class="footer-links">
